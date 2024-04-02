@@ -1,6 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
 import TopbarComponent from "./components/TopbarComponent";
+import "./App.css";
+
+// <Recommended title="Persone che potresti conoscere" subtitle="Dal tuo settore" />
+// <Recommended title="Consigliati" />
 
 function App() {
   return (

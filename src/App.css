@@ -1,3 +1,134 @@
+p,
+h6 {
+  margin: 0;
+}
+
+.sidebar {
+  margin: 3rem;
+}
+
+.sidebar-container {
+  /* padding: 1rem;
+  padding-top: 1.5rem; */
+  border: 1px rgba(0, 0, 0, 0.123) solid;
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+
+.sidebar-title {
+  font-size: 1.1rem;
+  margin-inline-end: auto;
+  margin-bottom: 0.3rem;
+}
+
+.sidebar-paragraph {
+  opacity: 70%;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.sidebar-border-bottom {
+  border-bottom: 1px rgba(0, 0, 0, 0.123) solid;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+.sidebar-border-bottom-people {
+  border-bottom: 1px rgba(0, 0, 0, 0.123) solid;
+  padding-bottom: 1rem;
+}
+
+.sidebar-people {
+  margin-top: 0.5rem;
+}
+
+.sidebar-people:hover {
+  text-decoration: underline;
+  color: rgb(45, 88, 187);
+  cursor: pointer;
+}
+
+.sidebar-description-people {
+  font-size: 0.9rem;
+  opacity: 80%;
+  margin-bottom: 0.4rem;
+}
+
+.sidebar-connections {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 50px;
+  padding: 0.2rem;
+  padding-inline: 0.8rem;
+  color: gray;
+}
+
+.sidebar-connections:hover {
+  border: 2px solid gray;
+  background-color: #ebebeb;
+  cursor: pointer;
+  padding: 0.15rem;
+  padding-inline: 0.7rem;
+}
+
+.sidebar-align {
+  vertical-align: middle;
+}
+
+.sidebar-footer {
+  /* border-top: 1px solid rgba(128, 128, 128, 0.23); */
+  padding-block: 0.6rem;
+}
+
+.sidebar-footer-show {
+  text-align: center;
+  opacity: 75%;
+}
+
+.sidebar-footer:hover {
+  cursor: pointer;
+  background-color: #ebebeb;
+}
+
+.cp {
+  cursor: pointer;
+}
+
+/* css della chat */
+
+.chat-min-position {
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+}
+
+.right {
+  bottom: -4px;
+  right: -6px;
+}
+
+.chat-container {
+  background-color: white;
+  border: 1px solid rgb(214, 210, 210);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.color {
+  color: rgb(64, 64, 64);
+  font-size: 0.9rem;
+}
+
+.circle {
+  color: rgb(64, 64, 64);
+  padding: 0.5rem;
+}
+
+.circle:hover {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #ebebeb;
+}
 /* HeroSection */
 #heroImg {
   height: 200px;
