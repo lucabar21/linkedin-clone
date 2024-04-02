@@ -4,7 +4,7 @@ import { BiRightArrowAlt } from "react-icons/bi";
 
 
 const Attività = () => {
-return (
+    return (
         <div className="mt-2">
         <Card>
             <Card.Body>

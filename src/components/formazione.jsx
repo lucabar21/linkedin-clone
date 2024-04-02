@@ -18,7 +18,7 @@ const Formazione = () => {
                         className="img-fluid"
                     />
                     </Col>
-                    <Col xs={12} md={9}>
+                    <Col xs={12}>
                     
                     <div>
                         <h3 className="mb-0">Luogo di Formazione</h3>
