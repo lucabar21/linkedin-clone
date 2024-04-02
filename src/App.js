@@ -1,7 +1,13 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import HeroSection from "./components/HeroSection";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <HeroSection />
+    </div>
+  );
 }
 
 export default App;
