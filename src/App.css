@@ -1,3 +1,124 @@
+/* HeroSection */
+#heroImg {
+  height: 200px;
+}
+
+#profileImg {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  border: 5px solid white;
+  top: 70px;
+  left: 40px;
+}
+
+#cardBody {
+  position: relative;
+}
+
+#profilePen {
+  width: 28px;
+  height: 28px;
+  margin-top: 10px;
+}
+
+#titleName {
+  display: inline-block;
+}
+
+#buttonVerify {
+  color: #0a66c2;
+  border: dotted 3px;
+  height: 30px;
+  width: 130px;
+  border-radius: 30px;
+}
+
+#buttonVerify:hover {
+  background-color: #e2f0fe;
+  transition: 0.2;
+}
+
+#location {
+  color: #666666;
+}
+
+@media (min-width: 990px) {
+  #education2 {
+    display: none;
+  }
+}
+
+@media (max-width: 765px) {
+  #location {
+    display: block;
+  }
+}
+
+@media (max-width: 990px) {
+  #education {
+    display: none;
+  }
+}
+
+#education2 {
+  color: #666666;
+  border: none;
+  background: none;
+}
+
+#education2:hover {
+  text-decoration: underline;
+  color: #0a66c2;
+}
+
+#information {
+  text-decoration: none;
+}
+
+#information:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 950px) {
+  #buttonPills1 {
+    width: 100%;
+  }
+}
+
+#buttonPills1 {
+  font-size: 17px;
+  height: 35px;
+}
+
+#buttonPills2 {
+  font-size: 17px;
+  height: 35px;
+  background-color: white;
+  color: #0a66c2;
+  border-color: #0a66c2;
+  box-sizing: border-box;
+}
+
+#buttonPills3 {
+  font-size: 17px;
+  height: 35px;
+  color: grey;
+  box-sizing: border-box;
+}
+
+#buttonPills2:hover {
+  transition: 0.2;
+  background-color: #e2f0fe;
+  outline: solid #0a66c2 2px;
+}
+
+#buttonPills3:hover {
+  transition: 0.2;
+  background-color: #b8b8b860;
+  outline: solid #000000 2px;
+}
 *,
 *::after,
 *::before {
