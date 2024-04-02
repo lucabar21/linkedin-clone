@@ -19,7 +19,6 @@ h6 {
 }
 
 .sidebar-container {
-  width: 19rem;
   /* padding: 1rem;
   padding-top: 1.5rem; */
   border: 1px rgba(0, 0, 0, 0.123) solid;
@@ -72,6 +71,10 @@ h6 {
   padding: 0.3rem;
   padding-inline: 0.8rem;
   color: gray;
+}
+
+.sidebar-align {
+  vertical-align: middle;
 }
 
 .sidebar-footer {

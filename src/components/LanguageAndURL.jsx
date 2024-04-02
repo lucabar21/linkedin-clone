@@ -3,16 +3,16 @@ function LanguageAndURL() {
     <div className="sidebar-container">
       <div className="p-3">
         <div className="sidebar-border-bottom">
-          <div>
+          <div className="d-flex justify-content-between">
             <h6 className="sidebar-title">Lingua del profilo</h6>
-            <div>{}</div>
+            <img src="penEdit.svg" alt="edit" />
           </div>
           <p className="sidebar-paragraph">Italiano</p>
         </div>
         <div>
-          <div>
+          <div className="d-flex justify-content-between">
             <h6 className="sidebar-title">Profilo pubblico e URL</h6>
-            <div>{}</div>
+            <img src="penEdit.svg" alt="edit" />
           </div>
           <p className="sidebar-paragraph">www.linkedin.com/</p>
         </div>
