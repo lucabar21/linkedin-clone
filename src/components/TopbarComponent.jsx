@@ -1,12 +1,19 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { useState } from "react";
 
 const TopbarComponent = () => {
+  const [dropdown, setDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdown(!dropdown);
+  };
+
   return (
     <Container fluid id="topbar">
       <Row className="justify-content-center">
-        <Col className="d-flex gap-2 align-items-center justify-content-center p-2 col-10">
+        <Col className="d-flex gap-2 align-items-center justify-content-center p-2">
           <div id="top-logo">
             <img src="linkedin.svg" alt="logo" />
           </div>
@@ -57,7 +64,7 @@ const TopbarComponent = () => {
               <span>Notifiche</span>
             </div>
             {/* USER */}
-            <div id="top-icon-user">
+            <div id="top-icon-user" onClick={toggleDropdown}>
               <div id="top-icon-avatar">
                 <img src="https://placedog.net/410" alt="user" />
               </div>
@@ -65,6 +72,36 @@ const TopbarComponent = () => {
                 <span id="drop-span" className="d-flex gap-1">
                   Tu <img src="dropdown.svg" alt="drop" />
                 </span>
+              </div>
+              <div id="user-dropdown" className={dropdown ? "d-flex" : "d-none"}>
+                <div className="d-flex gap-3">
+                  <div id="drop-img-container">
+                    <img src="https://placedog.net/410" alt="user" />
+                  </div>
+                  <div id="drop-text-container">
+                    <p>Nome Utente</p>
+                    <span>CEO of Stocazzo</span>
+                  </div>
+                </div>
+                <div id="view-profile">Visualizza profilo</div>
+                <div id="drop-line"></div>
+                <div id="account-drop">
+                  <p>Account</p>
+                  <h6>Prova Premium per 0 EUR</h6>
+                  <h6>Impostazioni e privacy</h6>
+                  <h6>Guida</h6>
+                  <h6>Lingua</h6>
+                </div>
+                <div id="drop-line"></div>
+                <div id="account-drop">
+                  <p>Gestisci</p>
+                  <h6>Post e attività</h6>
+                  <h6>Account per la pubblicazione di...</h6>
+                </div>
+                <div id="drop-line"></div>
+                <div id="account-drop">
+                  <h6>Esci</h6>
+                </div>
               </div>
             </div>
             {/* GRID */}

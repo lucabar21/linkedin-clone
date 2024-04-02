@@ -15,6 +15,7 @@ body {
 #top-logo {
   width: 42px;
   height: auto;
+  cursor: pointer;
 }
 #top-logo img {
   width: 100%;
@@ -49,13 +50,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
+
 #top-icon-lg {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   display: none;
+  cursor: pointer;
 }
 
 #top-icon-user {
@@ -65,6 +69,8 @@ body {
   align-items: center;
   padding-right: 1rem;
   border-right: 1px solid rgb(140 140 140/0.2);
+  cursor: pointer;
+  position: relative;
 }
 
 #top-icon-img {
@@ -73,6 +79,19 @@ body {
 }
 #top-icon-img img {
   width: 100%;
+}
+
+#top-icon span:hover {
+  color: black;
+  transition: 0.2s;
+}
+#top-icon-user span:hover {
+  color: black;
+  transition: 0.2s;
+}
+#top-icon-lg span:hover {
+  color: black;
+  transition: 0.2s;
 }
 
 #top-icon-avatar {
@@ -89,17 +108,17 @@ body {
 
 #top-icon span {
   font-weight: 300;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: rgba(0, 0, 0, 0.6);
 }
 #top-icon-lg span {
   font-weight: 300;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: rgba(0, 0, 0, 0.6);
 }
 #top-icon-user span {
   font-weight: 300;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: rgba(0, 0, 0, 0.6);
 }
 
@@ -143,4 +162,73 @@ body {
   #drop-span {
     display: none;
   }
+}
+
+/* DROPDOWN */
+
+#user-dropdown {
+  width: 250px;
+  height: 429px;
+  position: absolute;
+  right: 0px;
+  top: 60px;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  justify-content: start;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.7);
+  gap: 0.4rem;
+}
+
+#drop-img-container {
+  font-family: "roboto", sans-serif;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#drop-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#drop-text-container {
+  display: flex;
+  flex-direction: column;
+}
+#drop-text-container p {
+  margin: unset;
+}
+
+#view-profile {
+  border: 1px solid #0a66c2;
+  border-radius: 10px;
+  text-align: center;
+  color: #0a66c2;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+#drop-line {
+  margin-block: 0.5rem;
+  width: 100%;
+  height: 1px;
+  background-color: rgb(140 140 140/0.2);
+}
+
+#account-drop p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgb(0 0 0/0.8);
+  margin-bottom: 0.5rem;
+}
+
+#account-drop h6 {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgb(0 0 0/0.6);
 }
