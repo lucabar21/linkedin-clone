@@ -10,10 +10,10 @@ function PeopleOf(props) {
       <div>
         <h6 className="sidebar-people">Tizio Caio</h6>
         <p className="sidebar-description-people">Sempronio presso bo'</p>
-        <span className="sidebar-connections">
+        <button className="sidebar-connections">
           <img className="me-1 opacity-75 sidebar-align" src="peopleAdd.svg" alt="add-people" />
           <span className="sidebar-align">Collegati</span>
-        </span>
+        </button>
       </div>
     </div>
   );
