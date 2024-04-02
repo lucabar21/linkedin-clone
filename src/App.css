@@ -104,3 +104,39 @@ h6 {
 .cp {
   cursor: pointer;
 }
+
+/* css della chat */
+
+.chat-min-position {
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+}
+
+.right {
+  bottom: -4px;
+  right: -6px;
+}
+
+.chat-container {
+  background-color: white;
+  border: 1px solid rgb(214, 210, 210);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.color {
+  color: rgb(64, 64, 64);
+  font-size: 0.9rem;
+}
+
+.circle {
+  color: rgb(64, 64, 64);
+  padding: 0.5rem;
+}
+
+.circle:hover {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #ebebeb;
+}
