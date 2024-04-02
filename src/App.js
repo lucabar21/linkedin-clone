@@ -6,10 +6,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import TopbarComponent from "./components/TopbarComponent";
 import HeroSection from "./components/HeroSection";
-import LanguageAndURL from "./components/LanguageAndURL";
-import Recommended from "./components/Recommended";
 import ChatMin from "./components/ChatMin";
 import Analisi from "./components/Analisi";
+import SidebarProfile from "./components/SidebarProfile";
 
 function App() {
   return (
@@ -27,11 +26,7 @@ function App() {
                     <Analisi />
                   </Col>
                   <Col className="col-3">
-                    <div>
-                      <LanguageAndURL />
-                      <Recommended title="Persone che potresti conoscere" subtitle="Dal tuo settore" />
-                      <Recommended title="Consigliati" />
-                    </div>
+                    <SidebarProfile />
                   </Col>
                 </Row>
               </Container>

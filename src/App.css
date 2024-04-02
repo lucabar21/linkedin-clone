@@ -4,12 +4,13 @@ h6 {
 }
 
 .sidebar {
-  margin: 3rem;
+  margin-top: 1rem;
 }
 
 .sidebar-container {
   /* padding: 1rem;
   padding-top: 1.5rem; */
+  width: 19rem;
   border: 1px rgba(0, 0, 0, 0.123) solid;
   border-radius: 10px;
   background-color: #ffffff;
@@ -108,6 +109,7 @@ h6 {
 }
 
 .chat-container {
+  width: 19rem;
   background-color: white;
   border: 1px solid rgb(214, 210, 210);
   border-top-left-radius: 10px;
@@ -129,6 +131,43 @@ h6 {
   border-radius: 50%;
   background-color: #ebebeb;
 }
+
+.chat-border {
+  border-top: 1px solid rgb(214, 210, 210);
+}
+
+.chat-searchbar {
+  background-color: #edf3f8;
+  border-radius: 5px;
+  margin: 0.5rem 0.8rem;
+  padding: 0.2rem 0.3rem;
+}
+
+.chat-remove-style-searchbar {
+  background-color: transparent;
+  border: none;
+}
+
+.chat-section {
+  width: 50%;
+  padding: 0.7rem;
+  opacity: 90%;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-bottom: 1px solid rgb(214, 210, 210);
+}
+
+.chat-section:hover {
+  background-color: #edf3f8;
+  opacity: 100%;
+}
+/* da sistemare con js */
+.chat-section:active {
+  color: rgb(59, 110, 59);
+  border-bottom: 2px solid rgb(59, 110, 59);
+}
+
 /* HeroSection */
 #heroImg {
   height: 200px;
