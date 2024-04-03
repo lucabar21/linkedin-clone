@@ -42,7 +42,6 @@
 //                 onChange={handleChange}
 //                 />
 //             </Form.Group>
-//             {/* Altri campi del form per le informazioni sull'esperienza */}
 //             <Form.Group controlId="startDate">
 //                 <Form.Label>Data Inizio</Form.Label>
 //                 <Form.Control
@@ -52,7 +51,6 @@
 //                 onChange={handleChange}
 //                 />
 //             </Form.Group>
-//             {/* Aggiungi altri campi del form come necessario */}
 //             </Form>
 //         </Modal.Body>
 //         <Modal.Footer>

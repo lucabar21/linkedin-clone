@@ -10,12 +10,12 @@
 //   const handleCloseModal = () => setShowModal(false);
 
 //   const handleSaveEsperienza = (data) => {
-//     // Implementa la logica per salvare o aggiornare l'esperienza nel tuo stato o nel tuo backend
+//     
 //     console.log("Salva esperienza:", data);
 //   };
 
 //   const handleDeleteEsperienza = () => {
-//     // Implementa la logica per eliminare l'esperienza dal tuo stato o dal tuo backend
+//     
 //     console.log("Elimina esperienza:", esperienza.id);
 //   };
 
@@ -41,9 +41,7 @@
 //                   <div>
 //                     <h6 className="mb-2">Luogo di Esperienza</h6>
 //                     <p>{esperienza.company}</p>
-//                     {/* Aggiungi altri campi per visualizzare le informazioni sull'esperienza */}
 //                   </div>
-//                   {/* Altri contenuti di esperienza */}
 //                 </Col>
 //               </Row>
 //               {/* Bottone per aprire il modale */}
@@ -54,7 +52,6 @@
 //           </Card>
 //         </Col>
 //       </Row>
-//       {/* Modale per aggiungere o modificare esperienza */}
 //       <ModaleEsperienza
 //         show={showModal}
 //         handleClose={handleCloseModal}
