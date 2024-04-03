@@ -120,9 +120,10 @@ const TopbarComponent = () => {
                   <div id="top-icon-img">
                     <img src="grid.svg" alt="grid" />
                   </div>
-                  <div id="drop-span" className="d-flex">
-                    <span id="dropdownAziende">Per le aziende</span>
-                    <img src="dropdown.svg" alt="drop" />
+                  <div id="drop-span">
+                    <span className="d-flex flex-nowrap gap-1">
+                      Per le aziende <img src="dropdown.svg" alt="drop" />
+                    </span>
                   </div>
                 </div>
                 <div>
