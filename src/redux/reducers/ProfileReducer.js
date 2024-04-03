@@ -4,7 +4,7 @@ import { GET_ACCOUNT } from "../actions";
 const initialState = {
   list: [] /* Prende la lista di utenti */,
   user: null /* Prende il singolo utente loggato (proprietario Token) */,
-  byId: null /* Prende il singolo utente da un ID*/,
+  byId: [] /* Prende il singolo utente da un ID*/,
 };
 
 const ProfilesReducer = (state = initialState, action) => {
@@ -24,7 +24,7 @@ const ProfilesReducer = (state = initialState, action) => {
     case GET_USER: {
       return {
         ...state,
-        byId: action.payload /* Modifica il singolo utente utente da un ID */,
+        byId: state.byId.concat(action.payload) /* Modifica il singolo utente utente da un ID */,
       };
     }
     default:
