@@ -1,8 +1,12 @@
 import { useState } from "react";
 import ChatBig from "./ChatBig";
+import { useSelector } from "react-redux";
 
 function ChatgMin() {
   const [openClose, setOpenClose] = useState(false);
+
+  const currentProfile = useSelector(state => state.current.data);
+  console.log(currentProfile);
 
   const handleClick = () => {
     setOpenClose(!openClose);
@@ -16,9 +20,15 @@ function ChatgMin() {
             <div className="me-2">
               <div className="position-relative">
                 <img
-                  src="https://www.svgrepo.com/show/382095/female-avatar-girl-face-woman-user-4.svg"
-                  alt=""
+                  src={
+                    currentProfile !== null
+                      ? currentProfile.image
+                      : "https://openclipart.org/download/247319/abstract-user-flat-3.svg"
+                  }
+                  alt={currentProfile !== null ? currentProfile.username : "Nome Utente"}
                   width={35}
+                  height={36}
+                  className="rounded-circle"
                 />
                 <span className="position-absolute translate-middle right p-1 bg-success border border-light rounded-circle">
                   <span className="visually-hidden">New alerts</span>
