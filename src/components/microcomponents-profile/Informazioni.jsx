@@ -1,9 +1,13 @@
 //dinamico
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 
 const Informazioni = () => {
+
+    const currentAccount = useSelector((state) => state.current.data);
+
     return (
         <Container>
             <Row>
@@ -18,9 +22,7 @@ const Informazioni = () => {
                         </Card.Title>
                         <div>
                             <div>
-                                <p> 
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem sit ut sequi ipsa deserunt odio accusamus temporibus tenetur quam, ducimus, asperiores deleniti et eos magnam velit consectetur in voluptatum necessitatibus!
-                                </p>
+                            <p>{currentAccount && currentAccount.bio}</p>
                             </div>
                         </div>
                         </Card.Body>

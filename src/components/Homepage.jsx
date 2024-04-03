@@ -7,6 +7,7 @@ import Formazione from "./microcomponents-profile/Formazione";
 import Informazioni from "./microcomponents-profile/Informazioni";
 import Lingue from "./microcomponents-profile/Lingue";
 import Risorse from "./microcomponents-profile/Risorse";
+import Footer from "./Footer";
 
 
 function Homepage () {
@@ -20,6 +21,7 @@ function Homepage () {
             <Informazioni/>
             <Lingue/>
             <Risorse/>
+            <Footer/>
         </>
     );
 };

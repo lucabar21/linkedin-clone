@@ -12,6 +12,7 @@ import ChatMin from "./components/ChatMin";
 import Homepage from "./components/Homepage";
 
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -40,6 +41,7 @@ function App() {
           ></Route>
         </Routes>
         <ChatMin />
+        
       </div>
     </BrowserRouter>
   );
