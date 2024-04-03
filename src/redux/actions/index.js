@@ -20,7 +20,7 @@ export const getProfile = () => {
         Authorization: BearerLuca,
       },
     })
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
           console.log(response);
           return response.json();
@@ -28,11 +28,11 @@ export const getProfile = () => {
           throw new Error("Quacosa è andato storto!");
         }
       })
-      .then(data => {
+      .then((data) => {
         console.log(data);
         dispatch({ type: GET_DATA, payload: data });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };
@@ -55,7 +55,7 @@ export const getAccount = () => {
         Authorization: BearerMarco,
       },
     })
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
           console.log(response);
           return response.json();
@@ -63,17 +63,17 @@ export const getAccount = () => {
           throw new Error("Quacosa è andato storto!");
         }
       })
-      .then(data => {
+      .then((data) => {
         console.log(data);
         dispatch({ type: GET_ACCOUNT, payload: data });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };
 };
 
-export const getUserByID = userID => {
+export const getUserByID = (userID) => {
   return (dispatch, getState) => {
     const ProfilesEndpoint = "https://striveschool-api.herokuapp.com/api/profile/" + userID;
 
@@ -91,7 +91,7 @@ export const getUserByID = userID => {
         Authorization: BearerGianmarco,
       },
     })
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
           console.log(response);
           return response.json();
@@ -99,11 +99,11 @@ export const getUserByID = userID => {
           throw new Error("Quacosa è andato storto!");
         }
       })
-      .then(data => {
+      .then((data) => {
         console.log(data);
         dispatch({ type: GET_USER, payload: data });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };

@@ -210,6 +210,7 @@ h6 {
   border: 5px solid white;
   top: 70px;
   left: 40px;
+  object-fit: cover;
 }
 
 #cardBody {
