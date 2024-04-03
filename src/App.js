@@ -20,14 +20,14 @@ function App() {
           <Route
             path="/"
             element={
-              <Container>
-                <Row>
-                  <Col className="col-9">
-                    <HeroSection />
-                    <Analisi />
-                  </Col>
-                  <Col className="col-3">
-                    <div>
+              <Container fluid>
+                <Row className="justify-content-center">
+                  <Col className="col-10 d-flex justify-content-center">
+                    <div id="main-section">
+                      <HeroSection />
+                      <Analisi />
+                    </div>
+                    <div id="sidebar">
                       <LanguageAndURL />
                       <Recommended title="Persone che potresti conoscere" subtitle="Dal tuo settore" />
                       <Recommended title="Consigliati" />

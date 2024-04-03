@@ -294,7 +294,7 @@ body {
 /* NAV ICONS */
 #nav-icons-container {
   display: flex;
-  gap: 1.5rem;
+  gap: 2.8rem;
 }
 
 #top-icon {
@@ -433,6 +433,7 @@ body {
   flex-direction: column;
   box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.7);
   gap: 0.4rem;
+  z-index: 2;
 }
 
 #drop-img-container {
@@ -483,4 +484,14 @@ body {
   font-size: 0.8rem;
   font-weight: 300;
   color: rgb(0 0 0/0.6);
+  margin-bottom: 0.5rem;
+}
+
+/* MAIN SECTION AND SIDEBAR SETTINGS */
+#sidebar {
+  min-width: 300px;
+}
+
+#main-section {
+  min-width: 900px;
 }
