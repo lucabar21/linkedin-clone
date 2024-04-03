@@ -11,8 +11,6 @@ function SidebarProfile() {
   const user = useSelector(state => state.profile.byId);
   console.log("user-user", user);
 
-  const [users, setUsers] = useState([]);
-
   const userUs = [
     { _id: "660bc05fa281d80019a3ec4f", name: "Gianmarco" },
     { _id: "660bbf71a281d80019a3ec4c", name: "Luca" },
@@ -30,7 +28,7 @@ function SidebarProfile() {
   return (
     <div className="sidebar">
       <LanguageAndURL />
-      <Recommended title="Persone che potresti conoscere" subtitle="Dal tuo settore" />
+      <Recommended title="Persone che potresti conoscere" subtitle="Dal tuo settore" users={user} />
       <Recommended title="Consigliati" users={profiles} />
     </div>
   );
