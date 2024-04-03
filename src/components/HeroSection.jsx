@@ -7,7 +7,7 @@ import { getAccount } from "../redux/actions";
 
 function HeroSection() {
   const dispatch = useDispatch();
-  const profiles = useSelector((state) => state.current.data);
+  const currentAccount = useSelector((state) => state.current.data);
   useEffect(() => {
     dispatch(getProfile());
     dispatch(getAccount());
@@ -18,7 +18,7 @@ function HeroSection() {
       <Container>
         <Row>
           <Col>
-            {profiles && (
+            {currentAccount && (
               <Card className="rounded-4 mt-3">
                 <Card.Img
                   id="heroImg"
@@ -26,7 +26,7 @@ function HeroSection() {
                   variant="top"
                   src="https://sb.ecobnb.net/app/uploads/sites/2/2018/04/shoot-n-design-71270-unsplash.jpg"
                 />{" "}
-                <Card.Img id="profileImg" src={profiles.image} />
+                <Card.Img id="profileImg" src={currentAccount.image} />
                 <Card.Body id="cardBody" className="p-4">
                   <div className="d-flex justify-content-end">
                     {" "}
@@ -38,7 +38,7 @@ function HeroSection() {
                       {" "}
                       <Col className="d-flex flex-wrap  justify-content-start align-items-center">
                         <h2 id="titleName">
-                          {profiles.name} {profiles.surname}
+                          {currentAccount.name} {currentAccount.surname}
                         </h2>
                         <button
                           className="ms-3 fw-medium d-flex no-wrap justify-content-center align-items-center"
@@ -65,7 +65,7 @@ function HeroSection() {
                   <Card.Text>
                     <span id="location" className="me-1">
                       {" "}
-                      {profiles.area}·{" "}
+                      {currentAccount.area}·{" "}
                     </span>
                     <a href="#" id="information" className="fw-medium">
                       Informazioni di contatto
