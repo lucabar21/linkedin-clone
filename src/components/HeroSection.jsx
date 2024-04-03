@@ -7,7 +7,7 @@ import { getAccount } from "../redux/actions";
 
 function HeroSection() {
   const dispatch = useDispatch();
-  const currentAccount = useSelector((state) => state.current.data);
+  const currentAccount = useSelector((state) => state.profile.user);
   useEffect(() => {
     dispatch(getProfile());
     dispatch(getAccount());

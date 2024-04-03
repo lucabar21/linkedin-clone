@@ -36,7 +36,6 @@ export const getProfile = () => {
       });
   };
 };
-
 export const getAccount = () => {
   return (dispatch, getState) => {
     const ProfilesEndpoint = "https://striveschool-api.herokuapp.com/api/profile/me";
