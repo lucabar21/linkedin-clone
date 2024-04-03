@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import TopbarComponent from "./components/TopbarComponent";
 import HeroSection from "./components/HeroSection";
 import ChatMin from "./components/chat/ChatMin";
-import Analisi from "./components/Analisi";
+import ProfilePage from "./components/ProfilePage";
 import SidebarProfile from "./components/sidebarProfile/SidebarProfile";
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
                   <Col sm={12} md={7} lg={8} xl={9}>
                     <div id="main-section">
                       <HeroSection />
-                      <Analisi />
+                      <ProfilePage />
                     </div>
                   </Col>
                   <Col xs={12} md={5} lg={4} xl={3}>
