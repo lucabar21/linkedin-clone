@@ -7,8 +7,9 @@ import Col from "react-bootstrap/Col";
 import TopbarComponent from "./components/TopbarComponent";
 import HeroSection from "./components/HeroSection";
 import ChatMin from "./components/chat/ChatMin";
-import Analisi from "./components/Analisi";
+import ProfilePage from "./components/ProfilePage";
 import SidebarProfile from "./components/sidebarProfile/SidebarProfile";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,13 +20,15 @@ function App() {
           <Route
             path="/"
             element={
-              <Container>
+              <Container className="mt-4">
                 <Row>
-                  <Col className="col-9">
-                    <HeroSection />
-                    <Analisi />
+                  <Col sm={12} md={7} lg={8} xl={9}>
+                    <div id="main-section">
+                      <HeroSection />
+                      <ProfilePage />
+                    </div>
                   </Col>
-                  <Col className="col-3">
+                  <Col xs={12} md={5} lg={4} xl={3}>
                     <SidebarProfile />
                   </Col>
                 </Row>
@@ -33,6 +36,7 @@ function App() {
             }
           ></Route>
         </Routes>
+        <Footer />
         <ChatMin />
       </div>
     </BrowserRouter>
