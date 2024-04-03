@@ -6,12 +6,10 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import TopbarComponent from "./components/TopbarComponent";
 import HeroSection from "./components/HeroSection";
-import LanguageAndURL from "./components/LanguageAndURL";
-import Recommended from "./components/Recommended";
-import ChatMin from "./components/ChatMin";
-import Homepage from "./components/Homepage";
-
-
+import ChatMin from "./components/chat/ChatMin";
+import ProfilePage from "./components/ProfilePage";
+import SidebarProfile from "./components/sidebarProfile/SidebarProfile";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -22,26 +20,24 @@ function App() {
           <Route
             path="/"
             element={
-              <Container>
+              <Container className="mt-4">
                 <Row>
-                  <Col className="col-9">
-                    <HeroSection />
-                    <Homepage/>
-                  </Col>
-                  <Col className="col-3">
-                    <div>
-                      <LanguageAndURL />
-                      <Recommended title="Persone che potresti conoscere" subtitle="Dal tuo settore" />
-                      <Recommended title="Consigliati" />
+                  <Col sm={12} md={7} lg={8} xl={9}>
+                    <div id="main-section">
+                      <HeroSection />
+                      <ProfilePage />
                     </div>
+                  </Col>
+                  <Col xs={12} md={5} lg={4} xl={3}>
+                    <SidebarProfile />
                   </Col>
                 </Row>
               </Container>
             }
           ></Route>
         </Routes>
+        <Footer />
         <ChatMin />
-        
       </div>
     </BrowserRouter>
   );

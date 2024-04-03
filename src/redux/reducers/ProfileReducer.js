@@ -1,7 +1,10 @@
-import { GET_DATA } from "../actions";
+import { GET_DATA, GET_USER } from "../actions";
+import { GET_ACCOUNT } from "../actions";
 
 const initialState = {
-  content: [],
+  list: [] /* Prende la lista di utenti */,
+  user: null /* Prende il singolo utente loggato (proprietario Token) */,
+  byId: [] /* Prende il singolo utente da un ID*/,
 };
 
 const ProfilesReducer = (state = initialState, action) => {
@@ -9,10 +12,21 @@ const ProfilesReducer = (state = initialState, action) => {
     case GET_DATA: {
       return {
         ...state,
-        content: action.payload,
+        list: action.payload /* Modifica la lista di utenti */,
       };
     }
-
+    case GET_ACCOUNT: {
+      return {
+        ...state,
+        user: action.payload /* Modifica il singolo utente loggato (proprietario Token) */,
+      };
+    }
+    case GET_USER: {
+      return {
+        ...state,
+        byId: state.byId.concat(action.payload) /* Modifica il singolo utente utente da un ID */,
+      };
+    }
     default:
       return state;
   }
