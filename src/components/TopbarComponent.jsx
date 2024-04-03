@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 
 const TopbarComponent = () => {
-  const currentProfile = useSelector((state) => state.current.data);
+  const currentProfile = useSelector((state) => state.profile.user);
   const [dropdown, setDropdown] = useState(false);
 
   const toggleDropdown = () => {
