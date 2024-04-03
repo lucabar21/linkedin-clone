@@ -5,8 +5,7 @@ import { useSelector } from "react-redux";
 function ChatgMin() {
   const [openClose, setOpenClose] = useState(false);
 
-  const currentProfile = useSelector(state => state.current.data);
-  console.log(currentProfile);
+  const currentProfile = useSelector(state => state.profile.user);
 
   const handleClick = () => {
     setOpenClose(!openClose);
