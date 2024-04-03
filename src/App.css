@@ -152,10 +152,16 @@ h6 {
   width: 28px;
   height: 28px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 #titleName {
-  display: inline-block;
+  white-space: nowrap;
+}
+
+#workTitle {
+  font-size: 17px;
+  display: block;
 }
 
 #buttonVerify {
@@ -173,6 +179,7 @@ h6 {
 
 #location {
   color: #666666;
+  cursor: pointer;
 }
 
 @media (min-width: 990px) {
@@ -192,7 +199,9 @@ h6 {
     display: none;
   }
 }
-
+#education {
+  cursor: pointer;
+}
 #education2 {
   color: #666666;
   border: none;
@@ -212,7 +221,7 @@ h6 {
   text-decoration: underline;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 992px) {
   #buttonPills1 {
     width: 100%;
   }
@@ -488,10 +497,10 @@ body {
 }
 
 /* MAIN SECTION AND SIDEBAR SETTINGS */
-#sidebar {
+/* #sidebar {
   min-width: 300px;
-}
+} */
 
-#main-section {
-  min-width: 900px;
-}
+/* #main-section {
+  max-width: 1000px;
+} */
