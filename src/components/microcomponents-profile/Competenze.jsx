@@ -10,7 +10,7 @@ const Competenze = () => {
                 <Col>
                     <div className="mt-2">
                     <Card className="rounded-4">
-                        <Card.Body>
+                        <Card.Body className="mx-2">
                         <Card.Title className="d-flex justify-content-between align-items-center">
                             <div>
                             <h4 className="mb-2">Competenze</h4>

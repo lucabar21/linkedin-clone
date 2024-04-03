@@ -12,7 +12,7 @@ const Risorse = () => {
                 <Col className="pb-3">
                     <div className="mt-2">
                         <Card className="rounded-4">
-                            <Card.Body>
+                            <Card.Body className="mx-2">
                             <Card.Title>
                                 <h4 className="mb-2">Risorse</h4>
                             </Card.Title>
@@ -26,8 +26,8 @@ const Risorse = () => {
                                     <FaSatelliteDish />
                                     </Col>
                                     <Col>
-                                    <h6 className="mb-0">Modalità creazione di contenuti<Button variant="secondary">no</Button></h6>
-                                    <p>Fatti scoprire, metti in risalto i contenuti sul tuo profilo e accedi agli strumenti di creazione</p>
+                                    <h6 className="mb-2">Modalità creazione di contenuti<Button className="mx-2" variant="secondary">no</Button></h6>
+                                    <p className="mb-2">Fatti scoprire, metti in risalto i contenuti sul tuo profilo e accedi agli strumenti di creazione</p>
                                     </Col>
                                 </Row>
                                 <Row className="align-items-center">
@@ -35,7 +35,7 @@ const Risorse = () => {
                                     <SlPeople className="sidebar-align" />
                                     </Col>
                                     <Col>
-                                    <h6 className="mb-0">La mia rete</h6>
+                                    <h6 className="mb-2">La mia rete</h6>
                                     <p>Salva e gestisci i tuoi collegamenti e interessi.</p>
                                     </Col>
                                 </Row>
@@ -43,7 +43,7 @@ const Risorse = () => {
                             </div>
                             </Card.Body>
                             <ListGroup.Item className="text-center">
-                            <p>
+                            <p className="mb-2">
                                 Mostra tutte le risorse
                                 <BiRightArrowAlt />
                             </p>

@@ -14,7 +14,7 @@ const Analisi = () => {
                     <div className="mt-2">
                     
                     <Card className="rounded-4">
-                    <Card.Body>
+                    <Card.Body className="mx-2">
                     <Card.Title>
                         <h4 className="pb-2">Analisi</h4>
                     </Card.Title>
