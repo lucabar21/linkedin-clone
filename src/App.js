@@ -9,6 +9,7 @@ import HeroSection from "./components/HeroSection";
 import ChatMin from "./components/chat/ChatMin";
 import ProfilePage from "./components/ProfilePage";
 import SidebarProfile from "./components/sidebarProfile/SidebarProfile";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             }
           ></Route>
         </Routes>
+        <Footer />
         <ChatMin />
       </div>
     </BrowserRouter>

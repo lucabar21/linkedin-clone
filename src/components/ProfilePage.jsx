@@ -9,21 +9,19 @@ import Lingue from "./microcomponents-profile/Lingue";
 import Risorse from "./microcomponents-profile/Risorse";
 import Footer from "./Footer";
 
+function Homepage() {
+  return (
+    <>
+      <Analisi />
+      <Attività />
+      <Cause />
+      <Competenze />
+      <Formazione />
+      <Informazioni />
+      <Lingue />
+      <Risorse />
+    </>
+  );
+}
 
-function Homepage () {
-    return (
-        <>
-            <Analisi/>
-            <Attività/>
-            <Cause/>
-            <Competenze/>
-            <Formazione/>
-            <Informazioni/>
-            <Lingue/>
-            <Risorse/>
-            <Footer/>
-        </>
-    );
-};
-
-export default Homepage
+export default Homepage;
