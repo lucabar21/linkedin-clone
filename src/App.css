@@ -100,7 +100,7 @@ h6 {
 .chat-min-position {
   position: fixed;
   bottom: 0;
-  right: 50px;
+  right: 15px;
 }
 
 .right {
@@ -126,6 +126,10 @@ h6 {
   padding: 0.5rem;
 }
 
+.rotate {
+  rotate: 180deg;
+}
+
 .circle:hover {
   padding: 0.5rem;
   border-radius: 50%;
@@ -148,6 +152,10 @@ h6 {
   border: none;
 }
 
+.chat-remove-style-searchbar:focus-visible {
+  border: transparent;
+}
+
 .chat-section {
   width: 50%;
   padding: 0.7rem;
@@ -163,9 +171,30 @@ h6 {
   opacity: 100%;
 }
 /* da sistemare con js */
-.chat-section:active {
+.chat-section-active {
   color: rgb(59, 110, 59);
   border-bottom: 2px solid rgb(59, 110, 59);
+}
+
+.chat-font-mess {
+  font-size: 0.8rem;
+  line-height: 1rem;
+  opacity: 80%;
+}
+
+.chat-font-mess {
+  font-size: 0.8rem;
+  line-height: 1rem;
+  opacity: 80%;
+}
+
+.chat-bottom {
+  border-bottom: 1px solid rgb(214, 210, 210);
+  padding-bottom: 0.5rem;
+}
+
+.chat-space {
+  height: 70vh;
 }
 
 /* HeroSection */

@@ -6,9 +6,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import TopbarComponent from "./components/TopbarComponent";
 import HeroSection from "./components/HeroSection";
-import ChatMin from "./components/ChatMin";
+import ChatMin from "./components/chat/ChatMin";
 import Analisi from "./components/Analisi";
-import SidebarProfile from "./components/SidebarProfile";
+import SidebarProfile from "./components/sidebarProfile/SidebarProfile";
 
 function App() {
   return (

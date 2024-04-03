@@ -1,5 +1,5 @@
-import LanguageAndURL from "../components/LanguageAndURL";
-import Recommended from "../components/Recommended";
+import LanguageAndURL from "../sidebarProfile/LanguageAndURL";
+import Recommended from "../sidebarProfile/Recommended";
 
 function SidebarProfile() {
   return (

@@ -1,4 +1,4 @@
-import PeopleOf from "./PeopleOf";
+import PeopleOf from "../PeopleOf";
 
 function Recommended(props) {
   return (
