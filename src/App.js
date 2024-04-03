@@ -28,11 +28,7 @@ function App() {
                     </div>
                   </Col>
                   <Col xs={12} md={5} lg={4} xl={3}>
-                    <div id="sidebar">
-                      <LanguageAndURL />
-                      <Recommended title="Persone che potresti conoscere" subtitle="Dal tuo settore" />
-                      <Recommended title="Consigliati" />
-                    </div>
+                    <SidebarProfile />
                   </Col>
                 </Row>
               </Container>

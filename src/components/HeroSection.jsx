@@ -29,9 +29,7 @@ function HeroSection() {
               <Card.Body id="cardBody" className="p-4">
                 <div className="d-flex justify-content-end">
                   {" "}
-                  <a>
-                    <Card.Img id="profilePen" src="pen.svg" className="ml-auto" />
-                  </a>
+                  <Card.Img id="profilePen" src="pen.svg" className="ml-auto" />
                 </div>
 
                 <div className="mt-4 ">
