@@ -9,7 +9,8 @@ import HeroSection from "./components/HeroSection";
 import LanguageAndURL from "./components/LanguageAndURL";
 import Recommended from "./components/Recommended";
 import ChatMin from "./components/ChatMin";
-import Analisi from "./components/Analisi";
+import Homepage from "./components/Homepage";
+
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
                 <Row>
                   <Col className="col-9">
                     <HeroSection />
-                    <Analisi />
+                    <Homepage/>
                   </Col>
                   <Col className="col-3">
                     <div>
