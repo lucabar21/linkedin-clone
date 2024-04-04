@@ -9,8 +9,7 @@ import HeroSection from "./components/HeroSection";
 import ChatMin from "./components/chat/ChatMin";
 import ProfilePage from "./components/ProfilePage";
 import SidebarProfile from "./components/sidebarProfile/SidebarProfile";
-import Footer from "./components/Footer";
-import RightbarHomepage from "./components/RightbarHomepage";
+
 
 function App() {
   return (
@@ -31,14 +30,14 @@ function App() {
                   </Col>
                   <Col xs={12} md={5} lg={4} xl={3}>
                     <SidebarProfile />
-                    <RightbarHomepage/>
+                    
                   </Col>
                 </Row>
               </Container>
             }
           ></Route>
         </Routes>
-        <Footer />
+        
         
 
         <ChatMin />
