@@ -14,6 +14,7 @@ import ProfileModal from "./components/ProfileModal";
 import HeroSection from "./components/HeroSection";
 import ProfilePage from "./components/ProfilePage";
 import { useSelector } from "react-redux";
+import HomePage from "./components/homePageBody/HomePage";
 
 function App() {
   const currentAccount = useSelector(state => state.profile.user);
@@ -31,7 +32,7 @@ function App() {
                 <Row>
                   {/* <Col sm={12} md={7} lg={8} xl={9}> */}
                   <AddCommentMain />
-                  <CardPost />
+                  <HomePage />
                   {/* </Col> */}
                 </Row>
               </Container>

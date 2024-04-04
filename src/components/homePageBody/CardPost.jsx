@@ -1,11 +1,17 @@
 import { useState } from "react";
 import SectionComment from "./SectionComment";
 import Comment from "./Comment";
+import { useSelector } from "react-redux";
+import ModalComment from "./ModalComment";
 
-function CardPost() {
-  const [counterLike, setCounterLike] = useState(0);
-  const [counterComments, setCounterComments] = useState(0); //array lenght
+function CardPost({ post }) {
+  const randNum = Math.floor(Math.random() * 500);
+  const [counterLike, setCounterLike] = useState(randNum);
+  const [counterComments, setCounterComments] = useState(0); //array lenght comments
   const [openClose, setOpenClose] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
+
+  const currentProfile = useSelector(state => state.profile.user);
 
   const handleClick = () => {
     setOpenClose(!openClose);
@@ -18,33 +24,42 @@ function CardPost() {
           <div className="d-flex align-items-center">
             <img
               className="me-2 rounded-circle object-fit-cover cp"
-              src="https://openclipart.org/download/247319/abstract-user-flat-3.svg"
+              src={post.user.image}
               alt="Nome Utente"
               width={45}
               height={45}
             />
             <div className="d-flex">
               <div>
-                <p className="small fw-bold line-heigh-name cp">Name</p>
+                <p className="small fw-bold line-heigh-name cp">
+                  {post.user.name} {post.user.surname}
+                </p>
                 <p className="opacity-75 line-heigh">
-                  Professione <br></br>Pubblicato
+                  {post.user.title} <br></br>
+                  {post.updatedAt}
                 </p>
               </div>
             </div>
           </div>
-          <div className="d-flex follow-section">
-            <img className="me-1" src="plus.svg" alt="" width={20} height={20} />
-            <p>Segui</p>
-          </div>
+          {currentProfile._id === post.user._id ? (
+            <div className="d-flex follow-section" onClick={() => setModalShow(true)}>
+              <img className="me-1" src="/pen.svg" alt="" width={20} height={20} />
+            </div>
+          ) : (
+            <div className="d-flex follow-section">
+              <img className="me-1" src="plus.svg" alt="" width={20} height={20} />
+              <p>Segui</p>
+            </div>
+          )}
         </div>
         <div>
-          <div className="my-3">
-            Contenuto Post <br /> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odio tempora
-            suscipit assumenda eaque est ex natus quasi at nostrum, porro, quibusdam, amet reiciendis autem numquam quos
-            laborum maxime animi.
-          </div>
+          <div className="my-3">{post.text}</div>
           {/* inserire qui il crontrollo nel caso l'immagine non sia presente nel post */}
-          <img src="" alt="Immagine contenuta nel post" />
+          {post.image && (
+            <div className="overflow-hidden text-center">
+              <img src={post.image} alt="Immagine contenuta nel post" className="object-fit-cover w-50" />
+            </div>
+          )}
         </div>
         <div className="d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center my-2">
@@ -81,6 +96,7 @@ function CardPost() {
       </div>
       {openClose && <SectionComment />}
       {openClose && <Comment />}
+      <ModalComment show={modalShow} onHide={() => setModalShow(false)} edit={"Modifica"} post={post} />
     </div>
   );
 }
