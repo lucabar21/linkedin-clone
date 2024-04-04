@@ -33,7 +33,6 @@ const ExperienceReducer = (state = initialState, action) => {
       };
 
     case DELETE_EXP:
-      // Logica per eliminare un'esperienza esistente
       const filteredExperiences = state.experiences.filter((exp) => exp._id !== action.payload);
       return {
         ...state,

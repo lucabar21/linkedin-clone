@@ -2,52 +2,9 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { createExperience } from "../redux/actions/experience";
-import { getExperience } from "../redux/actions/experience";
 
 const ExperienceModal = (props) => {
-  const dispatch = useDispatch();
-
-  const initialData = useSelector((state) => state.exp.experience);
-  const currentData = useSelector((state) => state.profile.user);
-
-  const [formData, setFormData] = useState({
-    role: "",
-    company: "",
-    startDate: "",
-    endDate: "",
-    description: "",
-    area: "",
-  });
-
-  useEffect(() => {
-    if (initialData) {
-      setFormData({
-        role: initialData.role || "",
-        company: initialData.company || "",
-        startDate: initialData.startDate || "",
-        endDate: initialData.endDate || "",
-        description: initialData.description || "",
-        area: initialData.area || "",
-      });
-    }
-  }, [initialData]);
-
-  const handleChange = (name, value) => {
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(createExperience(currentData._id, formData));
-    dispatch(getExperience(currentData._id));
-    props.onHide();
-  };
+  const { formData, handleChange, handleSubmit } = props;
 
   return (
     <>
@@ -65,7 +22,7 @@ const ExperienceModal = (props) => {
                 aria-label="name"
                 aria-describedby="basic-addon1"
                 value={formData.role}
-                onChange={(e) => handleChange("role", e.target.value)}
+                onChange={(e) => handleChange(e, "role")}
               />
             </InputGroup>
             <InputGroup className="mb-3">
@@ -75,7 +32,7 @@ const ExperienceModal = (props) => {
                 aria-label="company"
                 aria-describedby="basic-addon2"
                 value={formData.company}
-                onChange={(e) => handleChange("company", e.target.value)}
+                onChange={(e) => handleChange(e, "company")}
               />
             </InputGroup>
             <InputGroup className="mb-3">
@@ -86,7 +43,7 @@ const ExperienceModal = (props) => {
                 type="date"
                 aria-describedby="basic-addon3"
                 value={formData.startDate}
-                onChange={(e) => handleChange("startDate", e.target.value)}
+                onChange={(e) => handleChange(e, "startDate")}
               />
             </InputGroup>
             <InputGroup className="mb-3">
@@ -97,7 +54,7 @@ const ExperienceModal = (props) => {
                 aria-describedby="basic-addon4"
                 type="date"
                 value={formData.endDate}
-                onChange={(e) => handleChange("endDate", e.target.value)}
+                onChange={(e) => handleChange(e, "endDate")}
               />
             </InputGroup>
             <InputGroup className="mb-3">
@@ -106,9 +63,8 @@ const ExperienceModal = (props) => {
                 placeholder="La tua descrizione"
                 aria-label="description"
                 aria-describedby="basic-addon5"
-                type="textarea"
                 value={formData.description}
-                onChange={(e) => handleChange("description", e.target.value)}
+                onChange={(e) => handleChange(e, "description")}
               />
             </InputGroup>
             <InputGroup className="mb-3">
@@ -118,14 +74,14 @@ const ExperienceModal = (props) => {
                 aria-label="area"
                 aria-describedby="basic-addon7"
                 value={formData.area}
-                onChange={(e) => handleChange("area", e.target.value)}
+                onChange={(e) => handleChange(e, "area")}
               />
             </InputGroup>
             <Modal.Footer>
               <Button variant="secondary" onClick={props.onHide}>
                 Chiudi
               </Button>
-              <Button variant="primary" type="submit">
+              <Button variant="primary" type="submit" onClick={handleSubmit}>
                 Salva
               </Button>
             </Modal.Footer>

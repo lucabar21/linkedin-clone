@@ -24,14 +24,12 @@ export const getExperience = (userID) => {
     })
       .then((response) => {
         if (response.ok) {
-          console.log(response);
           return response.json();
         } else {
           throw new Error("Quacosa è andato storto!");
         }
       })
       .then((data) => {
-        console.log(data);
         dispatch({ type: GET_EXP, payload: data });
       })
       .catch((error) => {
