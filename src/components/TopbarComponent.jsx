@@ -101,7 +101,7 @@ const TopbarComponent = () => {
                           <span className="fs-6">{currentProfile.title}</span>
                         </div>
                       </div>
-                      <Link to="/me">
+                      <Link to="/me" class="text-decoration-none">
                         <div id="view-profile">Visualizza profilo</div>
                       </Link>
                       <div id="drop-line"></div>

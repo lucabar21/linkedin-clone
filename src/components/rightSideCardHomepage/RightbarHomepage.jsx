@@ -2,7 +2,6 @@ import { Card, Row, Col } from "react-bootstrap";
 import { BsFillInfoSquareFill } from "react-icons/bs";
 import HomepageFooter from "./HomepageFooter";
 
-
 const Rightbar = () => {
   return (
     <>
@@ -19,12 +18,12 @@ const Rightbar = () => {
                   <li className="fw-bold">Quali confini tra vita e lavoro</li>
                   <p className="mb-2 text-muted">Notizie principali</p>
                 </div>
-                  
+
                 <div className="homepage-news">
                   <li className="fw-bold">Lamborghini ritocca il logo</li>
                   <p className="mb-2 text-muted">1 giorno fa</p>
                 </div>
-                  
+
                 <div className="homepage-news">
                   <li className="fw-bold">Worldpay integra Satispay</li>
                   <p className="mb-2 text-muted">1 giorno fa</p>
@@ -44,9 +43,8 @@ const Rightbar = () => {
         </Col>
       </Row>
       <HomepageFooter />
-
     </>
   );
 };
 
-export default Rightbar
+export default Rightbar;

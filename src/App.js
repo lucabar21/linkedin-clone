@@ -16,6 +16,7 @@ import MainSectionComponent from "./components/MainSectionComponent";
 import ProfileModal from "./components/ProfileModal";
 import HeroSection from "./components/HeroSection";
 import ProfilePage from "./components/ProfilePage";
+import RightbarHomepage from "./components/rightSideCardHomepage/RightbarHomepage";
 
 function App() {
   const currentAccount = (state) => state.profile.user;
@@ -30,10 +31,17 @@ function App() {
             element={
               <Container className="mt-4">
                 <Row>
-                  {/* <Col sm={12} md={7} lg={8} xl={9}> */}
-                  <AddCommentMain />
-                  <CardPost />
-                  {/* </Col> */}
+                  <Col lg={3} sm={12}>
+                    <HomepageCardProfile />
+                    <HomepageMicrocard />
+                  </Col>
+                  <Col sm={12} lg={6}>
+                    <AddCommentMain />
+                    <CardPost />
+                  </Col>
+                  <Col sm={12} lg={3}>
+                    <RightbarHomepage />
+                  </Col>
                 </Row>
               </Container>
             }
