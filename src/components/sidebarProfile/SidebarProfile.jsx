@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import LanguageAndURL from "../sidebarProfile/LanguageAndURL";
 import Recommended from "../sidebarProfile/Recommended";
 import { getProfile, getUserByID } from "../../redux/actions";
@@ -9,7 +9,6 @@ function SidebarProfile() {
   const profiles = useSelector(state => state.profile.list);
 
   const user = useSelector(state => state.profile.byId);
-  console.log("user-user", user);
 
   const userUs = [
     { _id: "660bc05fa281d80019a3ec4f", name: "Gianmarco" },
