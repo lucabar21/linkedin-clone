@@ -1,10 +1,12 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import ProfilesReducer from "../reducers/ProfileReducer";
 import uploadImageReducer from "../reducers/uploadImageReducer";
+import ExperienceReducer from "../reducers/experienceReducer";
 
 const combinedReducers = combineReducers({
   profile: ProfilesReducer,
   image: uploadImageReducer,
+  exp: ExperienceReducer,
 });
 
 const store = configureStore({

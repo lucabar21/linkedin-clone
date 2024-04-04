@@ -6,11 +6,13 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { uploadImage } from "../redux/actions";
 import { useSelector } from "react-redux";
+import { getAccount } from "../redux/actions";
 
 function UploadImageModal(props) {
   const [selectedImage, setSelectedImage] = useState(null);
   const dispatch = useDispatch();
 
+  // Questo ci serve per poter prendere l'ID del profilo corrente!
   const currentAccount = useSelector((state) => state.profile.user);
 
   const handleImageChange = (event) => {
@@ -21,6 +23,7 @@ function UploadImageModal(props) {
     event.preventDefault();
     if (selectedImage) {
       dispatch(uploadImage(currentAccount._id, selectedImage));
+      dispatch(getAccount());
     }
     props.onHide();
   };

@@ -54,7 +54,7 @@ export const getAccount = () => {
 
     fetch(ProfilesEndpoint, {
       headers: {
-        Authorization: BearerMarco,
+        Authorization: BearerLuca,
       },
     })
       .then((response) => {
@@ -90,7 +90,7 @@ export const getUserByID = (userID) => {
 
     fetch(ProfilesEndpoint, {
       headers: {
-        Authorization: BearerGianmarco,
+        Authorization: BearerLuca,
       },
     })
       .then((response) => {
@@ -139,7 +139,7 @@ export const putAccount = (updatedData) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization: BearerMarco,
+        Authorization: BearerLuca,
       },
       body: JSON.stringify(requestBody),
     })
@@ -181,7 +181,7 @@ export const uploadImage = (userID, imageFile) => {
     fetch(ImageEndpoint, {
       method: "POST",
       headers: {
-        Authorization: BearerMarco,
+        Authorization: BearerLuca,
       },
       body: formData,
     })
