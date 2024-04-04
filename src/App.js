@@ -10,6 +10,8 @@ import ChatMin from "./components/chat/ChatMin";
 import ProfilePage from "./components/ProfilePage";
 import SidebarProfile from "./components/sidebarProfile/SidebarProfile";
 import Footer from "./components/Footer";
+import AddCommentMain from "./components/homePageBody/AddCommentMain";
+import CardPost from "./components/homePageBody/CardPost";
 
 function App() {
   return (
@@ -19,6 +21,19 @@ function App() {
         <Routes>
           <Route
             path="/"
+            element={
+              <Container className="mt-4">
+                <Row>
+                  {/* <Col sm={12} md={7} lg={8} xl={9}> */}
+                  <AddCommentMain />
+                  <CardPost />
+                  {/* </Col> */}
+                </Row>
+              </Container>
+            }
+          ></Route>
+          <Route
+            path="/660bc05fa281d80019a3ec4f"
             element={
               <Container className="mt-4">
                 <Row>
