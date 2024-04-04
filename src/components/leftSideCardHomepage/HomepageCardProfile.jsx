@@ -2,7 +2,7 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getAccount } from "../redux/actions";
+import { getAccount } from "../../redux/actions";
 
 function HomepageCardProfile() {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ function HomepageCardProfile() {
           />{" "}
           <Card.Img id="cardProfileImg" src={currentAccount.image} />
           <Card.Body>
-            <Card.Title className="text-center mt-4">
+            <Card.Title id="cardProfileTitle" className="text-center mt-4">
               {" "}
               {currentAccount.name} {currentAccount.surname}
             </Card.Title>

@@ -614,6 +614,9 @@ body {
   right: 90px;
   object-fit: cover;
 }
+#cardProfileTitle:hover {
+  text-decoration: underline blueviolet;
+}
 
 #provaPremium {
   color: #000000;

@@ -27,7 +27,7 @@ function HomepageMicrocard() {
           </Link>
         </ListGroup.Item>{" "}
         <ListGroup.Item className="text-center component-footer-show">
-          <p className="my-1">Gruppi</p>
+          <p className="my-1">Scopri di più</p>
         </ListGroup.Item>
       </ListGroup>
     </Card>
