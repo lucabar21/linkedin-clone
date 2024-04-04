@@ -1,11 +1,17 @@
 import { useEffect } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfile } from "../redux/actions";
 import { getAccount } from "../redux/actions";
+import { useState } from "react";
+import ProfileModal from "./ProfileModal";
+import UploadImageModal from "./uploadImageModal";
 
 function HeroSection() {
+  const [modalShow, setModalShow] = useState(false);
+  const [imgModalShow, setImgModalShow] = useState(false);
+
   const dispatch = useDispatch();
   const currentAccount = useSelector((state) => state.profile.user);
   useEffect(() => {
@@ -24,11 +30,14 @@ function HeroSection() {
                 variant="top"
                 src="https://sb.ecobnb.net/app/uploads/sites/2/2018/04/shoot-n-design-71270-unsplash.jpg"
               />{" "}
-              <Card.Img id="profileImg" src={currentAccount.image} />
+              <div id="profile-img-container">
+                <Card.Img id="profileImg" src={currentAccount.image} />
+                <Card.Img id="photo" src="cam.svg" className="ml-auto" onClick={() => setImgModalShow(true)} />
+              </div>
               <Card.Body id="cardBody" className="p-4">
                 <div className="d-flex justify-content-end">
                   {" "}
-                  <Card.Img id="profilePen" src="pen.svg" className="ml-auto" />
+                  <Card.Img id="profilePen" src="pen.svg" className="ml-auto" onClick={() => setModalShow(true)} />
                 </div>
 
                 <div className="mt-4 ">
@@ -96,6 +105,8 @@ function HeroSection() {
           )}
         </Col>
       </Row>
+      <ProfileModal show={modalShow} onHide={() => setModalShow(false)} />
+      <UploadImageModal show={imgModalShow} onHide={() => setImgModalShow(false)} />
     </>
   );
 }

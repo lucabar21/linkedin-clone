@@ -1,10 +1,20 @@
+import { getUserClicked } from "../../redux/actions";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 function PeopleOf({ user }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    dispatch(getUserClicked(user));
+    navigate(`/profile/` + user._id);
+  };
+
   return (
     <>
-      <div className="d-flex align-items-start mt-3 cp sidebar-border-bottom-people">
+      <div className="d-flex align-items-start mt-3 cp sidebar-border-bottom-people" onClick={handleClick}>
         <img
-          id="userImage"
-          className="me-2 rounded-circle"
+          className="me-2 rounded-circle object-fit-cover"
           src={user.image}
           alt={user.username}
           width={50}
