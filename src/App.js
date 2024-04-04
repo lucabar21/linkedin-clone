@@ -17,6 +17,7 @@ import RightbarHomepage from "./components/rightSideCardHomepage/RightbarHomepag
 import { useSelector } from "react-redux";
 import HomepageCardProfile from "./components/leftSideCardHomepage/HomepageCardProfile";
 import HomepageMicrocard from "./components/leftSideCardHomepage/HomepageMicrocard";
+import HomePage from "./components/homePageBody/HomePage";
 
 function App() {
   const currentAccount = useSelector((state) => state.profile.user);
@@ -38,7 +39,7 @@ function App() {
                   </Col>
                   <Col sm={12} md={8} lg={6}>
                     <AddCommentMain />
-                    <CardPost />
+                    <HomePage />
                   </Col>
                   <Col id="colNone" md={4}></Col>
                   <Col sm={12} md={8} lg={3}>

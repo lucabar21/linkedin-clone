@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { useDispatch, useSelector } from "react-redux";
-import { getProfile } from "../redux/actions";
 import { getAccount } from "../redux/actions";
 import { useState } from "react";
 import ProfileModal from "./ProfileModal";

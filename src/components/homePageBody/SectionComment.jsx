@@ -1,14 +1,20 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 function SectionComment() {
   const [searchQuery, setSearchQuery] = useState("");
+  const currentProfile = useSelector(state => state.profile.user);
 
   return (
     <div>
       <div className="d-flex align-items-center pb-2">
         <img
           className="me-2 rounded-circle object-fit-cover cp"
-          src="https://openclipart.org/download/247319/abstract-user-flat-3.svg"
+          src={
+            currentProfile !== null
+              ? currentProfile.image
+              : "https://openclipart.org/download/247319/abstract-user-flat-3.svg"
+          }
           alt="Nome Utente"
           width={40}
           height={40}
