@@ -197,18 +197,40 @@ h6 {
 }
 
 #profileImg {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   position: absolute;
   border: 5px solid white;
-  top: 70px;
-  left: 40px;
   object-fit: cover;
+  cursor: pointer;
 }
 
-#cardBody {
+#profile-img-container {
   position: relative;
+  top: -115px;
+  left: 30px;
+}
+#photo {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  top: 142px;
+  left: 75px;
+  background-color: #ffffff;
+  padding: 0.2rem;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+#profile-img-container:hover #photo {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+#photo:hover {
+  outline: 1px solid #0a66c2;
 }
 
 #profilePen {

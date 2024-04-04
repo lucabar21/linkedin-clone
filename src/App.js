@@ -10,6 +10,7 @@ import ChatMin from "./components/chat/ChatMin";
 import ProfilePage from "./components/ProfilePage";
 import SidebarProfile from "./components/sidebarProfile/SidebarProfile";
 import Footer from "./components/Footer";
+import ProfileModal from "./components/ProfileModal";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                     <div id="main-section">
                       <HeroSection />
                       <ProfilePage />
+                      <ProfileModal />
                     </div>
                   </Col>
                   <Col xs={12} md={5} lg={4} xl={3}>

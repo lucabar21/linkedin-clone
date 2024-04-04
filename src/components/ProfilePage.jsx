@@ -14,10 +14,10 @@ function Homepage() {
     <>
       <Analisi />
       <Attività />
+      <Informazioni />
       <Cause />
       <Competenze />
       <Formazione />
-      <Informazioni />
       <Lingue />
       <Risorse />
     </>

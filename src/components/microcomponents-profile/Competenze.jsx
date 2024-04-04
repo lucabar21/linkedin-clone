@@ -8,7 +8,7 @@ const Competenze = () => {
     <>
       <Row>
         <Col>
-          <div className="mt-2">
+          <div className="my-2">
             <Card className="rounded-4">
               <Card.Body className="mx-2">
                 <Card.Title className="d-flex justify-content-between align-items-center">

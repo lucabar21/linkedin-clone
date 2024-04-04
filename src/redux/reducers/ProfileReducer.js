@@ -1,5 +1,6 @@
 import { GET_DATA, GET_USER } from "../actions";
 import { GET_ACCOUNT } from "../actions";
+import { PUT_ACCOUNT } from "../actions";
 
 const initialState = {
   list: [] /* Prende la lista di utenti */,
@@ -19,6 +20,12 @@ const ProfilesReducer = (state = initialState, action) => {
       return {
         ...state,
         user: action.payload /* Modifica il singolo utente loggato (proprietario Token) */,
+      };
+    }
+    case PUT_ACCOUNT: {
+      return {
+        ...state,
+        user: action.payload /* Aggiorna il singolo utente loggato con i dati modificati */,
       };
     }
     case GET_USER: {
