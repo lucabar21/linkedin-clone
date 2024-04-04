@@ -8,12 +8,12 @@ import { useState } from "react";
 import ProfileModal from "./ProfileModal";
 import UploadImageModal from "./uploadImageModal";
 
-function HeroSection() {
+function HeroSection({ user }) {
   const [modalShow, setModalShow] = useState(false);
   const [imgModalShow, setImgModalShow] = useState(false);
 
   const dispatch = useDispatch();
-  const currentAccount = useSelector((state) => state.profile.user);
+  const currentAccount = useSelector(state => state.profile.user);
   useEffect(() => {
     dispatch(getAccount());
   }, []);
@@ -22,7 +22,7 @@ function HeroSection() {
     <>
       <Row>
         <Col>
-          {currentAccount && (
+          {user && (
             <Card className="rounded-4 ">
               <Card.Img
                 id="heroImg"
@@ -31,7 +31,7 @@ function HeroSection() {
                 src="https://sb.ecobnb.net/app/uploads/sites/2/2018/04/shoot-n-design-71270-unsplash.jpg"
               />{" "}
               <div id="profile-img-container">
-                <Card.Img id="profileImg" src={currentAccount.image} />
+                <Card.Img id="profileImg" src={user.image} />
                 <Card.Img id="photo" src="cam.svg" className="ml-auto" onClick={() => setImgModalShow(true)} />
               </div>
               <Card.Body id="cardBody" className="p-4">
@@ -45,7 +45,7 @@ function HeroSection() {
                     {" "}
                     <Col className="d-flex flex-wrap  justify-content-start align-items-center">
                       <h2 id="titleName">
-                        {currentAccount.name} {currentAccount.surname}
+                        {user.name} {user.surname}
                       </h2>
                       <button
                         className="ms-1 fw-medium d-flex no-wrap justify-content-center align-items-center"
