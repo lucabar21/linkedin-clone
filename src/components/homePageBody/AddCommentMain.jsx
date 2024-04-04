@@ -5,12 +5,13 @@ import { useEffect } from "react";
 import { getAccount } from "../../redux/actions";
 
 function AddCommentMain() {
-  const currentProfile = useSelector((state) => state.profile.user);
+  const currentProfile = useSelector(state => state.profile.user);
   console.log(currentProfile);
 
   const dispatch = useDispatch();
 
   const [modalShow, setModalShow] = useState(false);
+
   useEffect(() => {
     dispatch(getAccount());
   }, []);
