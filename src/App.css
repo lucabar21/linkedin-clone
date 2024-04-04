@@ -116,6 +116,9 @@ a {
 }
 
 /* css della chat */
+#chatIndex {
+  z-index: 12;
+}
 
 .chat-min-position {
   position: fixed;
@@ -814,6 +817,8 @@ body {
 /* Homepage right section */
 #footerHome {
   position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .homepage-footer {

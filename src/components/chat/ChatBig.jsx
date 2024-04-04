@@ -1,7 +1,7 @@
 function ChatBig() {
   return (
     <>
-      <div className="chat-border chat-space">
+      <div className="chat-border chat-space" id="chatIndex">
         <div className="d-flex chat-searchbar">
           <img src="/search.svg" alt="" width={20} />
           <input type="search" placeholder="Cerca messaggi" className="chat-remove-style-searchbar ms-2" />

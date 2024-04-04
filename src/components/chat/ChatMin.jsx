@@ -13,7 +13,7 @@ function ChatgMin() {
 
   return (
     <>
-      <div className="chat-min-position chat-container cp">
+      <div className="chat-min-position chat-container cp" id="chatIndex">
         <div className="p-2">
           <div className="d-flex align-items-center ">
             <div className="me-2">

@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const HomepageFooter = () => {
   return (
-    <footer>
+    <footer id="footerHome" className="small">
       <Row className="justify-content-center"></Row>
       <Row className="text-center mt-3">
         <Col>

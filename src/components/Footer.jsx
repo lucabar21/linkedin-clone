@@ -1,74 +1,94 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { AiFillQuestionCircle } from "react-icons/ai";
-import { FaCog } from "react-icons/fa";
 
 const Footer = () => {
-return (
-        <footer>
-        <Container className="mt-4">
+  return (
+    <footer className="small">
+      <Container className="mt-4">
         <Row>
-            <Col md={3}>
+          <Col md={3}>
             <ul className="list-unstyled text-muted">
-                <li className="pb-2">Informazioni</li>
-                <li className="pb-2">Linee guida della community</li>
-                <li className="pb-2">Privacy e condizioni</li>
-                <li className="pb-2">Sales Solutions</li>
-                <li className="pb-2">Centro sicurezza</li>
+              <li className="pb-2">Informazioni</li>
+              <li className="pb-2">Linee guida della community</li>
+              <li className="pb-2">Privacy e condizioni</li>
+              <li className="pb-2">Sales Solutions</li>
+              <li className="pb-2">Centro sicurezza</li>
             </ul>
-            </Col>
-            <Col md={2}>
+          </Col>
+          <Col md={2}>
             <ul className="list-unstyled text-muted">
-                <li className="pb-2">Accessibilità</li>
-                <li className="pb-2">Carriera</li>
-                <li className="pb-2">Opzioni per gli annunci pubblicitari</li>
-                <li className="pb-2">Mobile</li>
+              <li className="pb-2">Accessibilità</li>
+              <li className="pb-2">Carriera</li>
+              <li className="pb-2">Opzioni per gli annunci pubblicitari</li>
+              <li className="pb-2">Mobile</li>
             </ul>
-            </Col>
-            <Col md={3}>
+          </Col>
+          <Col md={3}>
             <ul className="list-unstyled text-muted">
-                <li className="pb-2">Talent Solutions</li>
-                <li className="pb-2">Soluzioni di marketing</li>
-                <li className="pb-2">Pubblicità</li>
-                <li className="pb-2">Piccole imprese</li>
+              <li className="pb-2">Talent Solutions</li>
+              <li className="pb-2">Soluzioni di marketing</li>
+              <li className="pb-2">Pubblicità</li>
+              <li className="pb-2">Piccole imprese</li>
             </ul>
-            </Col>
-            <Col md={3}>
+          </Col>
+          <Col md={3}>
             <ul className="list-unstyled text-muted">
-                <li>
+              <li>
                 <Container>
-                    <Row>
+                  <Row>
                     <Col md={2}>
-                    <span><AiFillQuestionCircle /></span>
+                      <span>
+                        <img src="/question.svg" alt="" />
+                      </span>
                     </Col>
                     <Col md={9} className="pb-2">
-                        Domande?
-                        <br />
-                        Visita il nostro centro assistenza.
+                      <span className="fw-bold"> Domande?</span>
+                      <br />
+                      Visita il nostro centro assistenza.
                     </Col>
-                    </Row>
+                  </Row>
                 </Container>
-                </li>
-                <li>
+              </li>
+              <li>
                 <Container>
-                    <Row>
+                  <Row>
                     <Col md={2}>
-                        <span><FaCog /></span>
+                      <span>
+                        <img src="/options.svg" alt="" />
+                      </span>
                     </Col>
                     <Col md={9} className="pb-2">
-                        Gestisci il tuo account e la tua privacy
-                        <br />
-                        Vai alle impostazioni
+                      <span className="fw-bold">Gestisci il tuo account e la tua privacy</span>
+                      <br />
+                      Vai alle impostazioni
                     </Col>
-                    </Row>
+                  </Row>
                 </Container>
-                </li>
+              </li>
+              <li>
+                <Container>
+                  <Row>
+                    <Col md={2}>
+                      <span>
+                        <img src="/shield.svg" alt="" />
+                      </span>
+                    </Col>
+                    <Col md={9} className="pb-2">
+                      <span className="fw-bold">Trasparenza sui contenuti consigliati</span>
+                      <br />
+                      Scopri di più sui contenuti consigliati.
+                    </Col>
+                  </Row>
+                </Container>
+              </li>
             </ul>
-            </Col>
+          </Col>
         </Row>
-        <Row style={{ marginLeft: "-2px" }} className="text-muted pb-2">LinkedIn Corporation © 2024</Row>
-        </Container>
-        </footer>
-    );
+        <Row style={{ marginLeft: "-2px" }} className="text-muted pb-2">
+          LinkedIn Corporation © 2024
+        </Row>
+      </Container>
+    </footer>
+  );
 };
 
 export default Footer;

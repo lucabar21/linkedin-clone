@@ -25,17 +25,17 @@ function HomePage() {
         Authorization: BearerLuca,
       },
     })
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
           return response.json();
         } else {
           throw new Error("Quacosa è andato storto!");
         }
       })
-      .then(data => {
+      .then((data) => {
         setPosts(data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };
@@ -47,24 +47,24 @@ function HomePage() {
   return (
     <>
       {posts ? (
-        posts.slice(randNum, randNum + numAdd).map((post, i) => (
-          <>
-            <CardPost key={i} post={post} />
-          </>
-        ))
+        posts.slice(randNum, randNum + numAdd).map((post, i) => <CardPost key={i} post={post} />)
       ) : (
         <div className="d-flex justify-content-center my-5">
           <Spinner />{" "}
         </div>
       )}
-      <div className="my-5 d-flex justify-content-center">
+      <div className="my-4 d-flex justify-content-center">
         <div
-          className="sidebar-footer"
           onClick={() => {
             setNumAdd(numAdd + 10);
           }}
         >
-          <div className="sidebar-footer-show">Mostra di più</div>
+          <button
+            id="buttonPills2"
+            className="mx-1 mt-2 p-3 rounded-pill fw-medium d-flex no-wrap justify-content-center align-items-center"
+          >
+            Vedi nuovi post
+          </button>
         </div>
       </div>
     </>
