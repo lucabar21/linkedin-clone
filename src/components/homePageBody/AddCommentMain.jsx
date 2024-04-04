@@ -1,12 +1,19 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ModalComment from "./ModalComment";
 import { useState } from "react";
+import { useEffect } from "react";
+import { getAccount } from "../../redux/actions";
 
 function AddCommentMain() {
-  const currentProfile = useSelector(state => state.profile.user);
+  const currentProfile = useSelector((state) => state.profile.user);
   console.log(currentProfile);
 
+  const dispatch = useDispatch();
+
   const [modalShow, setModalShow] = useState(false);
+  useEffect(() => {
+    dispatch(getAccount());
+  }, []);
 
   return (
     <div className="sidebar-container pt-2 pb-1 px-3">

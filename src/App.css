@@ -2,6 +2,10 @@ p,
 h6 {
   margin: 0;
 }
+
+a {
+  padding: 0 !important;
+}
 /* MICRO-COMPONENTS */
 .component-footer-show {
   border-top: 0.5px solid #6666662a;

@@ -5,18 +5,21 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import TopbarComponent from "./components/TopbarComponent";
-import HeroSection from "./components/HeroSection";
 import ChatMin from "./components/chat/ChatMin";
-import ProfilePage from "./components/ProfilePage";
 import SidebarProfile from "./components/sidebarProfile/SidebarProfile";
 import Footer from "./components/Footer";
-import ProfileModal from "./components/ProfileModal";
 import HomepageMicrocard from "./components/leftSideCardHomepage/HomepageMicrocard";
 import HomepageCardProfile from "./components/leftSideCardHomepage/HomepageCardProfile";
 import AddCommentMain from "./components/homePageBody/AddCommentMain";
 import CardPost from "./components/homePageBody/CardPost";
+import MainSectionComponent from "./components/MainSectionComponent";
+import ProfileModal from "./components/ProfileModal";
+import HeroSection from "./components/HeroSection";
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
+  const currentAccount = (state) => state.profile.user;
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -36,15 +39,33 @@ function App() {
             }
           ></Route>
           <Route
-            path="/660bc05fa281d80019a3ec4f"
+            path="/me"
             element={
               <Container className="mt-4">
                 <Row>
                   <Col sm={12} md={7} lg={8} xl={9}>
                     <div id="main-section">
-                      <HeroSection />
-                      <ProfilePage />
-                      <ProfileModal />
+                      <HeroSection user={currentAccount} />
+                      <ProfilePage user={currentAccount} />
+                      <ProfileModal user={currentAccount} />
+                    </div>
+                  </Col>
+                  <Col xs={12} md={5} lg={4} xl={3}>
+                    <SidebarProfile />
+                  </Col>
+                </Row>{" "}
+                <Footer />
+              </Container>
+            }
+          ></Route>
+          <Route
+            path="/profile/:userId"
+            element={
+              <Container className="mt-4">
+                <Row>
+                  <Col sm={12} md={7} lg={8} xl={9}>
+                    <div id="main-section">
+                      <MainSectionComponent />
                     </div>
                   </Col>
                   <Col xs={12} md={5} lg={4} xl={3}>

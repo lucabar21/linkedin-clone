@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const TopbarComponent = () => {
   const currentProfile = useSelector((state) => state.profile.user);
@@ -13,6 +13,8 @@ const TopbarComponent = () => {
     setDropdown(!dropdown);
   };
 
+  const location = useLocation();
+
   return (
     <div id="topbar">
       <Container>
@@ -20,9 +22,11 @@ const TopbarComponent = () => {
           <Row className="justify-content-center">
             <Col className="d-flex gap-4 align-items-center justify-content-between p-2">
               <div className="d-flex">
-                <div id="top-logo">
-                  <img src="linkedin.svg" alt="logo" />
-                </div>
+                <Link to="/">
+                  <div id="top-logo">
+                    <img src="linkedin.svg" alt="logo" />
+                  </div>
+                </Link>
 
                 <div id="input-search">
                   <img src="search.svg" alt="search" />
@@ -36,14 +40,17 @@ const TopbarComponent = () => {
                   <div id="top-icon-img">
                     <img src="search.svg" alt="home" />
                   </div>
+
                   <span>Cerca</span>
                 </div>
                 <div id="top-icon">
-                  <div id="top-icon-img">
-                    <img src="home.svg" alt="home" />
-                    <span id="span-1"></span>
-                    <span id="span-2"></span>
-                  </div>
+                  <Link to="/">
+                    <div id="top-icon-img">
+                      <img src="home.svg" alt="home" />
+                      <span id="span-1"></span>
+                      <span id="span-2"></span>
+                    </div>
+                  </Link>
                   <span>Home</span>
                 </div>
                 <div id="top-icon">
@@ -76,6 +83,7 @@ const TopbarComponent = () => {
                     <div id="top-icon-avatar">
                       <img src={currentProfile.image} alt="user" />
                     </div>
+
                     <div id="drop-span">
                       <span id="drop-span" className="d-flex gap-1">
                         Tu <img src="dropdown.svg" alt="drop" />
@@ -93,7 +101,9 @@ const TopbarComponent = () => {
                           <span>{currentProfile.title}</span>
                         </div>
                       </div>
-                      <div id="view-profile">Visualizza profilo</div>
+                      <Link to="/me">
+                        <div id="view-profile">Visualizza profilo</div>
+                      </Link>
                       <div id="drop-line"></div>
                       <div id="account-drop">
                         <p>Account</p>
