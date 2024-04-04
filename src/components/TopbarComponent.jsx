@@ -81,36 +81,41 @@ const TopbarComponent = () => {
                         Tu <img src="dropdown.svg" alt="drop" />
                       </span>
                     </div>
-                    <div id="user-dropdown" className={dropdown ? "d-flex" : "d-none"}>
+                    <div id="user-dropdown" className={dropdown ? "d-flex mt-3" : "d-none"}>
                       <div className="d-flex gap-3">
                         <div id="drop-img-container">
                           <img src={currentProfile.image} alt="user" />
                         </div>
                         <div id="drop-text-container">
-                          <p>
+                          <p id="dropdownName" className="fw-medium">
                             {currentProfile.name} {currentProfile.surname}
                           </p>
-                          <span>{currentProfile.title}</span>
+                          <span className="fs-6">{currentProfile.title}</span>
                         </div>
                       </div>
                       <div id="view-profile">Visualizza profilo</div>
                       <div id="drop-line"></div>
                       <div id="account-drop">
                         <p>Account</p>
-                        <h6>Prova Premium per 0 EUR</h6>
-                        <h6>Impostazioni e privacy</h6>
-                        <h6>Guida</h6>
-                        <h6>Lingua</h6>
+                        <div className="d-flex align-items-end ">
+                          <img src="linkedinPremium.svg" alt="" className="mb-1" />
+                          <h6 className="fw-medium" id="provaPremium">
+                            Prova Premium gratis
+                          </h6>
+                        </div>
+                        <h6 id="microCardLink">Impostazioni e privacy</h6>
+                        <h6 id="microCardLink">Guida</h6>
+                        <h6 id="microCardLink">Lingua</h6>
                       </div>
                       <div id="drop-line"></div>
                       <div id="account-drop">
                         <p>Gestisci</p>
-                        <h6>Post e attività</h6>
-                        <h6>Account per la pubblicazione di...</h6>
+                        <h6 id="microCardLink">Post e attività</h6>
+                        <h6 id="microCardLink">Account per la pubblicazione di...</h6>
                       </div>
                       <div id="drop-line"></div>
                       <div id="account-drop">
-                        <h6>Esci</h6>
+                        <h6 id="microCardLink">Esci</h6>
                       </div>
                     </div>
                   </div>
