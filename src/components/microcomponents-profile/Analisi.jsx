@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Container, Row, Col } from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
 import { AiFillEye } from "react-icons/ai";
 
 import { BiRightArrowAlt } from "react-icons/bi";

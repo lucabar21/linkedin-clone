@@ -1,6 +1,6 @@
 //dinamico
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
 const Informazioni = () => {
