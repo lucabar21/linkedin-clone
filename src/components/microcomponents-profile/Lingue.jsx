@@ -20,7 +20,7 @@ const Lingue = () => {
                       <AiOutlinePlus />
                     </div>
                     <div>
-                      <img src="pen.svg" alt="" />
+                      <img src="/pen.svg" alt="" />
                     </div>
                   </div>
                 </Card.Title>

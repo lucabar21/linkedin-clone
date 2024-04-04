@@ -33,7 +33,7 @@ function CardPost() {
             </div>
           </div>
           <div className="d-flex follow-section">
-            <img className="me-1" src="plus.svg" alt="" width={20} height={20} />
+            <img className="me-1" src="/plus.svg" alt="" width={20} height={20} />
             <p>Segui</p>
           </div>
         </div>
@@ -63,19 +63,19 @@ function CardPost() {
             setCounterLike(counterLike + 1);
           }}
         >
-          <img src="like.svg" alt="" />
+          <img src="/like.svg" alt="" />
           <p className="small opacity-75 ms-1">Consiglia</p>
         </div>
         <div className="like-section mt-1 d-flex align-items-center cp" onClick={handleClick}>
-          <img src="comment.svg" alt="" />
+          <img src="/comment.svg" alt="" />
           <p className="small opacity-75 ms-1">Commenta</p>
         </div>
         <div className="like-section mt-1 d-flex align-items-center cp">
-          <img src="sharing.svg" alt="" />
+          <img src="/sharing.svg" alt="" />
           <p className="small opacity-75 ms-1">Diffondi il post</p>
         </div>
         <div className="like-section mt-1 d-flex align-items-center cp">
-          <img src="connect.svg" alt="" />
+          <img src="/connect.svg" alt="" />
           <p className="small opacity-75 ms-1">Invia</p>
         </div>
       </div>

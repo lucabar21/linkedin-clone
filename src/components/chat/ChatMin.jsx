@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 function ChatgMin() {
   const [openClose, setOpenClose] = useState(false);
 
-  const currentProfile = useSelector(state => state.profile.user);
+  const currentProfile = useSelector((state) => state.profile.user);
 
   const handleClick = () => {
     setOpenClose(!openClose);
@@ -36,10 +36,10 @@ function ChatgMin() {
             </div>
             <h6 className="me-5 color">Messaggistica</h6>
             <div>
-              <img src="threePoints.svg" alt="" className="circle" />
-              <img src="notePen.svg" alt="" className="circle" />
+              <img src="/threePoints.svg" alt="" className="circle" />
+              <img src="/notePen.svg" alt="" className="circle" />
               <img
-                src="arrowUp.svg"
+                src="/arrowUp.svg"
                 alt=""
                 className={openClose ? "circle rotate" : "circle"}
                 onClick={handleClick}

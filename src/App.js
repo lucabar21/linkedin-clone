@@ -15,9 +15,12 @@ import HeroSection from "./components/HeroSection";
 import ProfilePage from "./components/ProfilePage";
 import RightbarHomepage from "./components/rightSideCardHomepage/RightbarHomepage";
 import { useSelector } from "react-redux";
+import HomepageCardProfile from "./components/leftSideCardHomepage/HomepageCardProfile";
+import HomepageMicrocard from "./components/leftSideCardHomepage/HomepageMicrocard";
 
 function App() {
-  const currentAccount = (state) => state.profile.user;
+  const currentAccount = useSelector((state) => state.profile.user);
+  const clickedAccount = useSelector((state) => state.profile.clicked);
 
   return (
     <BrowserRouter>
@@ -29,15 +32,16 @@ function App() {
             element={
               <Container className="mt-4">
                 <Row>
-                  <Col lg={3} sm={12}>
+                  <Col lg={3} md={4} sm={12}>
                     <HomepageCardProfile />
                     <HomepageMicrocard />
                   </Col>
-                  <Col sm={12} lg={6}>
+                  <Col sm={12} md={8} lg={6}>
                     <AddCommentMain />
                     <CardPost />
                   </Col>
-                  <Col sm={12} lg={3}>
+                  <Col id="colNone" md={4}></Col>
+                  <Col sm={12} md={8} lg={3}>
                     <RightbarHomepage />
                   </Col>
                 </Row>
@@ -74,7 +78,6 @@ function App() {
                         <>
                           <HeroSection user={clickedAccount} />
                           <ProfilePage user={clickedAccount} />
-                          <ProfileModal user={clickedAccount} />
                         </>
                       )}
                     </div>

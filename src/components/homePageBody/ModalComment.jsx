@@ -31,26 +31,26 @@ function ModalComment(props) {
             as="textarea"
             placeholder="Leave a comment here"
             rows={10}
-            onChange={e => setText(e.target.value)}
+            onChange={(e) => setText(e.target.value)}
             value={text}
           />
         </FloatingLabel>
         <div className="d-flex">
           <div className="bg-svg">
-            <img src="multimedia.svg" alt="" className="img-textarea-comm" />
+            <img src="/multimedia.svg" alt="" className="img-textarea-comm" />
           </div>
           <div className="bg-svg">
-            <img src="calendar.svg" alt="" className="img-textarea-comm" />
+            <img src="/calendar.svg" alt="" className="img-textarea-comm" />
           </div>
           <div className="bg-svg">
-            <img src="happyStar.svg" alt="" className="img-textarea-comm" />
+            <img src="/happyStar.svg" alt="" className="img-textarea-comm" />
           </div>
           <div className="bg-svg">
-            <img src="threePointsBlack.svg" alt="" className="img-textarea-comm" />
+            <img src="/threePointsBlack.svg" alt="" className="img-textarea-comm" />
           </div>
         </div>
         <Modal.Footer>
-          <img src="clock.svg" alt="" className="opacity-75" />
+          <img src="/clock.svg" alt="" className="opacity-75" />
           {text === "" && (
             <Button disabled className="rounded-pill py-1" onClick={props.onHide}>
               Pubblica

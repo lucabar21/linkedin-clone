@@ -19,7 +19,7 @@ const Competenze = () => {
                       <AiOutlinePlus />
                     </div>
                     <div>
-                      <img src="pen.svg" alt="" />
+                      <img src="/pen.svg" alt="" />
                     </div>
                   </div>
                 </Card.Title>
@@ -28,7 +28,7 @@ const Competenze = () => {
                     <h6 className="mb-2">Reducers</h6>
                     <p className="mb-2">
                       {" "}
-                      <img className="mx-2" height="20" width="20" id="epicodLogo" src="epicode.svg" alt="logo" />
+                      <img className="mx-2" height="20" width="20" id="epicodLogo" src="/epicode.svg" alt="logo" />
                       Full-Stack Developer - Certification
                     </p>
                   </div>
@@ -36,7 +36,7 @@ const Competenze = () => {
                     <h6 className="mb-2">Typescript</h6>
                     <p className="mb-2">
                       {" "}
-                      <img className="mx-2" height="20" width="20" id="epicodLogo" src="epicode.svg" alt="logo" />
+                      <img className="mx-2" height="20" width="20" id="epicodLogo" src="/epicode.svg" alt="logo" />
                       Full-Stack Developer - Certification
                     </p>
                   </div>

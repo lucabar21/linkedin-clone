@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 
 const TopbarComponent = () => {
-  const currentProfile = useSelector(state => state.profile.user);
+  const currentProfile = useSelector((state) => state.profile.user);
   const [dropdown, setDropdown] = useState(false);
 
   const toggleDropdown = () => {
@@ -108,7 +108,7 @@ const TopbarComponent = () => {
                       <div id="account-drop">
                         <p>Account</p>
                         <div className="d-flex align-items-end ">
-                          <img src="linkedinPremium.svg" alt="" className="mb-1" />
+                          <img src="/linkedinPremium.svg" alt="" className="mb-1" />
                           <h6 className="fw-medium" id="provaPremium">
                             Prova Premium gratis
                           </h6>

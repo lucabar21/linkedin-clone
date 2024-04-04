@@ -1,3 +1,4 @@
+/* APP Css */
 p,
 h6 {
   margin: 0;
@@ -6,6 +7,12 @@ h6 {
 a {
   padding: 0 !important;
 }
+@media screen and (min-width: 992px) {
+  #colNone {
+    display: none;
+  }
+}
+
 /* MICRO-COMPONENTS */
 .component-footer-show {
   border-top: 0.5px solid #6666662a;
@@ -730,10 +737,13 @@ body {
   border-radius: 50%;
   position: absolute;
   border: 3px solid white;
-  top: 35px;
-  right: 90px;
   object-fit: cover;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
+
 #cardProfileTitle:hover {
   text-decoration: underline blueviolet;
 }
@@ -797,6 +807,9 @@ body {
 }
 
 /* Homepage right section */
+#footerHome {
+  position: sticky;
+}
 
 .homepage-footer {
   cursor: pointer;
