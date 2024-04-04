@@ -11,6 +11,8 @@ import ProfilePage from "./components/ProfilePage";
 import SidebarProfile from "./components/sidebarProfile/SidebarProfile";
 import Footer from "./components/Footer";
 import ProfileModal from "./components/ProfileModal";
+import HomepageMicrocard from "./components/leftSideCardHomepage/HomepageMicrocard";
+import HomepageCardProfile from "./components/leftSideCardHomepage/HomepageCardProfile";
 
 function App() {
   return (
@@ -33,12 +35,13 @@ function App() {
                   <Col xs={12} md={5} lg={4} xl={3}>
                     <SidebarProfile />
                   </Col>
-                </Row>
+                </Row>{" "}
+                <Footer />
               </Container>
             }
           ></Route>
         </Routes>
-        <Footer />
+
         <ChatMin />
       </div>
     </BrowserRouter>

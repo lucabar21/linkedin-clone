@@ -2,7 +2,18 @@ p,
 h6 {
   margin: 0;
 }
+/* MICRO-COMPONENTS */
+.component-footer-show {
+  border-top: 0.5px solid #6666662a;
+  color: #666666;
+  padding: 7px;
+}
+.component-footer-show:hover {
+  cursor: pointer;
+  background-color: #ebebeb;
+}
 
+/* SIDEBAR */
 .sidebar-container {
   /* padding: 1rem;
   padding-top: 1.5rem; */
@@ -87,6 +98,10 @@ h6 {
 
 .cp {
   cursor: pointer;
+}
+
+#userImage {
+  object-fit: cover;
 }
 
 /* css della chat */
@@ -194,6 +209,7 @@ h6 {
 /* HeroSection */
 #heroImg {
   height: 200px;
+  object-fit: cover;
 }
 
 #profileImg {
@@ -267,19 +283,19 @@ h6 {
   cursor: pointer;
 }
 
-@media (min-width: 990px) {
+@media screen and (min-width: 990px) {
   #education2 {
     display: none;
   }
 }
 
-@media (max-width: 765px) {
+@media screen and (max-width: 765px) {
   #location {
     display: block;
   }
 }
 
-@media (max-width: 990px) {
+@media screen and (max-width: 990px) {
   #education {
     display: none;
   }
@@ -306,7 +322,7 @@ h6 {
   text-decoration: underline;
 }
 
-@media (max-width: 992px) {
+@media screen and (max-width: 992px) {
   #buttonPills1 {
     width: 100%;
   }
@@ -475,6 +491,12 @@ body {
   color: #856436;
 }
 
+@media screen and (max-width: 1200px) {
+  #premiumLink {
+    display: none;
+  }
+}
+
 #span-1 {
   position: absolute;
   top: 0;
@@ -596,3 +618,43 @@ body {
 /* #main-section {
   max-width: 1000px;
 } */
+
+/*CARD PROFILE HOMEPAGE  */
+
+#topCardProfileImg {
+  height: 80px;
+  object-fit: cover;
+}
+
+#cardProfileImg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  border: 3px solid white;
+  top: 35px;
+  right: 90px;
+  object-fit: cover;
+}
+#cardProfileTitle:hover {
+  text-decoration: underline blueviolet;
+}
+
+#provaPremium {
+  color: #000000;
+  text-decoration: none;
+}
+#provaPremium:hover {
+  color: #0071e2;
+  text-decoration: underline;
+}
+
+#buttonPlus:hover {
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #ebebeb;
+}
+
+#microCardLink:hover {
+  text-decoration: underline;
+}

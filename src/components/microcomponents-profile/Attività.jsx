@@ -23,10 +23,12 @@ const Attività = () => {
                 </div>
               </Card.Body>
               <ListGroup.Item className="text-center">
-                <p>
-                  Mostra tutte le attività
-                  <BiRightArrowAlt />
-                </p>
+                <div className="component-footer-show ">
+                  <p>
+                    Mostra tutte le attività
+                    <BiRightArrowAlt />
+                  </p>
+                </div>
               </ListGroup.Item>
             </Card>
           </div>

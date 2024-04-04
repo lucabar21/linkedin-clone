@@ -121,7 +121,7 @@ const TopbarComponent = () => {
                     <img src="grid.svg" alt="grid" />
                   </div>
                   <div id="drop-span">
-                    <span className="d-flex gap-1">
+                    <span className="d-flex flex-nowrap gap-1">
                       Per le aziende <img src="dropdown.svg" alt="drop" />
                     </span>
                   </div>
