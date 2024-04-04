@@ -26,7 +26,7 @@ function PeopleOf({ user }) {
           </h6>
           <p className="sidebar-description-people">{user.title}</p>
           <button className="sidebar-connections">
-            <img className="me-1 opacity-75 sidebar-align" src="peopleAdd.svg" alt="add-people" />
+            <img className="me-1 opacity-75 sidebar-align" src="/peopleAdd.svg" alt="add-people" />
             <span className="sidebar-align">Collegati</span>
           </button>
         </div>

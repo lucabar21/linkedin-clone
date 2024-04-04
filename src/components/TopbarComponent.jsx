@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 
 const TopbarComponent = () => {
-  const currentProfile = useSelector((state) => state.profile.user);
+  const currentProfile = useSelector(state => state.profile.user);
   const [dropdown, setDropdown] = useState(false);
 
   const toggleDropdown = () => {
@@ -24,12 +24,12 @@ const TopbarComponent = () => {
               <div className="d-flex">
                 <Link to="/">
                   <div id="top-logo">
-                    <img src="linkedin.svg" alt="logo" />
+                    <img src="/linkedin.svg" alt="logo" />
                   </div>
                 </Link>
 
                 <div id="input-search">
-                  <img src="search.svg" alt="search" />
+                  <img src="/search.svg" alt="search" />
                   <input type="search" placeholder="Cerca" />
                 </div>
               </div>
@@ -38,7 +38,7 @@ const TopbarComponent = () => {
               <div id="nav-icons-container">
                 <div id="top-icon-lg">
                   <div id="top-icon-img">
-                    <img src="search.svg" alt="home" />
+                    <img src="/search.svg" alt="home" />
                   </div>
 
                   <span>Cerca</span>
@@ -46,7 +46,7 @@ const TopbarComponent = () => {
                 <div id="top-icon">
                   <Link to="/">
                     <div id="top-icon-img">
-                      <img src="home.svg" alt="home" />
+                      <img src="/home.svg" alt="home" />
                       <span id="span-1"></span>
                       <span id="span-2"></span>
                     </div>
@@ -55,25 +55,25 @@ const TopbarComponent = () => {
                 </div>
                 <div id="top-icon">
                   <div id="top-icon-img">
-                    <img src="rete.svg" alt="connections" />
+                    <img src="/rete.svg" alt="connections" />
                   </div>
                   <span>Rete</span>
                 </div>
                 <div id="top-icon">
                   <div id="top-icon-img">
-                    <img src="jobs.svg" alt="jobs" />
+                    <img src="/jobs.svg" alt="jobs" />
                   </div>
                   <span>Lavoro</span>
                 </div>
                 <div id="top-icon">
                   <div id="top-icon-img">
-                    <img src="message.svg" alt="jobs" />
+                    <img src="/message.svg" alt="jobs" />
                   </div>
                   <span>Messaggistica</span>
                 </div>
                 <div id="top-icon">
                   <div id="top-icon-img">
-                    <img src="bell.svg" alt="notification" />
+                    <img src="/bell.svg" alt="notification" />
                   </div>
                   <span>Notifiche</span>
                 </div>
@@ -86,7 +86,7 @@ const TopbarComponent = () => {
 
                     <div id="drop-span">
                       <span id="drop-span" className="d-flex gap-1">
-                        Tu <img src="dropdown.svg" alt="drop" />
+                        Tu <img src="/dropdown.svg" alt="drop" />
                       </span>
                     </div>
                     <div id="user-dropdown" className={dropdown ? "d-flex mt-3" : "d-none"}>
@@ -133,11 +133,11 @@ const TopbarComponent = () => {
                 {/* GRID */}
                 <div id="top-icon">
                   <div id="top-icon-img">
-                    <img src="grid.svg" alt="grid" />
+                    <img src="/grid.svg" alt="grid" />
                   </div>
                   <div id="drop-span">
                     <span className="d-flex flex-nowrap gap-1">
-                      Per le aziende <img src="dropdown.svg" alt="drop" />
+                      Per le aziende <img src="/dropdown.svg" alt="drop" />
                     </span>
                   </div>
                 </div>
