@@ -10,6 +10,8 @@ import ChatMin from "./components/chat/ChatMin";
 import ProfilePage from "./components/ProfilePage";
 import SidebarProfile from "./components/sidebarProfile/SidebarProfile";
 import Footer from "./components/Footer";
+import HomepageCardProfile from "./components/HomepageCardProfile";
+import HomepageMicrocard from "./components/HomepageMicrocard";
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
                   </Col>
                   <Col xs={12} md={5} lg={4} xl={3}>
                     <SidebarProfile />
+                    <HomepageCardProfile />
+                    <HomepageMicrocard />
                   </Col>
                 </Row>{" "}
                 <Footer />

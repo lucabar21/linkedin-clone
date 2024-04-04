@@ -9,7 +9,6 @@ function HeroSection() {
   const dispatch = useDispatch();
   const currentAccount = useSelector((state) => state.profile.user);
   useEffect(() => {
-    dispatch(getProfile());
     dispatch(getAccount());
   }, []);
 
