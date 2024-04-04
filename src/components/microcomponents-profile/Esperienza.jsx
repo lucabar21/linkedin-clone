@@ -42,25 +42,6 @@ const Esperienza = () => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (experiences && experiences.length > 0) {
-      dispatch(updateExperience(currentAccount._id, experiences[0]._id, formData));
-    } else {
-      dispatch(createExperience(currentAccount._id, formData));
-    }
-    dispatch(getExperience(currentAccount._id));
-    setModalShow(false);
-  };
-
-  const handleEdit = () => {
-    if (experiences && experiences.length > 0) {
-      const { role, company, startDate, endDate, description, area } = experiences[0];
-      setFormData({ role, company, startDate, endDate, description, area });
-      setModalShow(true);
-    }
-  };
-
   const handleCreate = () => {
     setFormData({
       role: "",
@@ -71,6 +52,17 @@ const Esperienza = () => {
       area: "",
     });
     setModalShow(true);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    experiences.filter((exp) =>
+      exp.role === formData.role
+        ? dispatch(updateExperience(currentAccount._id, exp._id, formData))
+        : dispatch(createExperience(currentAccount._id, formData))
+    );
+    dispatch(getExperience(currentAccount._id));
+    setModalShow(false);
   };
 
   return (
@@ -93,7 +85,13 @@ const Esperienza = () => {
                 experiences.slice(0, 5).map((exp) => (
                   <Row key={exp._id}>
                     <div className="d-flex align-items-end">
-                      <div onClick={handleEdit}>
+                      <div
+                        onClick={() => {
+                          const { role, company, startDate, endDate, description, area } = exp;
+                          setFormData({ role, company, startDate, endDate, description, area });
+                          setModalShow(true);
+                        }}
+                      >
                         <BiPencil />
                       </div>
                     </div>
