@@ -2,7 +2,18 @@ p,
 h6 {
   margin: 0;
 }
+/* MICRO-COMPONENTS */
+.component-footer-show {
+  border-top: 0.5px solid #6666662a;
+  color: #666666;
+  padding: 7px;
+}
+.component-footer-show:hover {
+  cursor: pointer;
+  background-color: #ebebeb;
+}
 
+/* SIDEBAR */
 .sidebar-container {
   /* padding: 1rem;
   padding-top: 1.5rem; */
@@ -87,6 +98,10 @@ h6 {
 
 .cp {
   cursor: pointer;
+}
+
+#userImage {
+  object-fit: cover;
 }
 
 /* css della chat */

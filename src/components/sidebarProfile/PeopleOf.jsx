@@ -2,7 +2,14 @@ function PeopleOf({ user }) {
   return (
     <>
       <div className="d-flex align-items-start mt-3 cp sidebar-border-bottom-people">
-        <img className="me-2 rounded-circle" src={user.image} alt={user.username} width={50} height={50} />
+        <img
+          id="userImage"
+          className="me-2 rounded-circle"
+          src={user.image}
+          alt={user.username}
+          width={50}
+          height={50}
+        />
         <div>
           <h6 className="sidebar-people">
             {user.name} {user.surname}

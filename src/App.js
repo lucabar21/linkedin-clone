@@ -31,12 +31,13 @@ function App() {
                   <Col xs={12} md={5} lg={4} xl={3}>
                     <SidebarProfile />
                   </Col>
-                </Row>
+                </Row>{" "}
+                <Footer />
               </Container>
             }
           ></Route>
         </Routes>
-        <Footer />
+
         <ChatMin />
       </div>
     </BrowserRouter>

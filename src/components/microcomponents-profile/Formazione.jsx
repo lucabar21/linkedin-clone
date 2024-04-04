@@ -6,8 +6,8 @@ const Formazione = () => {
     <>
       <Row>
         <Col>
-          <Card className="rounded-4">
-            <Card.Body className="mx-2 mt-2">
+          <Card className="rounded-4 mt-2">
+            <Card.Body className="mx-2 ">
               <Card.Title>
                 <h4 className="mb-2">Formazione</h4>
               </Card.Title>

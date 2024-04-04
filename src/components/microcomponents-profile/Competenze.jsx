@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { AiOutlinePlus } from "react-icons/ai";
-import { BiPencil } from "react-icons/bi";
 
 const Competenze = () => {
   return (
@@ -20,7 +19,7 @@ const Competenze = () => {
                       <AiOutlinePlus />
                     </div>
                     <div>
-                      <BiPencil />
+                      <img src="pen.svg" alt="" />
                     </div>
                   </div>
                 </Card.Title>
