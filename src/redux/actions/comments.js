@@ -1,8 +1,8 @@
-export const GET_POSTS = "GET_POSTS";
+export const GET_COMMENT = "GET_COMMENT";
 
-export const fetchPosts = () => {
+export const fetchComments = () => {
   return (dispatch, getState) => {
-    const ExperiencesEndpoint = `https://striveschool-api.herokuapp.com/api/posts/`;
+    const ExperiencesEndpoint = `https://striveschool-api.herokuapp.com/api/comments/`;
 
     const BearerLuca =
       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYmY3MWEyODFkODAwMTlhM2VjNGMiLCJpYXQiOjE3MTIwNDU5MzcsImV4cCI6MTcxMzI1NTUzN30.hmJKIzkyLuUnHRSgl7aIoiEUzVYkWjsw30SWCcApqpw";
@@ -26,7 +26,7 @@ export const fetchPosts = () => {
         }
       })
       .then(data => {
-        dispatch({ type: GET_POSTS, payload: data });
+        dispatch({ type: GET_COMMENT, payload: data });
       })
       .catch(error => {
         console.log(error);

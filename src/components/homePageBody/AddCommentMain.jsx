@@ -6,7 +6,6 @@ import { getAccount } from "../../redux/actions";
 
 function AddCommentMain() {
   const currentProfile = useSelector(state => state.profile.user);
-  console.log(currentProfile);
 
   const dispatch = useDispatch();
 

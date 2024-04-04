@@ -94,8 +94,8 @@ function CardPost({ post }) {
           <p className="small opacity-75 ms-1">Invia</p>
         </div>
       </div>
-      {openClose && <SectionComment />}
-      {openClose && <Comment />}
+      {openClose && <SectionComment post={post._id} />}
+
       <ModalComment show={modalShow} onHide={() => setModalShow(false)} edit={"Modifica"} post={post} />
     </div>
   );

@@ -1,39 +1,24 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import AddCommentResponse from "./AddCommentResponse";
+import Comment from "./Comment";
+import { useEffect } from "react";
+import { fetchComments } from "../../redux/actions/comments";
 
-function SectionComment() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const currentProfile = useSelector(state => state.profile.user);
+function SectionComment({ post }) {
+  const comments = useSelector(state => state.comments.comments);
+  console.log("commenti", comments);
+  console.log("post della section comment", post);
+
+  const distpatch = useDispatch();
+  useEffect(() => {
+    distpatch(fetchComments());
+  }, []);
 
   return (
-    <div>
-      <div className="d-flex align-items-center pb-2">
-        <img
-          className="me-2 rounded-circle object-fit-cover cp"
-          src={
-            currentProfile !== null
-              ? currentProfile.image
-              : "https://openclipart.org/download/247319/abstract-user-flat-3.svg"
-          }
-          alt="Nome Utente"
-          width={40}
-          height={40}
-        />
-        <div className="d-flex justify-content-between align-items-center add-comm-search-input w-100">
-          <input
-            type="text"
-            placeholder="Aggiungi un commento..."
-            className="textarea-focus w-75"
-            onChange={e => setSearchQuery(e.target.value)}
-            value={searchQuery}
-          />
-          <div>
-            <img src="smile.svg" alt="" className="me-3" />
-            <img src="multimedia.svg" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <AddCommentResponse post={post} />
+      <Comment post={post} />
+    </>
   );
 }
 export default SectionComment;
