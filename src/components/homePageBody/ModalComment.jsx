@@ -1,10 +1,94 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FloatingLabel, Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPosts } from "../../redux/actions/posts";
 
 function ModalComment(props) {
+  const currentProfile = useSelector(state => state.profile.user);
   const [text, setText] = useState("");
+  const [postID, setPostId] = useState("");
+  const dispatch = useDispatch();
+
+  // console.log("POSTPOSR", props.post);
+
+  console.log("id", postID);
+
+  const ExperiencesEndpoint = `https://striveschool-api.herokuapp.com/api/posts/` + postID;
+  // 660ef48a13df0a001949f60c id commento test 1
+  const BearerLuca =
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYmY3MWEyODFkODAwMTlhM2VjNGMiLCJpYXQiOjE3MTIwNDU5MzcsImV4cCI6MTcxMzI1NTUzN30.hmJKIzkyLuUnHRSgl7aIoiEUzVYkWjsw30SWCcApqpw";
+  const BearerNicole =
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzBkNGEyODFkODAwMTlhM2VjNTAiLCJpYXQiOjE3MTIwNDYyOTIsImV4cCI6MTcxMzI1NTg5Mn0.xBtMmk_mwc9nbIKbU3G9nYXBHFKgy3RjAB0nQS4tCJY";
+  const BearerGianmarco =
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzA1ZmEyODFkODAwMTlhM2VjNGYiLCJpYXQiOjE3MTIwNDYxODIsImV4cCI6MTcxMzI1NTc4Mn0.hB0fH0MLwLZaP_II1wg4hLStxwhbtsHKeZhQ8jf2DfM";
+  const BearerMarco =
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYjhmZGEyODFkODAwMTlhM2VjNDAiLCJpYXQiOjE3MTIwNDQzMTUsImV4cCI6MTcxMzI1MzkxNX0.5M62SNzOSA7J8tw38IKZhtmYcf6JwWgcVMRzeUSoHRY";
+
+  const fetchOfPosts = method => {
+    fetch(ExperiencesEndpoint, {
+      method: method,
+      body: JSON.stringify({ text }),
+      headers: {
+        Authorization: BearerLuca,
+        "Content-Type": "application/json",
+      },
+    })
+      .then(response => {
+        if (response.ok) {
+          console.log("Commento pubblicato");
+          setText("");
+        } else {
+          throw new Error("Quacosa è andato storto!");
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  const handleclick = () => {
+    props.onHide();
+    fetchOfPosts("POST");
+    dispatch(fetchPosts());
+  };
+
+  const handleclickEdit = () => {
+    props.onHide();
+    fetchOfPosts("PUT");
+    dispatch(fetchPosts());
+  };
+
+  const handleclickDelete = () => {
+    fetch(ExperiencesEndpoint, {
+      method: "DELETE",
+      headers: {
+        Authorization: BearerLuca,
+        "Content-Type": "application/json",
+      },
+    })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Quacosa è andato storto!");
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    dispatch(fetchPosts());
+    props.onHide();
+  };
+
+  useEffect(() => {
+    if (props.post !== undefined) {
+      setPostId(props.post._id);
+      setText(props.post.text);
+    }
+  }, [props.post]);
+
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <div className="p-2">
@@ -13,14 +97,27 @@ function ModalComment(props) {
             <div className="d-flex">
               <img
                 className="me-2 rounded-circle object-fit-cover"
-                src="https://openclipart.org/download/247319/abstract-user-flat-3.svg"
+                src={
+                  currentProfile !== null
+                    ? currentProfile.image
+                    : "https://openclipart.org/download/247319/abstract-user-flat-3.svg"
+                }
                 alt="Nome Utente"
                 width={50}
                 height={50}
               />
               <div className="">
-                <h5>Name</h5>
-                <p className="comm-font-mess"> Pubblica: Chiunque</p>
+                <h5>
+                  {currentProfile !== null ? (
+                    <>
+                      {" "}
+                      {currentProfile.name} {currentProfile.surname}
+                    </>
+                  ) : (
+                    "title"
+                  )}
+                </h5>
+                <p className="comm-font-mess">{props.edit}</p>
               </div>
             </div>
           </Modal.Title>
@@ -51,15 +148,33 @@ function ModalComment(props) {
         </div>
         <Modal.Footer>
           <img src="clock.svg" alt="" className="opacity-75" />
-          {text === "" && (
-            <Button disabled className="rounded-pill py-1" onClick={props.onHide}>
+          {text === "" && props.post === undefined && (
+            <Button disabled className="rounded-pill py-1">
               Pubblica
             </Button>
           )}
-          {text !== "" && (
-            <Button className="rounded-pill py-1" onClick={props.onHide}>
+          {text === "" && props.post !== undefined && (
+            <>
+              <Button className="rounded-pill py-1 me-2">Elimina</Button>
+              <Button disabled className="rounded-pill py-1">
+                Modifica
+              </Button>
+            </>
+          )}
+          {text !== "" && props.post === undefined && (
+            <Button className="rounded-pill py-1" onClick={handleclick}>
               Pubblica
             </Button>
+          )}
+          {text !== "" && props.post !== undefined && (
+            <>
+              <Button className="rounded-pill py-1" onClick={handleclickDelete}>
+                Elimina
+              </Button>
+              <Button className="rounded-pill py-1" onClick={handleclickEdit}>
+                Modifica
+              </Button>
+            </>
           )}
         </Modal.Footer>
       </div>

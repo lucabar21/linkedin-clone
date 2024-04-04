@@ -1,11 +1,8 @@
-export const GET_EXP = "GET_EXP";
-export const PUT_EXP = "PUT_EXP";
-export const POST_EXP = "POST_EXP";
-export const DELETE_EXP = "DELETE_EXP";
+export const GET_POSTS = "GET_POSTS";
 
-export const getExperience = userID => {
+export const fetchPosts = () => {
   return (dispatch, getState) => {
-    const ExperiencesEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${userID}/experiences`;
+    const ExperiencesEndpoint = `https://striveschool-api.herokuapp.com/api/posts/`;
 
     const BearerLuca =
       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYmY3MWEyODFkODAwMTlhM2VjNGMiLCJpYXQiOjE3MTIwNDU5MzcsImV4cCI6MTcxMzI1NTUzN30.hmJKIzkyLuUnHRSgl7aIoiEUzVYkWjsw30SWCcApqpw";
@@ -23,15 +20,14 @@ export const getExperience = userID => {
     })
       .then(response => {
         if (response.ok) {
-          console.log(response);
           return response.json();
         } else {
           throw new Error("Quacosa è andato storto!");
         }
       })
       .then(data => {
-        console.log(data);
-        dispatch({ type: GET_EXP, payload: data });
+        console.log("fetch data", data);
+        dispatch({ type: GET_POSTS, payload: data });
       })
       .catch(error => {
         console.log(error);

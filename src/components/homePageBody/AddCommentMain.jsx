@@ -48,7 +48,7 @@ function AddCommentMain() {
           <p className="small ms-2 opacity-75">Scrivi un articolo</p>
         </div>
       </div>
-      <ModalComment show={modalShow} onHide={() => setModalShow(false)} />
+      <ModalComment show={modalShow} onHide={() => setModalShow(false)} edit="Pubblica: Chiunque" />
     </div>
   );
 }

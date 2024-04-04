@@ -1,12 +1,17 @@
 import { useState } from "react";
 import SectionComment from "./SectionComment";
 import Comment from "./Comment";
+import { useSelector } from "react-redux";
+import ModalComment from "./ModalComment";
 
 function CardPost({ post }) {
   const randNum = Math.floor(Math.random() * 500);
   const [counterLike, setCounterLike] = useState(randNum);
   const [counterComments, setCounterComments] = useState(0); //array lenght comments
   const [openClose, setOpenClose] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
+
+  const currentProfile = useSelector(state => state.profile.user);
 
   const handleClick = () => {
     setOpenClose(!openClose);
@@ -26,7 +31,9 @@ function CardPost({ post }) {
             />
             <div className="d-flex">
               <div>
-                <p className="small fw-bold line-heigh-name cp">{post.user.name}</p>
+                <p className="small fw-bold line-heigh-name cp">
+                  {post.user.name} {post.user.surname}
+                </p>
                 <p className="opacity-75 line-heigh">
                   {post.user.title} <br></br>
                   {post.updatedAt}
@@ -34,10 +41,16 @@ function CardPost({ post }) {
               </div>
             </div>
           </div>
-          <div className="d-flex follow-section">
-            <img className="me-1" src="plus.svg" alt="" width={20} height={20} />
-            <p>Segui</p>
-          </div>
+          {currentProfile._id === post.user._id ? (
+            <div className="d-flex follow-section" onClick={() => setModalShow(true)}>
+              <img className="me-1" src="/pen.svg" alt="" width={20} height={20} />
+            </div>
+          ) : (
+            <div className="d-flex follow-section">
+              <img className="me-1" src="plus.svg" alt="" width={20} height={20} />
+              <p>Segui</p>
+            </div>
+          )}
         </div>
         <div>
           <div className="my-3">{post.text}</div>
@@ -83,6 +96,7 @@ function CardPost({ post }) {
       </div>
       {openClose && <SectionComment />}
       {openClose && <Comment />}
+      <ModalComment show={modalShow} onHide={() => setModalShow(false)} edit={"Modifica"} post={post} />
     </div>
   );
 }
