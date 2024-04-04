@@ -580,3 +580,27 @@ body {
 /* #main-section {
   max-width: 1000px;
 } */
+
+/* Homepage right section */
+
+.homepage-footer {
+  cursor: pointer;
+  color: inherit; 
+}
+
+.homepage-footer:hover {
+  text-decoration: none; 
+  text-decoration: underline;
+  color: #007bff;
+}
+
+.homepage-news {
+  cursor: pointer;
+  color: inherit; 
+}
+
+.homepage-news:hover{
+  background-color: #EBEBEB;
+}
+
+/* Homepage right section end */

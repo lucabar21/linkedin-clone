@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 import { AiOutlinePlus } from "react-icons/ai";
 import { BiPencil } from "react-icons/bi";
 
@@ -8,7 +8,7 @@ const Competenze = () => {
     <>
       <Row>
         <Col>
-          <div className="mt-2">
+          <div className="my-2">
             <Card className="rounded-4">
               <Card.Body className="mx-2">
                 <Card.Title className="d-flex justify-content-between align-items-center">

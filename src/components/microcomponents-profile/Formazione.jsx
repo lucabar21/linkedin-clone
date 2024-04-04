@@ -1,12 +1,12 @@
 import React from "react";
-import { Card, Container, Row, Col } from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
 
 const Formazione = () => {
   return (
     <>
       <Row>
         <Col>
-          <Card className="rounded-4">
+          <Card className="rounded-4 mb-2">
             <Card.Body className="mx-2 mt-2">
               <Card.Title>
                 <h4 className="mb-2">Formazione</h4>

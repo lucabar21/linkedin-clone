@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Col, Row, Card, ListGroup } from "react-bootstrap";
+import { Col, Row, Card, ListGroup } from "react-bootstrap";
 import { BiRightArrowAlt } from "react-icons/bi";
 
 const Attività = () => {
