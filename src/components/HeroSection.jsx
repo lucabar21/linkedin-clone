@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { useDispatch, useSelector } from "react-redux";
-import { getProfile } from "../redux/actions";
 import { getAccount } from "../redux/actions";
 import { useState } from "react";
 import ProfileModal from "./ProfileModal";
@@ -13,7 +12,7 @@ function HeroSection({ user }) {
   const [imgModalShow, setImgModalShow] = useState(false);
 
   const dispatch = useDispatch();
-  const currentAccount = useSelector(state => state.profile.user);
+  const currentAccount = useSelector((state) => state.profile.user);
   useEffect(() => {
     dispatch(getAccount());
   }, []);
