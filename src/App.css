@@ -12,9 +12,37 @@ a {
   color: #666666;
   padding: 7px;
 }
+@media screen and (min-width: 1000px) {
+  #colNone2 {
+    display: none;
+  }
+}
 .component-footer-show:hover {
   cursor: pointer;
   background-color: #ebebeb;
+}
+
+#titleExperiences {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+#experiencesImg {
+  width: 70px;
+}
+
+#companyExperiences {
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+#infoExperiences {
+  font-weight: 400;
+  color: #0000007c;
+}
+
+#experiences {
+  border-bottom: solid rgba(0, 0, 0, 0.11) 1px;
 }
 
 /* SIDEBAR */

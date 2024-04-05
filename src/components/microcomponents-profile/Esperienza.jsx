@@ -41,21 +41,20 @@ const Esperienza = () => {
     });
     setModalShow(true);
   };
-
   return (
     <>
       <Row>
         <Col>
-          <Card className="rounded-4">
-            <div className="d-flex align-items-end">
-              <div className="mr-3" onClick={handleCreate}>
-                <AiOutlinePlus />
-              </div>
-            </div>
+          <Card className="rounded-4 mt-2">
             <Card.Body className="mx-2 mt-2">
               <Card.Title className="d-flex justify-content-between align-items-center">
                 <div>
-                  <h4 className="mb-2">Esperienze</h4>
+                  <h4 className="mb-2">Esperienza</h4>
+                </div>
+                <div className="d-flex align-items-end" onClick={handleCreate}>
+                  <div id="buttonPlus" className="p-2">
+                    <img src="/plus.svg" alt="" />
+                  </div>
                 </div>
               </Card.Title>
               {experiences ? (
