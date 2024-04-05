@@ -22,9 +22,9 @@ const TopbarComponent = () => {
       ) : (
         <div id="topbar">
           <Container>
-            <div id="topbar">
+            <div>
               <Row className="justify-content-center">
-                <Col className="d-flex gap-4 align-items-center justify-content-between p-2">
+                <Col className="d-flex gap-4 mx-1 align-items-center justify-content-between p-2">
                   <div className="d-flex">
                     <Link to="/">
                       <div id="top-logo">
