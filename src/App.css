@@ -1,3 +1,4 @@
+/* APP Css */
 p,
 h6 {
   margin: 0;
@@ -6,6 +7,12 @@ h6 {
 a {
   padding: 0 !important;
 }
+@media screen and (min-width: 992px) {
+  #colNone {
+    display: none;
+  }
+}
+
 /* MICRO-COMPONENTS */
 .component-footer-show {
   border-top: 0.5px solid #6666662a;
@@ -137,6 +144,9 @@ a {
 }
 
 /* css della chat */
+#chatIndex {
+  z-index: 12;
+}
 
 .chat-min-position {
   position: fixed;
@@ -672,8 +682,8 @@ body {
 /* DROPDOWN */
 
 #user-dropdown {
-  width: 250px;
-  height: 429px;
+  width: 280px;
+  height: 440px;
   position: absolute;
   right: 0px;
   top: 60px;
@@ -684,7 +694,7 @@ body {
   border-bottom-right-radius: 10px;
   justify-content: start;
   flex-direction: column;
-  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 7px 17px 4px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   gap: 0.4rem;
   z-index: 2;
 }
@@ -710,13 +720,23 @@ body {
   margin: unset;
 }
 
+#dropdownName {
+  font-size: 1.2rem;
+}
+
 #view-profile {
   border: 1px solid #0a66c2;
   border-radius: 10px;
   text-align: center;
   color: #0a66c2;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 500;
+}
+
+#view-profile:hover {
+  transition: 0.2;
+  background-color: #e2f0fe;
+  outline: solid #0a66c2 2px;
 }
 
 #drop-line {
@@ -727,17 +747,17 @@ body {
 }
 
 #account-drop p {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: rgb(0 0 0/0.8);
-  margin-bottom: 0.5rem;
+  margin-bottom: 5px;
 }
 
 #account-drop h6 {
-  font-size: 0.8rem;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 400;
   color: rgb(0 0 0/0.6);
-  margin-bottom: 0.5rem;
+  margin-bottom: 5px;
 }
 
 /*CARD PROFILE HOMEPAGE  */
@@ -753,10 +773,13 @@ body {
   border-radius: 50%;
   position: absolute;
   border: 3px solid white;
-  top: 35px;
-  right: 90px;
   object-fit: cover;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
+
 #cardProfileTitle:hover {
   text-decoration: underline blueviolet;
 }
@@ -820,6 +843,11 @@ body {
 }
 
 /* Homepage right section */
+#footerHome {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
 .homepage-footer {
   cursor: pointer;

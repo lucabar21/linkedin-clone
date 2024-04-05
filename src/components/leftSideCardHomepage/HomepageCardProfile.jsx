@@ -15,13 +15,14 @@ function HomepageCardProfile() {
     <>
       {currentAccount && (
         <Card className="rounded-4 ">
+          {" "}
+          <Card.Img id="cardProfileImg" src={currentAccount.image} />
           <Card.Img
             className="rounded-top-4 "
             variant="top"
             id="topCardProfileImg"
             src="https://sb.ecobnb.net/app/uploads/sites/2/2018/04/shoot-n-design-71270-unsplash.jpg"
           />{" "}
-          <Card.Img id="cardProfileImg" src={currentAccount.image} />
           <Card.Body>
             <Card.Title id="cardProfileTitle" className="text-center mt-4">
               {" "}
@@ -37,14 +38,14 @@ function HomepageCardProfile() {
             <ListGroup.Item className=" p-3 small component-footer-show">
               <p className=" text-body-tertiary ">Accedi a strumenti e informazioni in esclusiva</p>
               <div className="d-flex">
-                <img src="linkedinPremium.svg" alt="" className="me-1" />
+                <img src="/linkedinPremium.svg" alt="" className="me-1" />
                 <a className="d-flex align-items-end fw-medium " id="provaPremium">
                   Prova premium gratis
                 </a>
               </div>
             </ListGroup.Item>
             <ListGroup.Item className="d-flex p-3 small fw-medium component-footer-show">
-              <img src="saved.svg" alt="" />
+              <img src="/saved.svg" alt="" />
               <span className="ms-1">I miei elementi</span>
             </ListGroup.Item>
           </ListGroup>

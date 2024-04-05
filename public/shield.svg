@@ -1,0 +1,7 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" role="none" aria-hidden="true" class="global-footer__action-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="shield-medium"><defs><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="shield-medium" aria-hidden="true" role="none" data-supported-dps="24x24" fill="#000000" fill-opacity="0.9">
+  <path d="M12 2L3 5v6c0 5 3.12 8.81 7.77 10.56L12 22l1.27-.44C17.9 19.81 21.01 16 21.01 11V5L12 2zm-.53 17.8C7.6 18.35 5.01 15.1 5.01 11V6.44l7-2.32V20l-.54-.2z" fill-opacity="0.9"></path>
+</svg></defs>
+<!---->    
+
+    <use href="#shield-medium" width="24" height="24" stroke-opacity="0" stroke="#000000" fill-opacity="0" fill="#000000"></use>
+</svg>

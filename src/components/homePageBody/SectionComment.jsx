@@ -24,12 +24,12 @@ function SectionComment() {
             type="text"
             placeholder="Aggiungi un commento..."
             className="textarea-focus w-75"
-            onChange={e => setSearchQuery(e.target.value)}
+            onChange={(e) => setSearchQuery(e.target.value)}
             value={searchQuery}
           />
           <div>
-            <img src="smile.svg" alt="" className="me-3" />
-            <img src="multimedia.svg" alt="" />
+            <img src="/smile.svg" alt="" className="me-3" />
+            <img src="/multimedia.svg" alt="" />
           </div>
         </div>
       </div>

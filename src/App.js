@@ -13,12 +13,15 @@ import CardPost from "./components/homePageBody/CardPost";
 import ProfileModal from "./components/ProfileModal";
 import HeroSection from "./components/HeroSection";
 import ProfilePage from "./components/ProfilePage";
+import RightbarHomepage from "./components/rightSideCardHomepage/RightbarHomepage";
 import { useSelector } from "react-redux";
+import HomepageCardProfile from "./components/leftSideCardHomepage/HomepageCardProfile";
+import HomepageMicrocard from "./components/leftSideCardHomepage/HomepageMicrocard";
 import HomePage from "./components/homePageBody/HomePage";
 
 function App() {
-  const currentAccount = useSelector(state => state.profile.user);
-  const clickedAccount = useSelector(state => state.profile.clicked);
+  const currentAccount = useSelector((state) => state.profile.user);
+  const clickedAccount = useSelector((state) => state.profile.clicked);
 
   return (
     <BrowserRouter>
@@ -30,10 +33,18 @@ function App() {
             element={
               <Container className="mt-4">
                 <Row>
-                  {/* <Col sm={12} md={7} lg={8} xl={9}> */}
-                  <AddCommentMain />
-                  <HomePage />
-                  {/* </Col> */}
+                  <Col lg={3} md={4} sm={12}>
+                    <HomepageCardProfile />
+                    <HomepageMicrocard />
+                  </Col>
+                  <Col sm={12} md={8} lg={6}>
+                    <AddCommentMain />
+                    <HomePage />
+                  </Col>
+                  <Col id="colNone" md={4}></Col>
+                  <Col sm={12} md={8} lg={3}>
+                    <RightbarHomepage />
+                  </Col>
                 </Row>
               </Container>
             }
@@ -68,7 +79,6 @@ function App() {
                         <>
                           <HeroSection user={clickedAccount} />
                           <ProfilePage user={clickedAccount} />
-                          <ProfileModal user={clickedAccount} />
                         </>
                       )}
                     </div>

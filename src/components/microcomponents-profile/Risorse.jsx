@@ -16,14 +16,14 @@ const Risorse = () => {
                   <h4 className="mb-2">Risorse</h4>
                 </Card.Title>
                 <Card.Subtitle>
-                  <img src="eye.svg" alt="" className="me-1" />
+                  <img src="/eye.svg" alt="" className="me-1" />
                   Solo per te
                 </Card.Subtitle>
                 <div>
                   <div className="mt-3">
                     <Row className="align-items-center">
                       <Col xs="auto" className="d-flex flex-nowrap">
-                        <img src="satellite.svg" alt="" className="d-flex align-self-start" />
+                        <img src="/satellite.svg" alt="" className="d-flex align-self-start" />
 
                         <div className="ms-2">
                           <h6 className="mb-2">
@@ -42,7 +42,7 @@ const Risorse = () => {
                     </Row>
                     <Row className="align-items-center">
                       <Col xs="auto" className="d-flex flex-nowrap mt-2">
-                        <img src="people.svg" alt="" className="d-flex align-self-start " />
+                        <img src="/people.svg" alt="" className="d-flex align-self-start " />
 
                         <div className=" mt-1 ms-2">
                           <h6 className="mb-2">La mia rete</h6>

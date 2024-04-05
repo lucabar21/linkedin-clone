@@ -31,12 +31,12 @@ function HeroSection({ user }) {
               />{" "}
               <div id="profile-img-container">
                 <Card.Img id="profileImg" src={user.image} />
-                <Card.Img id="photo" src="cam.svg" className="ml-auto" onClick={() => setImgModalShow(true)} />
+                <Card.Img id="photo" src="/cam.svg" className="ml-auto" onClick={() => setImgModalShow(true)} />
               </div>
               <Card.Body id="cardBody" className="p-4">
                 <div className="d-flex justify-content-end">
                   {" "}
-                  <Card.Img id="profilePen" src="pen.svg" className="ml-auto" onClick={() => setModalShow(true)} />
+                  <Card.Img id="profilePen" src="/pen.svg" className="ml-auto" onClick={() => setModalShow(true)} />
                 </div>
 
                 <div className="mt-4 ">
@@ -50,14 +50,14 @@ function HeroSection({ user }) {
                         className="ms-1 fw-medium d-flex no-wrap justify-content-center align-items-center"
                         id="buttonVerify"
                       >
-                        <img src="verify.svg" alt="verifyShield" className="me-1" />
+                        <img src="/verify.svg" alt="verifyShield" className="me-1" />
                         Verifica ora
                       </button>
                     </Col>{" "}
                     <Col className="d-flex me-5 justify-content-end ">
                       {" "}
                       <span id="education" className="ps-2 fw-medium">
-                        <img id="epicodLogo" src="epicode.svg" alt="" />
+                        <img id="epicodLogo" src="/epicode.svg" alt="" />
                         Epicode
                       </span>
                     </Col>
@@ -65,7 +65,7 @@ function HeroSection({ user }) {
                 </div>
                 <Card.Text>
                   {" "}
-                  <span id="workTitle">{currentAccount.title}</span>
+                  <span id="workTitle">{user.title}</span>
                   <button className="ps-0 me-1" id="education2">
                     Epicode
                   </button>
@@ -73,7 +73,7 @@ function HeroSection({ user }) {
                 <Card.Text>
                   <span id="location" className="me-1">
                     {" "}
-                    {currentAccount.area}·{" "}
+                    {user.area}·{" "}
                   </span>
                   <a href="#" id="information" className="fw-medium">
                     Informazioni di contatto

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Card, Row, Col, Spinner } from "react-bootstrap";
-import { AiOutlinePlus } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { getExperience } from "../../redux/actions/experience";
 import { useState } from "react";
