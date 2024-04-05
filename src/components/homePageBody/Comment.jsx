@@ -4,10 +4,18 @@ import { getProfile } from "../../redux/actions";
 import { useEffect, useState } from "react";
 
 function Comment({ post, comt }) {
-  const currentProfile = useSelector((state) => state.profile.user);
-  const users = useSelector((state) => state.profile.list);
+  const currentProfile = useSelector(state => state.profile.user);
+  const users = useSelector(state => state.profile.list);
   const [user, setUser] = useState("");
   const [isClikced, setIsClikced] = useState(false);
+  const [isMod, setIsMod] = useState(false);
+  const [hiddenChange, setHiddenChange] = useState("d-flex");
+
+  const [text, setText] = useState(comt.comment);
+
+  const [comment, setComment] = useState("");
+  const [rate, setRate] = useState(1);
+  const [elementId, setElementId] = useState(post._id);
 
   console.log(comt);
 
@@ -18,19 +26,8 @@ function Comment({ post, comt }) {
   }, []);
 
   const ExperiencesEndpoint = "https://striveschool-api.herokuapp.com/api/comments/" + comt._id;
-  // const BearerLuca =
-  //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYmY3MWEyODFkODAwMTlhM2VjNGMiLCJpYXQiOjE3MTIwNDU5MzcsImV4cCI6MTcxMzI1NTUzN30.hmJKIzkyLuUnHRSgl7aIoiEUzVYkWjsw30SWCcApqpw";
-  // const BearerNicole =
-  //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzBkNGEyODFkODAwMTlhM2VjNTAiLCJpYXQiOjE3MTIwNDYyOTIsImV4cCI6MTcxMzI1NTg5Mn0.xBtMmk_mwc9nbIKbU3G9nYXBHFKgy3RjAB0nQS4tCJY";
-  // const BearerGianmarco =
-  //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzA1ZmEyODFkODAwMTlhM2VjNGYiLCJpYXQiOjE3MTIwNDYxODIsImV4cCI6MTcxMzI1NTc4Mn0.hB0fH0MLwLZaP_II1wg4hLStxwhbtsHKeZhQ8jf2DfM";
-  // const BearerMarco =
-  //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYjhmZGEyODFkODAwMTlhM2VjNDAiLCJpYXQiOjE3MTIwNDQzMTUsImV4cCI6MTcxMzI1MzkxNX0.5M62SNzOSA7J8tw38IKZhtmYcf6JwWgcVMRzeUSoHRY";
-  const currentLogin = useSelector((state) => state.login.data.token);
 
-  // useEffect(() => {
-  //   getComment();
-  // }, []);
+  const currentLogin = useSelector(state => state.login.data.token);
 
   const handleClickDelete = () => {
     fetch(ExperiencesEndpoint, {
@@ -40,29 +37,55 @@ function Comment({ post, comt }) {
         "Content-Type": "application/json",
       },
     })
-      .then((resp) => {
+      .then(resp => {
         if (resp.ok) {
           console.log("commento eliminato comment");
+          setHiddenChange("d-none");
           return resp.json();
         } else {
           throw new Error("Quacosa è andato storto!");
         }
       })
-      .catch((error) => {
+      .catch(error => {
         console.log("Error", error);
       });
     setIsClikced(!isClikced);
   };
 
   useEffect(() => {
-    const user = users && users.filter((user) => user.username === comt.author);
+    const user = users && users.filter(user => user.username === comt.author);
     if (user !== undefined) {
       setUser(user[0]);
     }
   }, [comt]);
 
+  const handleClickEdit = () => {
+    fetch(ExperiencesEndpoint, {
+      method: "PUT",
+      body: JSON.stringify({ comment, rate, elementId }),
+      headers: {
+        Authorization: currentLogin,
+        "Content-Type": "application/json",
+      },
+    })
+      .then(resp => {
+        if (resp.ok) {
+          console.log("Commento pubblicato");
+          setText(comment);
+          setComment("");
+          setRate(1);
+          setElementId(post._id); // qui sto resettando il form
+        }
+      })
+      .catch(error => {
+        console.log("Error", error);
+      });
+
+    setIsMod(false);
+  };
+
   return (
-    <div className="d-flex mt-2 px-2  ">
+    <div className={`${hiddenChange} mt-2 px-2`}>
       <div className="pt-2">
         {}
         <img
@@ -74,18 +97,43 @@ function Comment({ post, comt }) {
         />
       </div>
       <div className=" w-100">
-        <div className="d-flex cp p-2 bg-comment">
-          <div>
+        <div className="d-flex cp p-2 bg-comment ">
+          <div className="w-100">
             <p className="small fw-bold line-heigh-name cp">
               {user && user.name} {user && user.surname}
             </p>
             <p className="opacity-75 line-heigh">{user && user.title}</p>
-            <p className="mt-2 small">{comt.comment}</p>
+            <p className="mt-2 small">
+              {isMod ? (
+                <input
+                  type="text"
+                  placeholder="Modifica"
+                  className="textarea-focus bg-color-text-comment"
+                  onChange={e => setComment(e.target.value)}
+                  value={comment}
+                  onKeyDown={e => {
+                    if (e.key === "Enter") {
+                      handleClickEdit();
+                    }
+                  }}
+                />
+              ) : (
+                text
+              )}
+            </p>
           </div>
         </div>
         {user && user.username === currentProfile.username && (
           <div className="opacity-75 mt-2 line-heigh fw-bold d-flex">
-            <p className="cp over">Modifica |</p>
+            <p
+              className="cp over"
+              onClick={() => {
+                setIsMod(true);
+                setComment(comt.comment);
+              }}
+            >
+              Modifica |
+            </p>
             <p className="ms-1 cp over" onClick={handleClickDelete}>
               Elimina
             </p>
