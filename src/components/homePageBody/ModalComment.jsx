@@ -4,17 +4,32 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../../redux/actions/posts";
+import { uploadImagePost } from "../../redux/actions/posts";
+import { getAccount } from "../../redux/actions";
 
 function ModalComment(props) {
-  const currentProfile = useSelector(state => state.profile.user);
-  const currentLogin = useSelector(state => state.login.data.token);
+  const currentProfile = useSelector((state) => state.profile.user);
+  const currentLogin = useSelector((state) => state.login.data.token);
   const [text, setText] = useState("");
   const [postID, setPostId] = useState("");
   const dispatch = useDispatch();
 
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageChange = (event) => {
+    setSelectedImage(event.target.files[0]);
+  };
+
+  const handleFormSubmit = () => {
+    if (selectedImage) {
+      dispatch(uploadImagePost(postID, selectedImage));
+      dispatch(getAccount());
+    }
+  };
+
   const ExperiencesEndpoint = `https://striveschool-api.herokuapp.com/api/posts/` + postID;
 
-  const fetchOfPosts = method => {
+  const fetchOfPosts = (method) => {
     fetch(ExperiencesEndpoint, {
       method: method,
       body: JSON.stringify({ text }),
@@ -23,7 +38,7 @@ function ModalComment(props) {
         "Content-Type": "application/json",
       },
     })
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
           console.log("Commento pubblicato");
           setText("");
@@ -31,19 +46,21 @@ function ModalComment(props) {
           throw new Error("Quacosa è andato storto!");
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };
 
   const handleclick = () => {
     props.onHide();
+    handleFormSubmit();
     fetchOfPosts("POST");
     dispatch(fetchPosts());
   };
 
   const handleclickEdit = () => {
     props.onHide();
+    handleFormSubmit();
     fetchOfPosts("PUT");
     dispatch(fetchPosts());
   };
@@ -56,14 +73,14 @@ function ModalComment(props) {
         "Content-Type": "application/json",
       },
     })
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
           return response.json();
         } else {
           throw new Error("Quacosa è andato storto!");
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
     dispatch(fetchPosts());
@@ -116,12 +133,18 @@ function ModalComment(props) {
             as="textarea"
             placeholder="Leave a comment here"
             rows={10}
-            onChange={e => setText(e.target.value)}
+            onChange={(e) => setText(e.target.value)}
             value={text}
           />
         </FloatingLabel>
+        <Form.Control
+          className="textarea-focus"
+          placeholder="Carica la tua immagine"
+          onChange={handleImageChange}
+          type="file"
+        />
         <div className="d-flex">
-          <div className="bg-svg">
+          <div className="bg-svg" onClick={() => {}}>
             <img src="/multimedia.svg" alt="" className="img-textarea-comm" />
           </div>
           <div className="bg-svg">

@@ -142,7 +142,7 @@ export const putAccount = (updatedData) => {
   };
 };
 
-// UPLOAD IMAGE FETCH
+// UPLOAD IMAGE FETCH PROFILE
 
 export const uploadImage = (userID, imageFile) => {
   return (dispatch, getState) => {
