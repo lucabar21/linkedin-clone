@@ -1,19 +1,14 @@
 import React, { useEffect } from "react";
 import { Card, Row, Col, Spinner } from "react-bootstrap";
 import { AiOutlinePlus } from "react-icons/ai";
-import { BiPencil } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { getExperience } from "../../redux/actions/experience";
 import { useState } from "react";
 import ExperienceModal from "../ExperienceModal";
-// import { updateExperience } from "../../redux/actions/experience";
-// import { createExperience } from "../../redux/actions/experience";
-import { deleteExperience } from "../../redux/actions/experience";
 import SingleExperince from "../singleExperience";
 
 const Esperienza = () => {
   const [modalShow, setModalShow] = useState(false);
-  const [editModalShow, setEditModalShow] = useState(false);
 
   const [formData, setFormData] = useState({
     role: "",
