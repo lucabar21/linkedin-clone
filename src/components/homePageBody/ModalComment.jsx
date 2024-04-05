@@ -41,7 +41,6 @@ function ModalComment(props) {
     })
       .then((response) => {
         if (response.ok) {
-          console.log("Commento pubblicato");
           setText("");
           handleFormSubmit();
         } else {

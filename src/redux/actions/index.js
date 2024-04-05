@@ -18,7 +18,6 @@ export const getProfile = () => {
 
     const state = getState().login.data;
 
-    console.log("stato", state);
     fetch(ProfilesEndpoint, {
       headers: {
         Authorization: state.token,
@@ -26,14 +25,12 @@ export const getProfile = () => {
     })
       .then((response) => {
         if (response.ok) {
-          console.log(response);
           return response.json();
         } else {
           throw new Error("Quacosa è andato storto!");
         }
       })
       .then((data) => {
-        console.log(data);
         dispatch({ type: GET_DATA, payload: data });
       })
       .catch((error) => {
@@ -55,14 +52,12 @@ export const getAccount = () => {
     })
       .then((response) => {
         if (response.ok) {
-          console.log(response);
           return response.json();
         } else {
           throw new Error("Quacosa è andato storto!");
         }
       })
       .then((data) => {
-        console.log(data);
         dispatch({ type: GET_ACCOUNT, payload: data });
       })
       .catch((error) => {
@@ -84,14 +79,12 @@ export const getUserByID = (userID) => {
     })
       .then((response) => {
         if (response.ok) {
-          console.log(response);
           return response.json();
         } else {
           throw new Error("Quacosa è andato storto!");
         }
       })
       .then((data) => {
-        console.log(data);
         dispatch({ type: GET_USER, payload: data });
       })
       .catch((error) => {
@@ -127,7 +120,6 @@ export const putAccount = (updatedData) => {
     })
       .then((response) => {
         if (response.ok) {
-          console.log(response);
           return response.json();
         } else {
           throw new Error("Quacosa è andato storto!");
@@ -162,7 +154,6 @@ export const uploadImage = (userID, imageFile) => {
     })
       .then((response) => {
         if (response.ok) {
-          console.log(response);
           return response.json();
         } else {
           throw new Error("Quacosa è andato storto!");

@@ -4,8 +4,8 @@ import { getProfile } from "../../redux/actions";
 import { useEffect, useState } from "react";
 
 function Comment({ post, comt }) {
-  const currentProfile = useSelector(state => state.profile.user);
-  const users = useSelector(state => state.profile.list);
+  const currentProfile = useSelector((state) => state.profile.user);
+  const users = useSelector((state) => state.profile.list);
   const [user, setUser] = useState("");
   const [isClikced, setIsClikced] = useState(false);
   const [isMod, setIsMod] = useState(false);
@@ -17,8 +17,6 @@ function Comment({ post, comt }) {
   const [rate, setRate] = useState(1);
   const [elementId, setElementId] = useState(post._id);
 
-  console.log(comt);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,7 +25,7 @@ function Comment({ post, comt }) {
 
   const ExperiencesEndpoint = "https://striveschool-api.herokuapp.com/api/comments/" + comt._id;
 
-  const currentLogin = useSelector(state => state.login.data.token);
+  const currentLogin = useSelector((state) => state.login.data.token);
 
   const handleClickDelete = () => {
     fetch(ExperiencesEndpoint, {
@@ -37,23 +35,22 @@ function Comment({ post, comt }) {
         "Content-Type": "application/json",
       },
     })
-      .then(resp => {
+      .then((resp) => {
         if (resp.ok) {
-          console.log("commento eliminato comment");
           setHiddenChange("d-none");
           return resp.json();
         } else {
           throw new Error("Quacosa è andato storto!");
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("Error", error);
       });
     setIsClikced(!isClikced);
   };
 
   useEffect(() => {
-    const user = users && users.filter(user => user.username === comt.author);
+    const user = users && users.filter((user) => user.username === comt.author);
     if (user !== undefined) {
       setUser(user[0]);
     }
@@ -68,16 +65,15 @@ function Comment({ post, comt }) {
         "Content-Type": "application/json",
       },
     })
-      .then(resp => {
+      .then((resp) => {
         if (resp.ok) {
-          console.log("Commento pubblicato");
           setText(comment);
           setComment("");
           setRate(1);
           setElementId(post._id); // qui sto resettando il form
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("Error", error);
       });
 
@@ -109,9 +105,9 @@ function Comment({ post, comt }) {
                   type="text"
                   placeholder="Modifica"
                   className="textarea-focus bg-color-text-comment"
-                  onChange={e => setComment(e.target.value)}
+                  onChange={(e) => setComment(e.target.value)}
                   value={comment}
-                  onKeyDown={e => {
+                  onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       handleClickEdit();
                     }
