@@ -4,8 +4,8 @@ import { getProfile } from "../../redux/actions";
 import { useEffect, useState } from "react";
 
 function Comment({ post, comt }) {
-  const currentProfile = useSelector(state => state.profile.user);
-  const users = useSelector(state => state.profile.list);
+  const currentProfile = useSelector((state) => state.profile.user);
+  const users = useSelector((state) => state.profile.list);
   const [user, setUser] = useState("");
   const [isClikced, setIsClikced] = useState(false);
 
@@ -18,14 +18,15 @@ function Comment({ post, comt }) {
   }, []);
 
   const ExperiencesEndpoint = "https://striveschool-api.herokuapp.com/api/comments/" + comt._id;
-  const BearerLuca =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYmY3MWEyODFkODAwMTlhM2VjNGMiLCJpYXQiOjE3MTIwNDU5MzcsImV4cCI6MTcxMzI1NTUzN30.hmJKIzkyLuUnHRSgl7aIoiEUzVYkWjsw30SWCcApqpw";
-  const BearerNicole =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzBkNGEyODFkODAwMTlhM2VjNTAiLCJpYXQiOjE3MTIwNDYyOTIsImV4cCI6MTcxMzI1NTg5Mn0.xBtMmk_mwc9nbIKbU3G9nYXBHFKgy3RjAB0nQS4tCJY";
-  const BearerGianmarco =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzA1ZmEyODFkODAwMTlhM2VjNGYiLCJpYXQiOjE3MTIwNDYxODIsImV4cCI6MTcxMzI1NTc4Mn0.hB0fH0MLwLZaP_II1wg4hLStxwhbtsHKeZhQ8jf2DfM";
-  const BearerMarco =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYjhmZGEyODFkODAwMTlhM2VjNDAiLCJpYXQiOjE3MTIwNDQzMTUsImV4cCI6MTcxMzI1MzkxNX0.5M62SNzOSA7J8tw38IKZhtmYcf6JwWgcVMRzeUSoHRY";
+  // const BearerLuca =
+  //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYmY3MWEyODFkODAwMTlhM2VjNGMiLCJpYXQiOjE3MTIwNDU5MzcsImV4cCI6MTcxMzI1NTUzN30.hmJKIzkyLuUnHRSgl7aIoiEUzVYkWjsw30SWCcApqpw";
+  // const BearerNicole =
+  //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzBkNGEyODFkODAwMTlhM2VjNTAiLCJpYXQiOjE3MTIwNDYyOTIsImV4cCI6MTcxMzI1NTg5Mn0.xBtMmk_mwc9nbIKbU3G9nYXBHFKgy3RjAB0nQS4tCJY";
+  // const BearerGianmarco =
+  //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzA1ZmEyODFkODAwMTlhM2VjNGYiLCJpYXQiOjE3MTIwNDYxODIsImV4cCI6MTcxMzI1NTc4Mn0.hB0fH0MLwLZaP_II1wg4hLStxwhbtsHKeZhQ8jf2DfM";
+  // const BearerMarco =
+  //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYjhmZGEyODFkODAwMTlhM2VjNDAiLCJpYXQiOjE3MTIwNDQzMTUsImV4cCI6MTcxMzI1MzkxNX0.5M62SNzOSA7J8tw38IKZhtmYcf6JwWgcVMRzeUSoHRY";
+  const currentLogin = useSelector((state) => state.login.data.token);
 
   // useEffect(() => {
   //   getComment();
@@ -35,11 +36,11 @@ function Comment({ post, comt }) {
     fetch(ExperiencesEndpoint, {
       method: "DELETE",
       headers: {
-        Authorization: BearerLuca,
+        Authorization: currentLogin,
         "Content-Type": "application/json",
       },
     })
-      .then(resp => {
+      .then((resp) => {
         if (resp.ok) {
           console.log("commento eliminato comment");
           return resp.json();
@@ -47,14 +48,14 @@ function Comment({ post, comt }) {
           throw new Error("Quacosa è andato storto!");
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("Error", error);
       });
     setIsClikced(!isClikced);
   };
 
   useEffect(() => {
-    const user = users && users.filter(user => user.username === comt.author);
+    const user = users && users.filter((user) => user.username === comt.author);
     if (user !== undefined) {
       setUser(user[0]);
     }
