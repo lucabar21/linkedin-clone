@@ -30,7 +30,7 @@ function HomepageCardProfile() {
           
           <Card.Body>
             <Link to="/me" style={{ textDecoration: "none", color: "inherit" }}>
-              <Card.Title id="cardProfileTitle" className="text-center mt-4">
+              <Card.Title id="cardProfileTitle" className="text-center mt-4" style={{ textDecoration: "none", color: "inherit" }}>
                 {" "}
                 {currentAccount.name} {currentAccount.surname}
               </Card.Title>
