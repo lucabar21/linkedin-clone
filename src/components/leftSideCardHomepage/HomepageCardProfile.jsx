@@ -3,6 +3,8 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAccount } from "../../redux/actions";
+import { Link } from "react-router-dom";
+
 
 function HomepageCardProfile() {
   const dispatch = useDispatch();
@@ -16,18 +18,23 @@ function HomepageCardProfile() {
       {currentAccount && (
         <Card className="rounded-4 ">
           {" "}
+          <Link to="/me">
           <Card.Img id="cardProfileImg" src={currentAccount.image} />
+          </Link>
           <Card.Img
             className="rounded-top-4 "
             variant="top"
             id="topCardProfileImg"
             src="https://sb.ecobnb.net/app/uploads/sites/2/2018/04/shoot-n-design-71270-unsplash.jpg"
           />{" "}
+          
           <Card.Body>
-            <Card.Title id="cardProfileTitle" className="text-center mt-4">
-              {" "}
-              {currentAccount.name} {currentAccount.surname}
-            </Card.Title>
+            <Link to="/me" style={{ textDecoration: "none", color: "inherit" }}>
+              <Card.Title id="cardProfileTitle" className="text-center mt-4">
+                {" "}
+                {currentAccount.name} {currentAccount.surname}
+              </Card.Title>
+            </Link>
             <Card.Text className="text-center mt-2 small">{currentAccount.title}</Card.Text>
           </Card.Body>
           <ListGroup className="list-group-flush rounded-bottom-4">

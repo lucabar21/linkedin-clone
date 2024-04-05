@@ -13,14 +13,14 @@ function Homepage({ user }) {
   return (
     <>
       <Analisi />
-      <Attività />
-      <Informazioni user={user} />
-      <Cause />
-      <Competenze />
-      <Formazione />
-      <Esperienza />
-      <Lingue />
       <Risorse />
+      <Attività />
+      <Esperienza />
+      <Formazione />
+      <Competenze />
+      <Informazioni user={user} />
+      <Lingue />
+      <Cause />
     </>
   );
 }

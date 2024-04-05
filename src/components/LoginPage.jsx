@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Row, Col, Card, Form, Button, Alert } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   const [showAlert, setShowAlert] = useState(false);
@@ -48,9 +49,12 @@ const LoginPage = () => {
                   inline
                 />
               </Form.Group>
-              <Button variant="primary" type="submit" className="w-100">
+              <Link to="/">
+                <Button variant="primary" type="submit" className="w-100">
                 Accedi
-              </Button>
+                </Button>
+              </Link>
+              
             </Form>
             {showAlert && (
               <Alert variant="danger" onClose={() => setShowAlert(false)} dismissible>
