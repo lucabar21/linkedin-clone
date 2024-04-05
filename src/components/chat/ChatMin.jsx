@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function ChatgMin() {
   const [openClose, setOpenClose] = useState(false);
 
-  const currentProfile = useSelector(state => state.profile.user);
+  const currentProfile = useSelector((state) => state.profile.user);
 
   const location = useLocation();
 
@@ -20,7 +20,7 @@ function ChatgMin() {
       {location.pathname === `/` ? (
         <div></div>
       ) : (
-        <div className="chat-min-position chat-container cp rounded-4" id="chatIndex">
+        <div className="chat-min-position chat-container cp rounded-top-4" id="chatIndex">
           <div className="mt-1 p-2">
             <div className="d-flex align-items-center ">
               <div className="me-2">
