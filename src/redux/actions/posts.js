@@ -19,7 +19,6 @@ export const fetchPosts = () => {
         }
       })
       .then((data) => {
-        console.log("fetch data", data);
         dispatch({ type: GET_POSTS, payload: data });
       })
       .catch((error) => {

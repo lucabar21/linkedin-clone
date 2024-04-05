@@ -4,6 +4,7 @@ import uploadImageReducer from "../reducers/uploadImageReducer";
 import ExperienceReducer from "../reducers/experienceReducer";
 import PostReducer from "../reducers/postsReducer";
 import loginReducer from "../reducers/loginReducer";
+import CommentsReducer from "../reducers/commentsReducer";
 
 const combinedReducers = combineReducers({
   profile: ProfilesReducer,
@@ -11,6 +12,7 @@ const combinedReducers = combineReducers({
   exp: ExperienceReducer,
   posts: PostReducer,
   login: loginReducer,
+  comments: CommentsReducer,
 });
 
 const store = configureStore({

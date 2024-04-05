@@ -261,6 +261,23 @@ a {
 .textarea-focus {
   border: transparent !important;
 }
+
+/* .text-focus {
+  width: 2rem;
+  margin-right: 1rem;
+  border: transparent !important;
+  border-bottom: 1px solid rgb(101, 100, 100) !important;
+}
+.text-focus:focus {
+  outline: none !important;
+  border: transparent !important;
+  border-bottom: 1px solid rgb(101, 100, 100) !important;
+} */
+
+.over:hover {
+  color: rgb(138, 136, 136);
+}
+
 .textarea-focus:focus {
   outline: none !important;
   border: transparent !important;

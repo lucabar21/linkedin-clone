@@ -11,12 +11,7 @@ function ModalComment(props) {
   const [postID, setPostId] = useState("");
   const dispatch = useDispatch();
 
-  // console.log("POSTPOSR", props.post);
-
-  console.log("id", postID);
-
   const ExperiencesEndpoint = `https://striveschool-api.herokuapp.com/api/posts/` + postID;
-  // 660ef48a13df0a001949f60c id commento test 1
   const BearerLuca =
     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYmY3MWEyODFkODAwMTlhM2VjNGMiLCJpYXQiOjE3MTIwNDU5MzcsImV4cCI6MTcxMzI1NTUzN30.hmJKIzkyLuUnHRSgl7aIoiEUzVYkWjsw30SWCcApqpw";
   const BearerNicole =

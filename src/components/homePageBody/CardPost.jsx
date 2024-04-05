@@ -1,17 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SectionComment from "./SectionComment";
 import Comment from "./Comment";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import ModalComment from "./ModalComment";
+import { fetchComments } from "../../redux/actions/comments";
+import { PiStackOverflowLogoBold } from "react-icons/pi";
 
-function CardPost({ post }) {
+function CardPost({ post, pts }) {
   const randNum = Math.floor(Math.random() * 500);
   const [counterLike, setCounterLike] = useState(randNum);
   const [counterComments, setCounterComments] = useState(0); //array lenght comments
   const [openClose, setOpenClose] = useState(false);
   const [modalShow, setModalShow] = useState(false);
+  const comments = useSelector(state => state.comments.comments);
+  const currentProfile = useSelector(state => state.profile.user);
 
-  const currentProfile = useSelector((state) => state.profile.user);
+  const distpatch = useDispatch();
+  useEffect(() => {
+    distpatch(fetchComments());
+  }, []);
+
+  useEffect(() => {
+    const onlyPostComments = comments && comments.filter(comment => comment.elementId === post._id);
+    if (onlyPostComments !== undefined) {
+      console.log("onlyPostComments", onlyPostComments.length);
+      setCounterComments(onlyPostComments.length);
+    }
+  }, [comments.length, post]);
 
   const handleClick = () => {
     setOpenClose(!openClose);
@@ -94,8 +109,8 @@ function CardPost({ post }) {
           <p className="small opacity-75 ms-1">Invia</p>
         </div>
       </div>
-      {openClose && <SectionComment />}
-      {openClose && <Comment />}
+      {openClose && <SectionComment post={post} pts={pts} />}
+
       <ModalComment show={modalShow} onHide={() => setModalShow(false)} edit={"Modifica"} post={post} />
     </div>
   );
