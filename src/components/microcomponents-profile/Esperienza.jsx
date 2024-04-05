@@ -6,11 +6,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { getExperience } from "../../redux/actions/experience";
 import { useState } from "react";
 import ExperienceModal from "../ExperienceModal";
-import { updateExperience } from "../../redux/actions/experience";
-import { createExperience } from "../../redux/actions/experience";
+// import { updateExperience } from "../../redux/actions/experience";
+// import { createExperience } from "../../redux/actions/experience";
+import { deleteExperience } from "../../redux/actions/experience";
+import SingleExperince from "../singleExperience";
 
 const Esperienza = () => {
   const [modalShow, setModalShow] = useState(false);
+  const [editModalShow, setEditModalShow] = useState(false);
 
   const [formData, setFormData] = useState({
     role: "",
@@ -32,16 +35,6 @@ const Esperienza = () => {
     }
   }, [currentAccount]);
 
-  const handleChange = (e, fieldName) => {
-    if (e.target) {
-      const { value } = e.target;
-      setFormData((prevFormData) => ({
-        ...prevFormData,
-        [fieldName]: value,
-      }));
-    }
-  };
-
   const handleCreate = () => {
     setFormData({
       role: "",
@@ -52,17 +45,6 @@ const Esperienza = () => {
       area: "",
     });
     setModalShow(true);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    experiences.filter((exp) =>
-      exp.role === formData.role
-        ? dispatch(updateExperience(currentAccount._id, exp._id, formData))
-        : dispatch(createExperience(currentAccount._id, formData))
-    );
-    dispatch(getExperience(currentAccount._id));
-    setModalShow(false);
   };
 
   return (
@@ -82,48 +64,14 @@ const Esperienza = () => {
                 </div>
               </Card.Title>
               {experiences ? (
-                experiences.slice(0, 5).map((exp) => (
-                  <Row key={exp._id}>
-                    <div className="d-flex align-items-end">
-                      <div
-                        onClick={() => {
-                          const { role, company, startDate, endDate, description, area } = exp;
-                          setFormData({ role, company, startDate, endDate, description, area });
-                          setModalShow(true);
-                        }}
-                      >
-                        <BiPencil />
-                      </div>
-                    </div>
-                    <Col xs={12} md={3}>
-                      <img src="https://via.placeholder.com/70" alt="Placeholder" className="img-fluid mb-2" />
-                    </Col>
-                    <Col xs={12}>
-                      <div>
-                        <h6 className="mb-2">{exp.role}</h6>
-                        <p>{exp.company}</p>
-                        <p>
-                          {exp.startDate} - {exp.endDate}
-                        </p>
-                        <p>{exp.area}</p>
-                        <p>{exp.description}</p>
-                      </div>
-                    </Col>
-                  </Row>
-                ))
+                experiences.slice(0, 5).map((exp) => <SingleExperince exp={exp} key={exp._id} />)
               ) : (
                 <Spinner variant="primary" />
               )}
             </Card.Body>
           </Card>
         </Col>
-        <ExperienceModal
-          show={modalShow}
-          onHide={() => setModalShow(false)}
-          formData={formData}
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-        />
+        <ExperienceModal modalShow={modalShow} onHide={() => setModalShow(false)} />
       </Row>
     </>
   );

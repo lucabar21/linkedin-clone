@@ -61,7 +61,8 @@ export const createExperience = (userID, experienceData) => {
         }
       })
       .then((data) => {
-        dispatch({ type: POST_EXP, payload: data });
+        // dispatch({ type: POST_EXP, payload: data });
+        dispatch(getExperience(userID));
       })
       .catch((error) => {
         console.log(error);
@@ -121,6 +122,7 @@ export const updateExperience = (userID, expID, updatedExperienceData) => {
       })
       .then((data) => {
         dispatch({ type: PUT_EXP, payload: data });
+        dispatch(getExperience(userID));
       })
       .catch((error) => {
         console.log(error);
@@ -128,28 +130,30 @@ export const updateExperience = (userID, expID, updatedExperienceData) => {
   };
 };
 
-// export const deleteExperience = (userID, expID) => {
-//   return (dispatch, getState) => {
-//     const ExperienceEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${userID}/experiences/${expID}`;
+export const deleteExperience = (userID, expID) => {
+  return (dispatch, getState) => {
+    const ExperienceEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${userID}/experiences/${expID}`;
 
-//     const BearerLuca =
-//       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYmY3MWEyODFkODAwMTlhM2VjNGMiLCJpYXQiOjE3MTIwNDU5MzcsImV4cCI6MTcxMzI1NTUzN30.hmJKIzkyLuUnHRSgl7aIoiEUzVYkWjsw30SWCcApqpw";
+    const BearerLuca =
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYmY3MWEyODFkODAwMTlhM2VjNGMiLCJpYXQiOjE3MTIwNDU5MzcsImV4cCI6MTcxMzI1NTUzN30.hmJKIzkyLuUnHRSgl7aIoiEUzVYkWjsw30SWCcApqpw";
 
-//     fetch(ExperienceEndpoint, {
-//       method: "DELETE",
-//       headers: {
-//         Authorization: BearerLuca,
-//       },
-//     })
-//       .then((response) => {
-//         if (response.ok) {
-//           dispatch({ type: DELETE_EXP, payload: expID });
-//         } else {
-//           throw new Error("Qualcosa è andato storto durante l'eliminazione dell'esperienza!");
-//         }
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   };
-// };
+    fetch(ExperienceEndpoint, {
+      method: "DELETE",
+      headers: {
+        Authorization: BearerLuca,
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log(expID);
+          dispatch(getExperience(userID));
+          dispatch({ type: DELETE_EXP, payload: expID });
+        } else {
+          throw new Error("Qualcosa è andato storto durante l'eliminazione dell'esperienza!");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+};

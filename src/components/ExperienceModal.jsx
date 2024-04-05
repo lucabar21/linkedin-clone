@@ -2,13 +2,66 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { updateExperience } from "../redux/actions/experience";
+import { createExperience } from "../redux/actions/experience";
+import { getExperience } from "../redux/actions/experience";
 
 const ExperienceModal = (props) => {
-  const { formData, handleChange, handleSubmit } = props;
+  const { experience, modalShow } = props;
+
+  const currentAccount = useSelector((state) => state.profile.user);
+
+  const dispatch = useDispatch();
+
+  const handleChange = (e, fieldName) => {
+    if (e.target) {
+      const { value } = e.target;
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [fieldName]: value,
+      }));
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (experience) {
+      dispatch(updateExperience(currentAccount._id, experience._id, formData));
+    } else {
+      dispatch(createExperience(currentAccount._id, formData));
+    }
+
+    dispatch(getExperience(currentAccount._id));
+    props.onHide();
+  };
+
+  const [formData, setFormData] = useState({
+    role: "",
+    company: "",
+    startDate: "",
+    endDate: "",
+    description: "",
+    area: "",
+  });
+  useEffect(() => {
+    if (experience) {
+      setFormData({
+        role: experience.role,
+        company: experience.company,
+        startDate: experience.startDate,
+        endDate: experience.endDate,
+        description: experience.description,
+        area: experience.area,
+      });
+    }
+  }, [experience]);
 
   return (
     <>
-      <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
+      <Modal show={modalShow} onHide={props.onHide} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">Aggiungi esperienza</Modal.Title>
         </Modal.Header>
