@@ -29,7 +29,7 @@ function App() {
         <TopbarComponent />
         <Routes>
           <Route
-            path="/"
+            path="/home"
             element={
               <Container className="mt-4">
                 <Row>
@@ -69,7 +69,7 @@ function App() {
             }
           ></Route>
           <Route
-            path="/login"
+            path="/"
             element={
               <Container className="mt-4">
                 <LoginPage />

@@ -15,7 +15,7 @@ function ChatgMin() {
 
   return (
     <>
-      {location.pathname === `/login` ? (
+      {location.pathname === `/` ? (
         <div></div>
       ) : (
         <div className="chat-min-position chat-container cp" id="chatIndex">

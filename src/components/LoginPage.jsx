@@ -22,7 +22,7 @@ const LoginPage = () => {
         console.log("Password salvata");
       }
       dispatch({ type: SET_USER, payload: { name: username } });
-      navigate(`/`);
+      navigate(`/home`);
     } else {
       setShowAlert(true);
     }
