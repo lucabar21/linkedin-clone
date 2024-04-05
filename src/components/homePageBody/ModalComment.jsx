@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../../redux/actions/posts";
 
 function ModalComment(props) {
-  const currentProfile = useSelector((state) => state.profile.user);
+  const currentProfile = useSelector(state => state.profile.user);
   const [text, setText] = useState("");
   const [postID, setPostId] = useState("");
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ function ModalComment(props) {
   const BearerMarco =
     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYjhmZGEyODFkODAwMTlhM2VjNDAiLCJpYXQiOjE3MTIwNDQzMTUsImV4cCI6MTcxMzI1MzkxNX0.5M62SNzOSA7J8tw38IKZhtmYcf6JwWgcVMRzeUSoHRY";
 
-  const fetchOfPosts = (method) => {
+  const fetchOfPosts = method => {
     fetch(ExperiencesEndpoint, {
       method: method,
       body: JSON.stringify({ text }),
@@ -30,7 +30,7 @@ function ModalComment(props) {
         "Content-Type": "application/json",
       },
     })
-      .then((response) => {
+      .then(response => {
         if (response.ok) {
           console.log("Commento pubblicato");
           setText("");
@@ -38,7 +38,7 @@ function ModalComment(props) {
           throw new Error("Quacosa è andato storto!");
         }
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   };
@@ -63,14 +63,14 @@ function ModalComment(props) {
         "Content-Type": "application/json",
       },
     })
-      .then((response) => {
+      .then(response => {
         if (response.ok) {
           return response.json();
         } else {
           throw new Error("Quacosa è andato storto!");
         }
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
     dispatch(fetchPosts());
@@ -123,7 +123,7 @@ function ModalComment(props) {
             as="textarea"
             placeholder="Leave a comment here"
             rows={10}
-            onChange={(e) => setText(e.target.value)}
+            onChange={e => setText(e.target.value)}
             value={text}
           />
         </FloatingLabel>
@@ -148,6 +148,7 @@ function ModalComment(props) {
               Pubblica
             </Button>
           )}
+          {/* dobbiamo fare qualcosa */}
           {text === "" && props.post !== undefined && (
             <>
               <Button className="rounded-pill py-1 me-2">Elimina</Button>
