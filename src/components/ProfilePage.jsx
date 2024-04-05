@@ -15,12 +15,13 @@ function Homepage({ user }) {
       <Analisi />
       <Attività />
       <Informazioni user={user} />
-      <Cause />
+
       <Competenze />
       <Formazione />
       <Esperienza />
       <Lingue />
       <Risorse />
+      <Cause />
     </>
   );
 }

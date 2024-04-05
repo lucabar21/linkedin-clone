@@ -19,20 +19,35 @@ const Formazione = () => {
                   </div>
                 </div>
               </Card.Title>
-              <Row>
-                <Col xs={12} md={3}>
-                  {/* Immagine */}
-                  <img src="https://via.placeholder.com/100" alt="Placeholder" className="img-fluid mb-2" />
-                </Col>
-                <Col xs={12}>
-                  <div>
-                    <h6 className="mb-2">Luogo di Formazione</h6>
-                    <p>Qualifica formazione</p>
-                    <p>Skills</p>
+              <div className="d-flex" id="experiences">
+                <div>
+                  <img src="/epicode.svg" alt="Placeholder" className="img-fluid mb-2 " id="experiencesImg" />
+                </div>
+                <div className="mb-3 ps-2">
+                  <h6 id="titleExperiences">EPICODE </h6>
+                  <p id="companyExperiences">Formazione Full-Stack Developer</p>
+                  <div id="infoExperiences">
+                    <p>gen 2024 - lug 2024</p>
                   </div>
-                  {/* altro contenuto di formazione */}
-                </Col>
-              </Row>
+                </div>
+              </div>
+              <div className="d-flex my-4" id="experiences">
+                <div>
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm-mON6ahtd4DlEIB9nH0lVTW6cAWiqZGej_-lHQUBAxVKS2llu-Z6gctrFD4SXUYQX0U&usqp=CAU"
+                    alt="Placeholder"
+                    className="img-fluid mb-2 "
+                    id="experiencesImg"
+                  />
+                </div>
+                <div className="mb-3 ps-2">
+                  <h6 id="titleExperiences">Università dell'ozio </h6>
+                  <p id="companyExperiences">Sfaticato professionista</p>
+                  <div id="infoExperiences">
+                    <p>mag 1996 - In corso</p>
+                  </div>
+                </div>
+              </div>
             </Card.Body>
           </Card>
         </Col>
