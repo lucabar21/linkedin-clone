@@ -11,7 +11,7 @@ function CardPost({ post }) {
   const [openClose, setOpenClose] = useState(false);
   const [modalShow, setModalShow] = useState(false);
 
-  const currentProfile = useSelector((state) => state.profile.user);
+  const currentProfile = useSelector(state => state.profile.user);
 
   const handleClick = () => {
     setOpenClose(!openClose);
@@ -94,7 +94,7 @@ function CardPost({ post }) {
           <p className="small opacity-75 ms-1">Invia</p>
         </div>
       </div>
-      {openClose && <SectionComment post={post._id} />}
+      {openClose && <SectionComment post={post} />}
 
       <ModalComment show={modalShow} onHide={() => setModalShow(false)} edit={"Modifica"} post={post} />
     </div>

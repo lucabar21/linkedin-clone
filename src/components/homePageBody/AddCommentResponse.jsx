@@ -2,16 +2,16 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchComments } from "../../redux/actions/comments";
 
-function AddCommentResponse({ post }) {
+function AddCommentResponse({ post, comt }) {
   const currentProfile = useSelector(state => state.profile.user);
-  console.log(post);
+  console.log(post._id);
   const randNum = Math.floor(Math.random() * 5);
 
   const distpatch = useDispatch();
 
   const [comment, setComment] = useState("");
   const [rate, setRate] = useState(`${randNum}`);
-  const [elementId, setElementId] = useState(post);
+  const [elementId, setElementId] = useState(post._id);
 
   const postComment = () => {
     const ExperiencesEndpoint = "https://striveschool-api.herokuapp.com/api/comments/";
@@ -37,7 +37,7 @@ function AddCommentResponse({ post }) {
           console.log("Commento pubblicato");
           setComment("");
           setRate(`${randNum}`);
-          setElementId(post); // qui sto resettando il form
+          setElementId(post._id); // qui sto resettando il form
         }
       })
       .catch(error => {

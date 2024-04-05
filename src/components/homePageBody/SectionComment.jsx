@@ -17,7 +17,8 @@ function SectionComment({ post }) {
   return (
     <>
       <AddCommentResponse post={post} />
-      <Comment post={post} />
+      {comments &&
+        comments.map((comment, i) => comment.elementId === post._id && <Comment post={post} comt={comment} key={i} />)}
     </>
   );
 }
