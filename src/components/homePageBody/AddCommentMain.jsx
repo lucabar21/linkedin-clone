@@ -5,16 +5,16 @@ import { useEffect } from "react";
 import { getAccount } from "../../redux/actions";
 
 function AddCommentMain() {
-  const currentProfile = useSelector(state => state.profile.user);
+  const currentProfile = useSelector((state) => state.profile.user);
   console.log(currentProfile);
 
   const dispatch = useDispatch();
-
+  const currentLogin = useSelector((state) => state.login.data);
   const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
     dispatch(getAccount());
-  }, []);
+  }, [currentLogin]);
 
   return (
     <div className="sidebar-container pt-2 pb-1 px-3">

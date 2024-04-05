@@ -6,10 +6,11 @@ import { getAccount } from "../../redux/actions";
 
 function HomepageCardProfile() {
   const dispatch = useDispatch();
+  const currentLogin = useSelector((state) => state.login.data);
   const currentAccount = useSelector((state) => state.profile.user);
   useEffect(() => {
     dispatch(getAccount());
-  }, []);
+  }, [currentLogin]);
 
   return (
     <>

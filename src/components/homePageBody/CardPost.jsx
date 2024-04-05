@@ -41,7 +41,7 @@ function CardPost({ post }) {
               </div>
             </div>
           </div>
-          {currentProfile._id === post.user._id ? (
+          {currentProfile && currentProfile._id === post.user._id ? (
             <div className="d-flex follow-section" onClick={() => setModalShow(true)}>
               <img className="me-1" src="/pen.svg" alt="" width={20} height={20} />
             </div>
