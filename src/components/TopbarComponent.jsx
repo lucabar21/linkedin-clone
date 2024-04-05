@@ -129,7 +129,9 @@ const TopbarComponent = () => {
                           </div>
                           <div id="drop-line"></div>
                           <div id="account-drop">
-                            <h6 id="microCardLink">Esci</h6>
+                            <Link to="login">
+                              <h6 id="microCardLink">Esci</h6>
+                            </Link>
                           </div>
                         </div>
                       </div>
