@@ -17,7 +17,7 @@ import { useSelector } from "react-redux";
 import HomepageCardProfile from "./components/leftSideCardHomepage/HomepageCardProfile";
 import HomepageMicrocard from "./components/leftSideCardHomepage/HomepageMicrocard";
 import HomePage from "./components/homePageBody/HomePage";
-import LoginPage from "./components/login/LoginPage";
+import LoginPage from "./components/LoginPage";
 
 function App() {
   const currentAccount = useSelector((state) => state.profile.user);
