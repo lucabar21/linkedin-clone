@@ -14,6 +14,16 @@ a {
 }
 
 /* Login Page */
+@media screen and (max-width: 992px) {
+  #loginImg {
+    width: 400px;
+  }
+  #loginImgContainer {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 #buttonLoginFooter {
   box-shadow: 0 0 0 1px;
   color: #000000;

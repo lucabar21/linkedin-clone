@@ -71,7 +71,7 @@ function App() {
           <Route
             path="/login"
             element={
-              <Container className=" mt-4">
+              <Container className=" mt-4 ">
                 <LoginPage />
               </Container>
             }

@@ -5,13 +5,13 @@ const FooterLogin = () => {
     <div id="footerLogin">
       <div>
         <Row>
-          <Col xs={5} className="my-5">
+          <Col xs={12} lg={5} className="my-5">
             <p id="loginTitle" className="text-black">
               Trova il lavoro o lo stage giusto per te
             </p>
           </Col>
-          <Col xs={1}></Col>
-          <Col xs={6} className=" my-5">
+
+          <Col md={12} lg={6} className=" my-5">
             <h6 className="mb-3 fw-medium">RICERCHE SUGGERITE</h6>
             <button id="buttonLoginFooter" className="p-3 px-4 m-1 rounded-pill fw-medium">
               Ingegneria
@@ -48,7 +48,7 @@ const FooterLogin = () => {
       </div>
       <div id="footerLogin">
         <Row>
-          <Col xs={4} className="my-5">
+          <Col xs={12} md={4} className="my-5">
             <img
               className="footer-logo"
               src="https://logos-world.net/wp-content/uploads/2020/05/Linkedin-Logo-700x394.png"
@@ -56,7 +56,7 @@ const FooterLogin = () => {
               style={{ maxWidth: "120px" }}
             />
           </Col>
-          <Col xs={2} className="my-5">
+          <Col xs={6} sm={3} md={2} className="my-5">
             <p className="fw-bold mb-2">Generale</p>
 
             <p className="small">Iscriviti</p>
@@ -68,7 +68,7 @@ const FooterLogin = () => {
             <p className="small">Sviluppatori</p>
           </Col>
 
-          <Col xs={2} className="my-5">
+          <Col xs={6} sm={3} md={2} className="my-5">
             <p className="fw-bold mb-2">Sfoglia LinkedIn</p>
 
             <p className="small">Learning</p>
@@ -80,7 +80,7 @@ const FooterLogin = () => {
             <p className="small">Hub Top Companies</p>
           </Col>
 
-          <Col xs={2} className="my-5">
+          <Col xs={6} sm={3} md={2} className="my-5">
             <p className="fw-bold mb-2">Soluzioni Business</p>
 
             <p className="small">Talent</p>
@@ -89,7 +89,7 @@ const FooterLogin = () => {
             <p className="small">Learning</p>
           </Col>
 
-          <Col xs={2} className="my-5">
+          <Col xs={6} sm={3} md={2} className="my-5">
             <p className="fw-bold mb-2">Elenchi</p>
 
             <p className="small">Membri</p>
