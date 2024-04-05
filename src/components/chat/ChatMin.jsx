@@ -6,7 +6,8 @@ import { useLocation } from "react-router-dom";
 function ChatgMin() {
   const [openClose, setOpenClose] = useState(false);
 
-  const currentProfile = useSelector((state) => state.profile.user);
+  const currentProfile = useSelector(state => state.profile.user);
+
   const location = useLocation();
 
   const handleClick = () => {

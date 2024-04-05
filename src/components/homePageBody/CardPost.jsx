@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import SectionComment from "./SectionComment";
-import Comment from "./Comment";
 import { useSelector, useDispatch } from "react-redux";
 import ModalComment from "./ModalComment";
 import { fetchComments } from "../../redux/actions/comments";
-import { PiStackOverflowLogoBold } from "react-icons/pi";
+import { getAccount } from "../../redux/actions";
 
 function CardPost({ post, pts }) {
   const randNum = Math.floor(Math.random() * 500);
