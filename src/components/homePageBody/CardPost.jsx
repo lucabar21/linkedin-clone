@@ -11,8 +11,8 @@ function CardPost({ post, pts }) {
   const [counterComments, setCounterComments] = useState(0); //array lenght comments
   const [openClose, setOpenClose] = useState(false);
   const [modalShow, setModalShow] = useState(false);
-  const comments = useSelector((state) => state.comments.comments);
-  const currentProfile = useSelector((state) => state.profile.user);
+  const comments = useSelector(state => state.comments.comments);
+  const currentProfile = useSelector(state => state.profile.user);
 
   const distpatch = useDispatch();
   useEffect(() => {
@@ -20,7 +20,7 @@ function CardPost({ post, pts }) {
   }, []);
 
   useEffect(() => {
-    const onlyPostComments = comments && comments.filter((comment) => comment.elementId === post._id);
+    const onlyPostComments = comments && comments.filter(comment => comment.elementId === post._id);
     if (onlyPostComments !== undefined) {
       setCounterComments(onlyPostComments.length);
     }
@@ -28,6 +28,11 @@ function CardPost({ post, pts }) {
 
   const handleClick = () => {
     setOpenClose(!openClose);
+  };
+
+  const formatDates = (startDate, endDate) => {
+    const start = new Date(startDate).toLocaleDateString();
+    return `${start}`;
   };
 
   return (
@@ -49,7 +54,7 @@ function CardPost({ post, pts }) {
                 </p>
                 <p className="opacity-75 line-heigh">
                   {post.user.title} <br></br>
-                  {post.updatedAt}
+                  {formatDates(post.updatedAt)}
                 </p>
               </div>
             </div>
