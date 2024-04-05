@@ -291,6 +291,13 @@ a {
   border: transparent !important;
 }
 
+.bg-color-text-comment {
+  background-color: #b5d3eb !important;
+  padding-inline: 1rem;
+  border-radius: 50px;
+  width: 100%;
+}
+
 /* .text-focus {
   width: 2rem;
   margin-right: 1rem;
