@@ -3,33 +3,35 @@ import ModalComment from "./ModalComment";
 import { useState } from "react";
 import { useEffect } from "react";
 import { getAccount } from "../../redux/actions";
+import { Link } from "react-router-dom";
 
 function AddCommentMain() {
   const currentProfile = useSelector((state) => state.profile.user);
-  console.log(currentProfile);
 
   const dispatch = useDispatch();
-
+  const currentLogin = useSelector((state) => state.login.data);
   const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
     dispatch(getAccount());
-  }, []);
+  }, [currentLogin]);
 
   return (
     <div className="sidebar-container pt-3 pb-1 px-3 rounded-4">
       <div className="d-flex align-items-center">
-        <img
-          className="me-2 rounded-circle object-fit-cover cp"
-          src={
-            currentProfile !== null
-              ? currentProfile.image
-              : "https://openclipart.org/download/247319/abstract-user-flat-3.svg"
-          }
-          alt={currentProfile !== null ? currentProfile.username : "Nome Utente"}
-          width={45}
-          height={45}
-        />
+        <Link to="/me">
+          <img
+            className="me-2 rounded-circle object-fit-cover cp"
+            src={
+              currentProfile !== null
+                ? currentProfile.image
+                : "https://openclipart.org/download/247319/abstract-user-flat-3.svg"
+            }
+            alt={currentProfile !== null ? currentProfile.username : "Nome Utente"}
+            width={45}
+            height={45}
+          />
+        </Link>
         <div className="add-comm-search-input w-100" onClick={() => setModalShow(true)}>
           <input type="text" placeholder="Avvia un post" className="textarea-focus small" />
         </div>

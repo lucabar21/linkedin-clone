@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import { Row, Col, Card, Form, Button, Alert } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { SET_USER } from "../redux/actions/login";
+import { useNavigate } from "react-router-dom";
 import FooterLogin from "./FooterLogin";
 
 const LoginPage = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [savePassword, setSavePassword] = useState(false);
+  const [username, setUsername] = useState("");
+
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,6 +22,8 @@ const LoginPage = () => {
       if (savePassword) {
         console.log("Password salvata");
       }
+      dispatch({ type: SET_USER, payload: { name: username } });
+      navigate(`/home`);
     } else {
       setShowAlert(true);
     }
@@ -39,6 +49,8 @@ const LoginPage = () => {
                     <Form.Control
                       type="text"
                       placeholder="Inserisci il tuo username"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
                       required
                       className="p-3 rounded-3"
                     />

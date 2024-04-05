@@ -8,18 +8,11 @@ export const getExperience = (userID) => {
   return (dispatch, getState) => {
     const ExperiencesEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${userID}/experiences`;
 
-    const BearerLuca =
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYmY3MWEyODFkODAwMTlhM2VjNGMiLCJpYXQiOjE3MTIwNDU5MzcsImV4cCI6MTcxMzI1NTUzN30.hmJKIzkyLuUnHRSgl7aIoiEUzVYkWjsw30SWCcApqpw";
-    const BearerNicole =
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzBkNGEyODFkODAwMTlhM2VjNTAiLCJpYXQiOjE3MTIwNDYyOTIsImV4cCI6MTcxMzI1NTg5Mn0.xBtMmk_mwc9nbIKbU3G9nYXBHFKgy3RjAB0nQS4tCJY";
-    const BearerGianmarco =
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzA1ZmEyODFkODAwMTlhM2VjNGYiLCJpYXQiOjE3MTIwNDYxODIsImV4cCI6MTcxMzI1NTc4Mn0.hB0fH0MLwLZaP_II1wg4hLStxwhbtsHKeZhQ8jf2DfM";
-    const BearerMarco =
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYjhmZGEyODFkODAwMTlhM2VjNDAiLCJpYXQiOjE3MTIwNDQzMTUsImV4cCI6MTcxMzI1MzkxNX0.5M62SNzOSA7J8tw38IKZhtmYcf6JwWgcVMRzeUSoHRY";
+    const state = getState().login.data;
 
     fetch(ExperiencesEndpoint, {
       headers: {
-        Authorization: BearerLuca,
+        Authorization: state.token,
       },
     })
       .then((response) => {
@@ -42,14 +35,13 @@ export const createExperience = (userID, experienceData) => {
   return (dispatch, getState) => {
     const ExperiencesEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${userID}/experiences`;
 
-    const BearerLuca =
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYmY3MWEyODFkODAwMTlhM2VjNGMiLCJpYXQiOjE3MTIwNDU5MzcsImV4cCI6MTcxMzI1NTUzN30.hmJKIzkyLuUnHRSgl7aIoiEUzVYkWjsw30SWCcApqpw";
+    const state = getState().login.data;
 
     fetch(ExperiencesEndpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: BearerLuca,
+        Authorization: state.token,
       },
       body: JSON.stringify(experienceData),
     })
@@ -70,46 +62,17 @@ export const createExperience = (userID, experienceData) => {
   };
 };
 
-// export const getExperienceDetail = (userID, expID) => {
-//   return (dispatch, getState) => {
-//     const ExperienceDetailEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${userID}/experiences/${expID}`;
-
-//     const BearerLuca =
-//       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYmY3MWEyODFkODAwMTlhM2VjNGMiLCJpYXQiOjE3MTIwNDU5MzcsImV4cCI6MTcxMzI1NTUzN30.hmJKIzkyLuUnHRSgl7aIoiEUzVYkWjsw30SWCcApqpw";
-
-//     fetch(ExperienceDetailEndpoint, {
-//       headers: {
-//         Authorization: BearerLuca,
-//       },
-//     })
-//       .then((response) => {
-//         if (response.ok) {
-//           return response.json();
-//         } else {
-//           throw new Error("Qualcosa è andato storto durante il recupero dei dettagli dell'esperienza!");
-//         }
-//       })
-//       .then((data) => {
-//         dispatch({ type: GET_EXP_DETAIL, payload: data });
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   };
-// };
-
 export const updateExperience = (userID, expID, updatedExperienceData) => {
   return (dispatch, getState) => {
     const ExperienceEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${userID}/experiences/${expID}`;
 
-    const BearerLuca =
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYmY3MWEyODFkODAwMTlhM2VjNGMiLCJpYXQiOjE3MTIwNDU5MzcsImV4cCI6MTcxMzI1NTUzN30.hmJKIzkyLuUnHRSgl7aIoiEUzVYkWjsw30SWCcApqpw";
+    const state = getState().login.data;
 
     fetch(ExperienceEndpoint, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization: BearerLuca,
+        Authorization: state.token,
       },
       body: JSON.stringify(updatedExperienceData),
     })
@@ -134,13 +97,12 @@ export const deleteExperience = (userID, expID) => {
   return (dispatch, getState) => {
     const ExperienceEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${userID}/experiences/${expID}`;
 
-    const BearerLuca =
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYmY3MWEyODFkODAwMTlhM2VjNGMiLCJpYXQiOjE3MTIwNDU5MzcsImV4cCI6MTcxMzI1NTUzN30.hmJKIzkyLuUnHRSgl7aIoiEUzVYkWjsw30SWCcApqpw";
+    const state = getState().login.data;
 
     fetch(ExperienceEndpoint, {
       method: "DELETE",
       headers: {
-        Authorization: BearerLuca,
+        Authorization: state.token,
       },
     })
       .then((response) => {

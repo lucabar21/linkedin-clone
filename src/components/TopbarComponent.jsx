@@ -17,7 +17,7 @@ const TopbarComponent = () => {
 
   return (
     <>
-      {location.pathname === `/login` ? (
+      {location.pathname === `/` ? (
         <div></div>
       ) : (
         <div id="topbar">
@@ -26,7 +26,7 @@ const TopbarComponent = () => {
               <Row className="justify-content-center">
                 <Col className="d-flex gap-4 mx-1 align-items-center justify-content-between p-2">
                   <div className="d-flex">
-                    <Link to="/">
+                    <Link to="/home">
                       <div id="top-logo">
                         <img src="/linkedin.svg" alt="logo" />
                       </div>
@@ -48,7 +48,7 @@ const TopbarComponent = () => {
                       <span>Cerca</span>
                     </div>
                     <div id="top-icon">
-                      <Link to="/">
+                      <Link to="/home">
                         <div id="top-icon-img">
                           <img src="/home.svg" alt="home" />
                           <span id="span-1"></span>
@@ -129,7 +129,9 @@ const TopbarComponent = () => {
                           </div>
                           <div id="drop-line"></div>
                           <div id="account-drop">
-                            <h6 id="microCardLink">Esci</h6>
+                            <Link style={{ textDecoration: "none" }} to="/">
+                              <h6 id="microCardLink">Esci</h6>
+                            </Link>
                           </div>
                         </div>
                       </div>

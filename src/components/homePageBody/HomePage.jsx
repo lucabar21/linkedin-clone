@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../../redux/actions/posts";
 
 function HomePage() {
-  const posts = useSelector((state) => state.posts.posts);
+  const posts = useSelector(state => state.posts.posts);
   const randNum = Math.floor(Math.random() * 1000);
 
   const [numAdd, setNumAdd] = useState(10);
@@ -20,7 +20,10 @@ function HomePage() {
   return (
     <>
       {posts ? (
-        posts.slice(posts.length - 10, posts.length).map((post, i) => <CardPost key={i} post={post} />)
+        posts
+          .sort()
+          .slice(posts.length - numAdd, posts.length)
+          .map((post, i) => <CardPost key={i} post={post} pts={posts} />)
       ) : (
         <div className="d-flex justify-content-center my-5">
           <Spinner />{" "}

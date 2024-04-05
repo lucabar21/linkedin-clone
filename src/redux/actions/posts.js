@@ -1,21 +1,15 @@
 export const GET_POSTS = "GET_POSTS";
+export const POST_IMG_POSTS = "POST_IMG_POSTS";
 
 export const fetchPosts = () => {
   return (dispatch, getState) => {
     const ExperiencesEndpoint = `https://striveschool-api.herokuapp.com/api/posts/`;
 
-    const BearerLuca =
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYmY3MWEyODFkODAwMTlhM2VjNGMiLCJpYXQiOjE3MTIwNDU5MzcsImV4cCI6MTcxMzI1NTUzN30.hmJKIzkyLuUnHRSgl7aIoiEUzVYkWjsw30SWCcApqpw";
-    const BearerNicole =
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzBkNGEyODFkODAwMTlhM2VjNTAiLCJpYXQiOjE3MTIwNDYyOTIsImV4cCI6MTcxMzI1NTg5Mn0.xBtMmk_mwc9nbIKbU3G9nYXBHFKgy3RjAB0nQS4tCJY";
-    const BearerGianmarco =
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzA1ZmEyODFkODAwMTlhM2VjNGYiLCJpYXQiOjE3MTIwNDYxODIsImV4cCI6MTcxMzI1NTc4Mn0.hB0fH0MLwLZaP_II1wg4hLStxwhbtsHKeZhQ8jf2DfM";
-    const BearerMarco =
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYjhmZGEyODFkODAwMTlhM2VjNDAiLCJpYXQiOjE3MTIwNDQzMTUsImV4cCI6MTcxMzI1MzkxNX0.5M62SNzOSA7J8tw38IKZhtmYcf6JwWgcVMRzeUSoHRY";
+    const state = getState().login.data;
 
     fetch(ExperiencesEndpoint, {
       headers: {
-        Authorization: BearerLuca,
+        Authorization: state.token,
       },
     })
       .then((response) => {
@@ -26,8 +20,42 @@ export const fetchPosts = () => {
         }
       })
       .then((data) => {
-        console.log("fetch data", data);
         dispatch({ type: GET_POSTS, payload: data });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+};
+
+// const postId = getState().posts.posts._id DA FARE ALTROVE!!
+
+export const uploadImagePost = (postId, imageFile) => {
+  return (dispatch, getState) => {
+    const ImageEndpoint = ` https://striveschool-api.herokuapp.com/api/posts/${postId}`;
+
+    const state = getState().login.data;
+
+    const formData = new FormData();
+    formData.append("post", imageFile);
+
+    fetch(ImageEndpoint, {
+      method: "POST",
+      headers: {
+        Authorization: state.token,
+      },
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log(response);
+          return response.json();
+        } else {
+          throw new Error("Quacosa è andato storto!");
+        }
+      })
+      .then((data) => {
+        dispatch({ type: POST_IMG_POSTS, payload: data });
       })
       .catch((error) => {
         console.log(error);

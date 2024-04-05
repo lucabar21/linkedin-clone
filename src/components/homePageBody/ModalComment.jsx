@@ -4,34 +4,37 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../../redux/actions/posts";
+import { uploadImagePost } from "../../redux/actions/posts";
+import { getAccount } from "../../redux/actions";
 
 function ModalComment(props) {
   const currentProfile = useSelector((state) => state.profile.user);
+  const currentLogin = useSelector((state) => state.login.data.token);
   const [text, setText] = useState("");
   const [postID, setPostId] = useState("");
   const dispatch = useDispatch();
 
-  // console.log("POSTPOSR", props.post);
+  const [selectedImage, setSelectedImage] = useState(null);
 
-  console.log("id", postID);
+  const handleImageChange = (event) => {
+    setSelectedImage(event.target.files[0]);
+  };
+
+  const handleFormSubmit = () => {
+    if (selectedImage) {
+      dispatch(uploadImagePost(postID, selectedImage));
+      dispatch(getAccount());
+    }
+  };
 
   const ExperiencesEndpoint = `https://striveschool-api.herokuapp.com/api/posts/` + postID;
-  // 660ef48a13df0a001949f60c id commento test 1
-  const BearerLuca =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYmY3MWEyODFkODAwMTlhM2VjNGMiLCJpYXQiOjE3MTIwNDU5MzcsImV4cCI6MTcxMzI1NTUzN30.hmJKIzkyLuUnHRSgl7aIoiEUzVYkWjsw30SWCcApqpw";
-  const BearerNicole =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzBkNGEyODFkODAwMTlhM2VjNTAiLCJpYXQiOjE3MTIwNDYyOTIsImV4cCI6MTcxMzI1NTg5Mn0.xBtMmk_mwc9nbIKbU3G9nYXBHFKgy3RjAB0nQS4tCJY";
-  const BearerGianmarco =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzA1ZmEyODFkODAwMTlhM2VjNGYiLCJpYXQiOjE3MTIwNDYxODIsImV4cCI6MTcxMzI1NTc4Mn0.hB0fH0MLwLZaP_II1wg4hLStxwhbtsHKeZhQ8jf2DfM";
-  const BearerMarco =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYjhmZGEyODFkODAwMTlhM2VjNDAiLCJpYXQiOjE3MTIwNDQzMTUsImV4cCI6MTcxMzI1MzkxNX0.5M62SNzOSA7J8tw38IKZhtmYcf6JwWgcVMRzeUSoHRY";
 
   const fetchOfPosts = (method) => {
     fetch(ExperiencesEndpoint, {
       method: method,
       body: JSON.stringify({ text }),
       headers: {
-        Authorization: BearerLuca,
+        Authorization: currentLogin,
         "Content-Type": "application/json",
       },
     })
@@ -50,12 +53,14 @@ function ModalComment(props) {
 
   const handleclick = () => {
     props.onHide();
+    handleFormSubmit();
     fetchOfPosts("POST");
     dispatch(fetchPosts());
   };
 
   const handleclickEdit = () => {
     props.onHide();
+    handleFormSubmit();
     fetchOfPosts("PUT");
     dispatch(fetchPosts());
   };
@@ -64,7 +69,7 @@ function ModalComment(props) {
     fetch(ExperiencesEndpoint, {
       method: "DELETE",
       headers: {
-        Authorization: BearerLuca,
+        Authorization: currentLogin,
         "Content-Type": "application/json",
       },
     })
@@ -132,8 +137,14 @@ function ModalComment(props) {
             value={text}
           />
         </FloatingLabel>
+        <Form.Control
+          className="textarea-focus"
+          placeholder="Carica la tua immagine"
+          onChange={handleImageChange}
+          type="file"
+        />
         <div className="d-flex">
-          <div className="bg-svg">
+          <div className="bg-svg" onClick={() => {}}>
             <img src="/multimedia.svg" alt="" className="img-textarea-comm" />
           </div>
           <div className="bg-svg">
@@ -153,6 +164,7 @@ function ModalComment(props) {
               Pubblica
             </Button>
           )}
+          {/* dobbiamo fare qualcosa */}
           {text === "" && props.post !== undefined && (
             <>
               <Button className="rounded-pill py-1 me-2">Elimina</Button>

@@ -12,10 +12,10 @@ function HeroSection({ user }) {
   const [imgModalShow, setImgModalShow] = useState(false);
 
   const dispatch = useDispatch();
-  const currentAccount = useSelector((state) => state.profile.user);
+  const currentLogin = useSelector((state) => state.login.data);
   useEffect(() => {
     dispatch(getAccount());
-  }, []);
+  }, [currentLogin]);
 
   return (
     <>
