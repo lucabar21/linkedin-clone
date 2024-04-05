@@ -18,18 +18,18 @@ export const fetchPosts = () => {
         Authorization: BearerLuca,
       },
     })
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
           return response.json();
         } else {
           throw new Error("Quacosa è andato storto!");
         }
       })
-      .then(data => {
+      .then((data) => {
         console.log("fetch data", data);
         dispatch({ type: GET_POSTS, payload: data });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };

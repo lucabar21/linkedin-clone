@@ -8,7 +8,7 @@ const Risorse = () => {
   return (
     <>
       <Row>
-        <Col className="pb-3">
+        <Col>
           <div className="mt-2">
             <Card className="rounded-4">
               <Card.Body className="mx-2">

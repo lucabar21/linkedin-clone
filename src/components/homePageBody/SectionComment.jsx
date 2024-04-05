@@ -3,11 +3,11 @@ import { useSelector } from "react-redux";
 
 function SectionComment() {
   const [searchQuery, setSearchQuery] = useState("");
-  const currentProfile = useSelector(state => state.profile.user);
+  const currentProfile = useSelector((state) => state.profile.user);
 
   return (
     <div>
-      <div className="d-flex align-items-center pb-2">
+      <div className="d-flex align-items-center pb-2 ">
         <img
           className="me-2 rounded-circle object-fit-cover cp"
           src={

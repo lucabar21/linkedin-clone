@@ -1,6 +1,6 @@
 function Comment(props) {
   return (
-    <div className="d-flex mt-2 px-2">
+    <div className="d-flex mt-2 px-2  ">
       <div className="pt-2">
         <img
           src="https://openclipart.org/download/247319/abstract-user-flat-3.svg"

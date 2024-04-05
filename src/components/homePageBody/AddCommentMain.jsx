@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { getAccount } from "../../redux/actions";
 
 function AddCommentMain() {
-  const currentProfile = useSelector(state => state.profile.user);
+  const currentProfile = useSelector((state) => state.profile.user);
   console.log(currentProfile);
 
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function AddCommentMain() {
   }, []);
 
   return (
-    <div className="sidebar-container pt-2 pb-1 px-3">
+    <div className="sidebar-container pt-3 pb-1 px-3 rounded-4">
       <div className="d-flex align-items-center">
         <img
           className="me-2 rounded-circle object-fit-cover cp"

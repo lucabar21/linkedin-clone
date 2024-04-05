@@ -91,7 +91,7 @@ function ModalComment(props) {
 
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
-      <div className="p-2">
+      <div className="p-2 ">
         <Modal.Header className="textarea-comm" closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
             <div className="d-flex">

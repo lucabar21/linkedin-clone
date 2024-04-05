@@ -13,6 +13,35 @@ a {
   }
 }
 
+/* Login Page */
+#buttonLoginFooter {
+  box-shadow: 0 0 0 1px;
+  color: #000000;
+  border: 1px;
+}
+
+#buttonLoginFooter:hover {
+  background-color: #0000000c;
+}
+
+#loginCard {
+  background-color: #f4f2ee;
+  border: none;
+}
+#loginTitle {
+  color: #b24020;
+  font-weight: 300;
+  font-size: 60px;
+  text-align: start;
+}
+
+#loginPage {
+  background-color: white;
+}
+#footerLogin {
+  margin-top: 200px;
+}
+
 /* MICRO-COMPONENTS */
 .component-footer-show {
   border-top: 0.5px solid #6666662a;
@@ -512,6 +541,9 @@ body {
 
 /* TOPBAR SETTINGS  */
 #topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   background-color: #ffffff;
   padding-inline: 10px;
 }
@@ -845,7 +877,7 @@ body {
 /* Homepage right section */
 #footerHome {
   position: sticky;
-  top: 0;
+  top: 5vh;
   z-index: 10;
 }
 

@@ -17,7 +17,7 @@ import { useSelector } from "react-redux";
 import HomepageCardProfile from "./components/leftSideCardHomepage/HomepageCardProfile";
 import HomepageMicrocard from "./components/leftSideCardHomepage/HomepageMicrocard";
 import HomePage from "./components/homePageBody/HomePage";
-import LoginPage from "./components/LoginPage";
+import LoginPage from "./components/login/LoginPage";
 
 function App() {
   const currentAccount = useSelector((state) => state.profile.user);
@@ -71,7 +71,7 @@ function App() {
           <Route
             path="/login"
             element={
-              <Container className="mt-4">
+              <Container className=" mt-4">
                 <LoginPage />
               </Container>
             }

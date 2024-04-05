@@ -18,8 +18,8 @@ function CardPost({ post }) {
   };
 
   return (
-    <div className={openClose ? "sidebar-container p-3 pb-3" : "sidebar-container p-3 pb-0"}>
-      <div className="border-bottom">
+    <div className={openClose ? "sidebar-container p-3 pb-3 rounded-4" : "sidebar-container p-3 pb-0 rounded-4"}>
+      <div className="border-bottom ">
         <div className="d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center">
             <img
