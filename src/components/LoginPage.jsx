@@ -18,9 +18,7 @@ const LoginPage = () => {
     event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity()) {
-      console.log("Accesso eseguito");
       if (savePassword) {
-        console.log("Password salvata");
       }
       dispatch({ type: SET_USER, payload: { name: username } });
       navigate(`/home`);

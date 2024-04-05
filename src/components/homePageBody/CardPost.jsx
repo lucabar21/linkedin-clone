@@ -11,8 +11,8 @@ function CardPost({ post, pts }) {
   const [counterComments, setCounterComments] = useState(0); //array lenght comments
   const [openClose, setOpenClose] = useState(false);
   const [modalShow, setModalShow] = useState(false);
-  const comments = useSelector(state => state.comments.comments);
-  const currentProfile = useSelector(state => state.profile.user);
+  const comments = useSelector((state) => state.comments.comments);
+  const currentProfile = useSelector((state) => state.profile.user);
 
   const distpatch = useDispatch();
   useEffect(() => {
@@ -20,9 +20,8 @@ function CardPost({ post, pts }) {
   }, []);
 
   useEffect(() => {
-    const onlyPostComments = comments && comments.filter(comment => comment.elementId === post._id);
+    const onlyPostComments = comments && comments.filter((comment) => comment.elementId === post._id);
     if (onlyPostComments !== undefined) {
-      console.log("onlyPostComments", onlyPostComments.length);
       setCounterComments(onlyPostComments.length);
     }
   }, [comments.length, post]);

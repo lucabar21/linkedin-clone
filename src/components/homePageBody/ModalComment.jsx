@@ -21,6 +21,7 @@ function ModalComment(props) {
   };
 
   const handleFormSubmit = () => {
+    console.log("c'è l'immagine?", selectedImage);
     if (selectedImage) {
       dispatch(uploadImagePost(postID, selectedImage));
       dispatch(getAccount());
@@ -40,8 +41,8 @@ function ModalComment(props) {
     })
       .then((response) => {
         if (response.ok) {
-          console.log("Commento pubblicato");
           setText("");
+          handleFormSubmit();
         } else {
           throw new Error("Quacosa è andato storto!");
         }
@@ -53,14 +54,14 @@ function ModalComment(props) {
 
   const handleclick = () => {
     props.onHide();
-    handleFormSubmit();
+
     fetchOfPosts("POST");
     dispatch(fetchPosts());
   };
 
   const handleclickEdit = () => {
     props.onHide();
-    handleFormSubmit();
+
     fetchOfPosts("PUT");
     dispatch(fetchPosts());
   };

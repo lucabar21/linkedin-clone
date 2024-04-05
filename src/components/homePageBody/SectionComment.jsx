@@ -6,8 +6,6 @@ import { fetchComments } from "../../redux/actions/comments";
 
 function SectionComment({ post }) {
   const comments = useSelector((state) => state.comments.comments);
-  console.log("commenti", comments);
-  console.log("post della section comment", post);
 
   const distpatch = useDispatch();
   useEffect(() => {

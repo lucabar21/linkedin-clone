@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchComments } from "../../redux/actions/comments";
 
 function AddCommentResponse({ post, comt }) {
-  const currentProfile = useSelector(state => state.profile.user);
-  console.log(post._id);
+  const currentProfile = useSelector((state) => state.profile.user);
   const randNum = Math.floor(Math.random() * 5);
 
   const distpatch = useDispatch();
@@ -13,7 +12,7 @@ function AddCommentResponse({ post, comt }) {
   const [rate, setRate] = useState(`${randNum}`);
   const [elementId, setElementId] = useState(post._id);
 
-  const currentLogin = useSelector(state => state.login.data.token);
+  const currentLogin = useSelector((state) => state.login.data.token);
 
   const postComment = () => {
     const ExperiencesEndpoint = "https://striveschool-api.herokuapp.com/api/comments/";
@@ -26,21 +25,19 @@ function AddCommentResponse({ post, comt }) {
         "Content-Type": "application/json",
       },
     })
-      .then(resp => {
+      .then((resp) => {
         if (resp.ok) {
-          console.log("Commento pubblicato");
           setComment("");
           setRate(`${randNum}`);
           setElementId(post._id); // qui sto resettando il form
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("Error", error);
       });
   };
 
   const hendleclick = () => {
-    console.log("Enter press");
     postComment();
     distpatch(fetchComments());
   };
@@ -64,9 +61,9 @@ function AddCommentResponse({ post, comt }) {
             type="text"
             placeholder="Aggiungi un commento..."
             className="textarea-focus w-50"
-            onChange={e => setComment(e.target.value)}
+            onChange={(e) => setComment(e.target.value)}
             value={comment}
-            onKeyDown={e => {
+            onKeyDown={(e) => {
               if (e.key === "Enter") {
                 hendleclick();
               }
