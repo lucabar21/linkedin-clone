@@ -61,7 +61,7 @@ function Comment({ post, comt }) {
   }, [comt]);
 
   return (
-    <div className="d-flex mt-2 px-2">
+    <div className="d-flex mt-2 px-2  ">
       <div className="pt-2">
         {}
         <img

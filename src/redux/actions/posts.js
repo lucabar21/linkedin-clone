@@ -12,6 +12,7 @@ export const fetchPosts = () => {
       },
     })
       .then((response) => {
+      .then((response) => {
         if (response.ok) {
           return response.json();
         } else {
@@ -21,6 +22,7 @@ export const fetchPosts = () => {
       .then((data) => {
         dispatch({ type: GET_POSTS, payload: data });
       })
+      .catch((error) => {
       .catch((error) => {
         console.log(error);
       });

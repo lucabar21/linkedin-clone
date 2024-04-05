@@ -18,8 +18,8 @@ function ChatgMin() {
       {location.pathname === `/` ? (
         <div></div>
       ) : (
-        <div className="chat-min-position chat-container cp" id="chatIndex">
-          <div className="p-2">
+        <div className="chat-min-position chat-container cp rounded-4" id="chatIndex">
+          <div className="mt-1 p-2">
             <div className="d-flex align-items-center ">
               <div className="me-2">
                 <div className="position-relative">

@@ -16,7 +16,7 @@ function AddCommentMain() {
   }, [currentLogin]);
 
   return (
-    <div className="sidebar-container pt-2 pb-1 px-3">
+    <div className="sidebar-container pt-3 pb-1 px-3 rounded-4">
       <div className="d-flex align-items-center">
         <img
           className="me-2 rounded-circle object-fit-cover cp"

@@ -5,8 +5,8 @@ const Cause = () => {
   return (
     <>
       <Row>
-        <Col>
-          <div className="mt-2 ">
+        <Col className="mb-5">
+          <div className="my-2 ">
             <Card className="rounded-4">
               <Card.Body>
                 <Card.Title className="d-flex justify-content-between align-items-center">
