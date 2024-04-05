@@ -46,21 +46,15 @@ function Comment({ post, comt }) {
   return (
     <div className="d-flex mt-2 px-2">
       <div className="pt-2">
-        <img
-          src={currentProfile.image}
-          alt=""
-          width={30}
-          height={30}
-          className="cp me-2 rounded-circle object-fit-cover"
-        />
+        <div width={30} height={30} className="cp me-2 rounded-circle object-fit-cover">
+          {comt.rate}{" "}
+        </div>
       </div>
       <div className=" w-100">
         <div className="d-flex cp p-2 bg-comment">
           <div>
-            <p className="small fw-bold line-heigh-name cp">
-              {currentProfile.name} {currentProfile.surname}
-            </p>
-            <p className="opacity-75 line-heigh">{currentProfile.title}</p>
+            <p className="small fw-bold line-heigh-name cp">{comt.author}</p>
+            <p className="opacity-75 line-heigh">{comt.createdAt}</p>
             <p className="mt-2 small">{comt.comment}</p>
           </div>
         </div>
