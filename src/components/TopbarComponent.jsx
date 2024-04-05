@@ -129,7 +129,7 @@ const TopbarComponent = () => {
                           </div>
                           <div id="drop-line"></div>
                           <div id="account-drop">
-                            <Link to="login">
+                            <Link style={{ textDecoration: "none" }} to="/">
                               <h6 id="microCardLink">Esci</h6>
                             </Link>
                           </div>
