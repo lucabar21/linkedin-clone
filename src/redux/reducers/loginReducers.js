@@ -20,7 +20,7 @@ const authReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         isLoggedIn: true,
-        user: action.payload, // Aggiungi eventuali dati dell'utente
+        user: action.payload,
       };
     case LOGIN_FAILURE:
       return {
