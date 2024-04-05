@@ -9,7 +9,6 @@ import ChatMin from "./components/chat/ChatMin";
 import SidebarProfile from "./components/sidebarProfile/SidebarProfile";
 import Footer from "./components/Footer";
 import AddCommentMain from "./components/homePageBody/AddCommentMain";
-import CardPost from "./components/homePageBody/CardPost";
 import ProfileModal from "./components/ProfileModal";
 import HeroSection from "./components/HeroSection";
 import ProfilePage from "./components/ProfilePage";
@@ -18,6 +17,7 @@ import { useSelector } from "react-redux";
 import HomepageCardProfile from "./components/leftSideCardHomepage/HomepageCardProfile";
 import HomepageMicrocard from "./components/leftSideCardHomepage/HomepageMicrocard";
 import HomePage from "./components/homePageBody/HomePage";
+import LoginPage from "./components/LoginPage";
 
 function App() {
   const currentAccount = useSelector((state) => state.profile.user);
@@ -65,6 +65,14 @@ function App() {
                   </Col>
                 </Row>{" "}
                 <Footer />
+              </Container>
+            }
+          ></Route>
+          <Route
+            path="/login"
+            element={
+              <Container className="mt-4">
+                <LoginPage />
               </Container>
             }
           ></Route>
