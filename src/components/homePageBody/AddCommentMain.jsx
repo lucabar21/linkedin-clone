@@ -35,15 +35,15 @@ function AddCommentMain() {
       </div>
       <div className="d-flex justify-content-around py-1">
         <div className="d-flex align-items-center like-section">
-          <img src="multimedia.svg" alt="" />
+          <img src="/multimedia.svg" alt="" />
           <p className="small ms-2 opacity-75">Contenuti multimediali</p>
         </div>
         <div className="d-flex align-items-center like-section">
-          <img src="calendar.svg" alt="" />
+          <img src="/calendar.svg" alt="" />
           <p className="small ms-2 opacity-75">Evento</p>
         </div>
         <div className="d-flex align-items-center like-section">
-          <img src="article.svg" alt="" />
+          <img src="/article.svg" alt="" />
           <p className="small ms-2 opacity-75">Scrivi un articolo</p>
         </div>
       </div>

@@ -3,7 +3,7 @@ import React from "react";
 import { Row, Col, Card } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
-const Informazioni = () => {
+const Informazioni = ({ user }) => {
   const currentAccount = useSelector((state) => state.profile.user);
 
   return (
@@ -20,7 +20,7 @@ const Informazioni = () => {
                 </Card.Title>
                 <div>
                   <div>
-                    <p>{currentAccount && currentAccount.bio}</p>
+                    <p>{user && user.bio}</p>
                   </div>
                 </div>
               </Card.Body>

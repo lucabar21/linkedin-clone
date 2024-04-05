@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
-import { AiFillEye } from "react-icons/ai";
 
 import { BiRightArrowAlt } from "react-icons/bi";
 
@@ -14,13 +13,13 @@ const Analisi = () => {
               <h4 className="pb-2">Analisi</h4>
             </Card.Title>
             <Card.Subtitle className="mb-3">
-              <img src="eye.svg" alt="" className="me-1" />
+              <img src="/eye.svg" alt="" className="me-1" />
               Solo per te
             </Card.Subtitle>
             <div>
               <Row className="align-items-start">
                 <Col md={12} lg="auto">
-                  <img src="people.svg" alt="" />
+                  <img src="/people.svg" alt="" />
                 </Col>
                 <Col>
                   <h6 className="mb-0">1 visualizzazione del profilo</h6>
@@ -28,7 +27,7 @@ const Analisi = () => {
                 </Col>
 
                 <Col md={12} lg="auto">
-                  <img src="search.svg" alt="" />
+                  <img src="/search.svg" alt="" />
                 </Col>
                 <Col>
                   <h6 className="mb-0">6 comparse nei motori di ricerca</h6>
@@ -36,7 +35,7 @@ const Analisi = () => {
                 </Col>
 
                 <Col md={12} lg="auto">
-                  <img src="impression.svg" alt="" />
+                  <img src="/impression.svg" alt="" />
                 </Col>
                 <Col>
                   <h6 className="mb-0">Crea un post per aumentare l’interesse.</h6>

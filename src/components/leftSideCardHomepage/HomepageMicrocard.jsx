@@ -18,7 +18,7 @@ function HomepageMicrocard() {
             </Link>
             <div id="buttonPlus" className="p-2">
               {" "}
-              <img src="plus.svg" alt="" />
+              <img src="/plus.svg" alt="" />
             </div>
           </div>
 

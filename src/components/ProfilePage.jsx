@@ -9,17 +9,16 @@ import Lingue from "./microcomponents-profile/Lingue";
 import Risorse from "./microcomponents-profile/Risorse";
 // import Footer from "./Footer";
 
-function Homepage() {
+function Homepage({ user }) {
   return (
     <>
       <Analisi />
       <Attività />
-      <Informazioni />
+      <Informazioni user={user} />
       <Cause />
       <Competenze />
       <Formazione />
       <Esperienza />
-      <Informazioni />
       <Lingue />
       <Risorse />
     </>
