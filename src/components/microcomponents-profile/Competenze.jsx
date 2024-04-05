@@ -7,7 +7,7 @@ const Competenze = () => {
     <>
       <Row>
         <Col>
-          <div className="my-2">
+          <div className="mt-2">
             <Card className="rounded-4">
               <Card.Body className="mx-2">
                 <Card.Title className="d-flex justify-content-between align-items-center">
@@ -15,10 +15,10 @@ const Competenze = () => {
                     <h4 className="mb-2">Competenze</h4>
                   </div>
                   <div className="d-flex align-items-end">
-                    <div className="mr-3">
-                      <AiOutlinePlus />
+                    <div id="buttonPlus" className="p-2">
+                      <img src="/plus.svg" alt="" />
                     </div>
-                    <div>
+                    <div id="buttonPlus" className="p-2">
                       <img src="/pen.svg" alt="" />
                     </div>
                   </div>

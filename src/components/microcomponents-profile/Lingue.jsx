@@ -1,7 +1,5 @@
 import React from "react";
 import { Row, Col, Card } from "react-bootstrap";
-import { AiOutlinePlus } from "react-icons/ai";
-import { BiPencil } from "react-icons/bi";
 
 const Lingue = () => {
   return (
@@ -16,10 +14,10 @@ const Lingue = () => {
                     <h4 className="mb-2">Lingue</h4>
                   </div>
                   <div className="d-flex align-items-end">
-                    <div className="mr-3">
-                      <AiOutlinePlus />
+                    <div id="buttonPlus" className="p-2">
+                      <img src="/plus.svg" alt="" />
                     </div>
-                    <div>
+                    <div id="buttonPlus" className="p-2">
                       <img src="/pen.svg" alt="" />
                     </div>
                   </div>
